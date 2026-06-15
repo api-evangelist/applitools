@@ -1,0 +1,169 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Applitools Eyes Server REST API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apiKey",
+      "value": "{{apiKey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Batches",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List batch results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eyesapi.applitools.com/batches/:batchId/results",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List batch results"
+        },
+        {
+          "info": {
+            "name": "List batch statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eyesapi.applitools.com/batches/:batchId/statistics",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List batch statistics"
+        },
+        {
+          "info": {
+            "name": "List batch properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eyesapi.applitools.com/batches/:batchId/properties",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List batch properties"
+        },
+        {
+          "info": {
+            "name": "Update batch properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://eyesapi.applitools.com/batches/:batchId/properties",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update batch properties"
+        },
+        {
+          "info": {
+            "name": "Delete a batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://eyesapi.applitools.com/batches/:batchId",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a batch"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Discussions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List discussion comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eyesapi.applitools.com/discussions/:discussionId/comments",
+            "params": [
+              {
+                "name": "discussionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List discussion comments"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SCM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set SCM status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://eyesapi.applitools.com/scm/status",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set SCM status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
