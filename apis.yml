@@ -11,7 +11,7 @@ description: >-
   and ships SDKs for Selenium, Cypress, Playwright, WebdriverIO, Puppeteer,
   Appium, Espresso, XCUI, Robot Framework, and more across JavaScript,
   TypeScript, Java, Python, C#, and Ruby.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Testing
   - Visual AI
@@ -33,7 +33,7 @@ apis:
       (list and manage comments), and SCM Integrations (status setting for
       source control systems). Authentication uses the user's Applitools API
       key.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://applitools.com/docs/eyes/reference/server-api
     baseURL: https://eyesapi.applitools.com
     tags:
@@ -55,7 +55,7 @@ apis:
       XCUI, Robot Framework, Images) across JavaScript/TypeScript, Java,
       Python, C#, and Ruby. SDKs send screenshots and DOM snapshots to the Eyes
       cloud server for Visual AI comparison.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://applitools.com/docs/eyes
     baseURL: https://eyesapi.applitools.com
     tags:
@@ -82,7 +82,7 @@ apis:
       AI-powered no-code platform for end-to-end functional, visual, and API
       testing. Handles test authoring, result analysis, and provides REST API
       access for programmatic integration into CI/CD.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://applitools.com/platform/autonomous/
     baseURL: https://eyes.applitools.com
     tags:
@@ -101,7 +101,7 @@ apis:
       Cloud test execution infrastructure with self-healing capabilities -
       tests remain functional even when UI elements change. Drop-in remote
       WebDriver replacement for Selenium, Playwright, and WebdriverIO tests.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://applitools.com/platform/execution-cloud/
     baseURL: https://exec-wus.applitools.com
     tags:
@@ -119,7 +119,7 @@ apis:
       Cross-browser and device visual rendering grid. Renders DOM snapshots
       captured by Eyes SDKs across many browser/viewport combinations in
       parallel and applies Visual AI comparison.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://applitools.com/platform/ultrafast-grid/
     baseURL: https://eyesapi.applitools.com
     tags:
