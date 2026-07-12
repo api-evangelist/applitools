@@ -130,6 +130,12 @@ apis:
       - type: ProductPage
         url: https://applitools.com/platform/ultrafast-grid/
 common:
+  - type: TrustCenter
+    url: security/applitools-trust-center.yml
+  - type: DomainSecurity
+    url: security/applitools-domain-security.yml
+  - type: Authentication
+    url: authentication/applitools-authentication.yml
   - type: Website
     url: https://applitools.com/
   - type: Documentation
@@ -144,6 +150,8 @@ common:
     url: rate-limits/applitools-rate-limits.yml
   - type: FinOps
     url: finops/applitools-finops.yml
+  - type: Blog
+    url: https://applitools.com/blog/feed/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

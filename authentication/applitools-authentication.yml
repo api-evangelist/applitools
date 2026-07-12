@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/applitools-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: ApiKeyQuery
+  type: apiKey
+  in: query
+  parameter: apiKey
+  description: Applitools API key passed as a query parameter.
+  sources:
+  - openapi/applitools-openapi.yml
