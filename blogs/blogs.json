@@ -1,0 +1,13 @@
+{
+  "repo": "applitools",
+  "feeds": [
+    {
+      "source": "https://applitools.com/blog/feed/",
+      "feed_url": "https://applitools.com/blog/feed/",
+      "title": "AI-Powered End-to-End Testing | Applitools",
+      "saved": 2
+    }
+  ],
+  "fetched": "2026-07-11T11:43:46Z",
+  "post_count": 24
+}
