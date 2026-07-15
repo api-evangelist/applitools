@@ -130,6 +130,8 @@ apis:
       - type: ProductPage
         url: https://applitools.com/platform/ultrafast-grid/
 common:
+  - type: AgenticAccess
+    url: agentic-access/applitools-agentic-access.yml
   - type: TrustCenter
     url: security/applitools-trust-center.yml
   - type: DomainSecurity
