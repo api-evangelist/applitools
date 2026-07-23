@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: Applitools Eyes Server REST Batches Discussions API
+  version: '1.0'
+  description: 'REST API for the Applitools Eyes cloud server covering batch management,
+
+    discussions (comments), and SCM integrations. Authentication uses the
+
+    user''s Applitools API key, typically passed as a query parameter
+
+    (`apiKey`) or via the Eyes server''s accepted header conventions.
+
+    '
+  contact:
+    name: Applitools Documentation
+    url: https://applitools.com/docs/eyes/reference/server-api
+servers:
+- url: https://eyesapi.applitools.com
+  description: Default public Applitools Eyes API (eyesapi host)
+- url: https://eyes.applitools.com/api/v1
+  description: Public Eyes cloud (api/v1 mount)
+security:
+- ApiKeyQuery: []
+tags:
+- name: Discussions
+  description: Discussion and comment endpoints
+paths:
+  /discussions/{discussionId}/comments:
+    get:
+      tags:
+      - Discussions
+      summary: List discussion comments
+      parameters:
+      - name: discussionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    ApiKeyQuery:
+      type: apiKey
+      in: query
+      name: apiKey
+      description: Applitools API key passed as a query parameter.

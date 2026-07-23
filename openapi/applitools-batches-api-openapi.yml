@@ -1,0 +1,97 @@
+openapi: 3.1.0
+info:
+  title: Applitools Eyes Server REST Batches API
+  version: '1.0'
+  description: 'REST API for the Applitools Eyes cloud server covering batch management,
+
+    discussions (comments), and SCM integrations. Authentication uses the
+
+    user''s Applitools API key, typically passed as a query parameter
+
+    (`apiKey`) or via the Eyes server''s accepted header conventions.
+
+    '
+  contact:
+    name: Applitools Documentation
+    url: https://applitools.com/docs/eyes/reference/server-api
+servers:
+- url: https://eyesapi.applitools.com
+  description: Default public Applitools Eyes API (eyesapi host)
+- url: https://eyes.applitools.com/api/v1
+  description: Public Eyes cloud (api/v1 mount)
+security:
+- ApiKeyQuery: []
+tags:
+- name: Batches
+  description: Batch management endpoints
+paths:
+  /batches/{batchId}/results:
+    get:
+      tags:
+      - Batches
+      summary: List batch results
+      parameters:
+      - $ref: '#/components/parameters/BatchId'
+      responses:
+        '200':
+          description: OK
+  /batches/{batchId}/statistics:
+    get:
+      tags:
+      - Batches
+      summary: List batch statistics
+      parameters:
+      - $ref: '#/components/parameters/BatchId'
+      responses:
+        '200':
+          description: OK
+  /batches/{batchId}/properties:
+    get:
+      tags:
+      - Batches
+      summary: List batch properties
+      parameters:
+      - $ref: '#/components/parameters/BatchId'
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - Batches
+      summary: Update batch properties
+      parameters:
+      - $ref: '#/components/parameters/BatchId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200':
+          description: OK
+  /batches/{batchId}:
+    delete:
+      tags:
+      - Batches
+      summary: Delete a batch
+      parameters:
+      - $ref: '#/components/parameters/BatchId'
+      responses:
+        '204':
+          description: Deleted
+components:
+  parameters:
+    BatchId:
+      name: batchId
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyQuery:
+      type: apiKey
+      in: query
+      name: apiKey
+      description: Applitools API key passed as a query parameter.
