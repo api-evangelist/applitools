@@ -11,7 +11,20 @@ description: >-
   and ships SDKs for Selenium, Cypress, Playwright, WebdriverIO, Puppeteer,
   Appium, Espresso, XCUI, Robot Framework, and more across JavaScript,
   TypeScript, Java, Python, C#, and Ruby.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/applitools.png
 tags:
   - Testing
   - Visual AI
@@ -25,110 +38,134 @@ created: '2026-05-23'
 modified: '2026-05-23'
 specificationVersion: '0.19'
 apis:
-  - aid: applitools:eyes-server-api
-    name: Applitools Eyes Server REST API
-    description: >-
-      REST API for the Applitools Eyes cloud server. Endpoint groups include
-      Batch Management (results, statistics, properties, deletion), Discussions
-      (list and manage comments), and SCM Integrations (status setting for
-      source control systems). Authentication uses the user's Applitools API
-      key.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://applitools.com/docs/eyes/reference/server-api
-    baseURL: https://eyesapi.applitools.com
-    tags:
-      - REST
-      - Eyes
-      - Batches
-      - Discussions
-      - SCM
-    properties:
-      - type: Documentation
-        url: https://applitools.com/docs/eyes/reference/server-api
-      - type: ProductDocs
-        url: https://applitools.com/docs/
-  - aid: applitools:eyes-sdks
-    name: Applitools Eyes SDKs
-    description: >-
-      Visual testing SDKs that integrate with existing test frameworks
-      (Selenium, Cypress, Playwright, WebdriverIO, Puppeteer, Appium, Espresso,
-      XCUI, Robot Framework, Images) across JavaScript/TypeScript, Java,
-      Python, C#, and Ruby. SDKs send screenshots and DOM snapshots to the Eyes
-      cloud server for Visual AI comparison.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://applitools.com/docs/eyes
-    baseURL: https://eyesapi.applitools.com
-    tags:
-      - SDK
-      - Selenium
-      - Cypress
-      - Playwright
-      - Appium
-      - Visual AI
-    properties:
-      - type: Documentation
-        url: https://applitools.com/docs/eyes
-      - type: Cypress
-        url: https://applitools.com/docs/eyes/sdks/cypress
-      - type: PlaywrightPython
-        url: https://applitools.com/docs/eyes/sdks/playwright-python
-      - type: Robot
-        url: https://applitools.com/docs/eyes/sdks/robot
-      - type: Espresso
-        url: https://applitools.com/docs/eyes/sdks/espresso
-  - aid: applitools:autonomous
-    name: Applitools Autonomous
-    description: >-
-      AI-powered no-code platform for end-to-end functional, visual, and API
-      testing. Handles test authoring, result analysis, and provides REST API
-      access for programmatic integration into CI/CD.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://applitools.com/platform/autonomous/
-    baseURL: https://eyes.applitools.com
-    tags:
-      - Autonomous
-      - AI
-      - No-Code
-      - E2E Testing
-    properties:
-      - type: ProductPage
-        url: https://applitools.com/platform/autonomous/
-      - type: Documentation
-        url: https://applitools.com/docs/
-  - aid: applitools:execution-cloud
-    name: Applitools Execution Cloud
-    description: >-
-      Cloud test execution infrastructure with self-healing capabilities -
-      tests remain functional even when UI elements change. Drop-in remote
-      WebDriver replacement for Selenium, Playwright, and WebdriverIO tests.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://applitools.com/platform/execution-cloud/
-    baseURL: https://exec-wus.applitools.com
-    tags:
-      - Execution Cloud
-      - Self-Healing
-      - WebDriver
-    properties:
-      - type: ProductPage
-        url: https://applitools.com/platform/execution-cloud/
-      - type: Documentation
-        url: https://applitools.com/docs/
-  - aid: applitools:ultrafast-grid
-    name: Applitools Ultrafast Grid
-    description: >-
-      Cross-browser and device visual rendering grid. Renders DOM snapshots
-      captured by Eyes SDKs across many browser/viewport combinations in
-      parallel and applies Visual AI comparison.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://applitools.com/platform/ultrafast-grid/
-    baseURL: https://eyesapi.applitools.com
-    tags:
-      - Ultrafast Grid
-      - Cross-Browser
-      - Visual AI
-    properties:
-      - type: ProductPage
-        url: https://applitools.com/platform/ultrafast-grid/
+- aid: applitools:eyes-server-api
+  name: Applitools Eyes Server REST API
+  description: >-
+    REST API for the Applitools Eyes cloud server. Endpoint groups include Batch Management (results,
+    statistics, properties, deletion), Discussions (list and manage comments), and SCM Integrations (status
+    setting for source control systems). Authentication uses the user's Applitools API key.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - REST
+  - Eyes
+  - Batches
+  - Discussions
+  - SCM
+  properties:
+  - type: Documentation
+    url: https://applitools.com/docs/eyes/reference/server-api
+  - type: ProductDocs
+    url: https://applitools.com/docs/
+- aid: applitools:eyes-sdks
+  name: Applitools Eyes SDKs
+  description: >-
+    Visual testing SDKs that integrate with existing test frameworks (Selenium, Cypress, Playwright, WebdriverIO,
+    Puppeteer, Appium, Espresso, XCUI, Robot Framework, Images) across JavaScript/TypeScript, Java, Python,
+    C#, and Ruby. SDKs send screenshots and DOM snapshots to the Eyes cloud server for Visual AI comparison.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://applitools.com/docs/eyes
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - SDK
+  - Selenium
+  - Cypress
+  - Playwright
+  - Appium
+  - Visual AI
+  properties:
+  - type: Documentation
+    url: https://applitools.com/docs/eyes
+  - type: Cypress
+    url: https://applitools.com/docs/eyes/sdks/cypress
+  - type: PlaywrightPython
+    url: https://applitools.com/docs/eyes/sdks/playwright-python
+  - type: Robot
+    url: https://applitools.com/docs/eyes/sdks/robot
+  - type: Espresso
+    url: https://applitools.com/docs/eyes/sdks/espresso
+- aid: applitools:autonomous
+  name: Applitools Autonomous
+  description: >-
+    AI-powered no-code platform for end-to-end functional, visual, and API testing. Handles test authoring,
+    result analysis, and provides REST API access for programmatic integration into CI/CD.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://applitools.com/platform/autonomous/
+  baseURL: https://eyes.applitools.com
+  tags:
+  - Autonomous
+  - AI
+  - No-Code
+  - E2E Testing
+  properties:
+  - type: ProductPage
+    url: https://applitools.com/platform/autonomous/
+  - type: Documentation
+    url: https://applitools.com/docs/
+- aid: applitools:execution-cloud
+  name: Applitools Execution Cloud
+  description: >-
+    Cloud test execution infrastructure with self-healing capabilities - tests remain functional even
+    when UI elements change. Drop-in remote WebDriver replacement for Selenium, Playwright, and WebdriverIO
+    tests.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://applitools.com/platform/execution-cloud/
+  baseURL: https://exec-wus.applitools.com
+  tags:
+  - Execution Cloud
+  - Self-Healing
+  - WebDriver
+  properties:
+  - type: ProductPage
+    url: https://applitools.com/platform/execution-cloud/
+  - type: Documentation
+    url: https://applitools.com/docs/
+- aid: applitools:ultrafast-grid
+  name: Applitools Ultrafast Grid
+  description: >-
+    Cross-browser and device visual rendering grid. Renders DOM snapshots captured by Eyes SDKs across
+    many browser/viewport combinations in parallel and applies Visual AI comparison.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://applitools.com/platform/ultrafast-grid/
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Ultrafast Grid
+  - Cross-Browser
+  - Visual AI
+  properties:
+  - type: ProductPage
+    url: https://applitools.com/platform/ultrafast-grid/
+- aid: applitools:applitools-batches-api
+  name: Applitools Batches API
+  description: Batch management endpoints
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Batches
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-batches-api-openapi.yml
+- aid: applitools:applitools-discussions-api
+  name: Applitools Discussions API
+  description: Discussion and comment endpoints
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Discussions
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-discussions-api-openapi.yml
+- aid: applitools:applitools-scm-api
+  name: Applitools SCM API
+  description: Source-control management integrations
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - SCM
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-scm-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/applitools-agentic-access.yml
