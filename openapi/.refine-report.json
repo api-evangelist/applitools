@@ -1,0 +1,18 @@
+{
+  "provider": "applitools",
+  "sources": [
+    "applitools-batches-api-openapi.yml",
+    "applitools-discussions-api-openapi.yml",
+    "applitools-scm-api-openapi.yml"
+  ],
+  "outputs": [
+    "applitools-batches-api-openapi.yml",
+    "applitools-discussions-api-openapi.yml",
+    "applitools-scm-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
