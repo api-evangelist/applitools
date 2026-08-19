@@ -36,7 +36,7 @@ tags:
   - Execution Cloud
 created: '2026-05-23'
 modified: '2026-05-23'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: applitools:eyes-server-api
   name: Applitools Eyes Server REST API
