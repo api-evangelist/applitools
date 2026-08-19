@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Applitools Eyes Server REST Batches Discussions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apiKey",
+      "value": "{{apiKey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discussions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List discussion comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eyesapi.applitools.com/discussions/:discussionId/comments",
+            "params": [
+              {
+                "name": "discussionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List discussion comments"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

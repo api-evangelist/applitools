@@ -1,0 +1,134 @@
+{
+  "item": [
+    {
+      "id": "2e63911c-86dc-46c8-9fc0-97f89e7174b2",
+      "name": "SCM",
+      "description": {
+        "content": "Source-control management integrations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0f19ee80-c2d5-44bb-beaf-8a7966f773e6",
+          "name": "Set SCM status",
+          "request": {
+            "name": "Set SCM status",
+            "description": {},
+            "url": {
+              "path": [
+                "scm",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 8136,\n  \"key_1\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "86cdb537-b8de-4166-8fdf-82974f1faa81",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scm",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 1539,\n  \"key_1\": \"string\",\n  \"key_2\": \"string\",\n  \"key_3\": 1620,\n  \"key_4\": 6610.203657062927\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eyesapi.applitools.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d7dc1e0a-5833-4d78-bde0-9f4d3094293f",
+    "name": "Applitools Eyes Server REST Batches SCM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Applitools Eyes cloud server covering batch management,\ndiscussions (comments), and SCM integrations. Authentication uses the\nuser's Applitools API key, typically passed as a query parameter\n(`apiKey`) or via the Eyes server's accepted header conventions.\n\n\nContact Support:\n Name: Applitools Documentation",
+      "type": "text/plain"
+    }
+  }
+}

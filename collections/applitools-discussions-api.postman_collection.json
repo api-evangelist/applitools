@@ -1,0 +1,129 @@
+{
+  "item": [
+    {
+      "id": "a602980e-e7b9-42f9-808d-993704862178",
+      "name": "Discussions",
+      "description": {
+        "content": "Discussion and comment endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d6e6840e-acd8-404d-8c45-e76b6cd74971",
+          "name": "List discussion comments",
+          "request": {
+            "name": "List discussion comments",
+            "description": {},
+            "url": {
+              "path": [
+                "discussions",
+                ":discussionId",
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "discussionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b9011cb-c402-41c5-b178-c0d1a960e60f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discussions",
+                    ":discussionId",
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "discussionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eyesapi.applitools.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "862e2e30-e5f9-4ec9-966b-137fa653af19",
+    "name": "Applitools Eyes Server REST Batches Discussions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Applitools Eyes cloud server covering batch management,\ndiscussions (comments), and SCM integrations. Authentication uses the\nuser's Applitools API key, typically passed as a query parameter\n(`apiKey`) or via the Eyes server's accepted header conventions.\n\n\nContact Support:\n Name: Applitools Documentation",
+      "type": "text/plain"
+    }
+  }
+}

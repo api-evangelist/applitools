@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Applitools Eyes Server REST Batches SCM API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apiKey",
+      "value": "{{apiKey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SCM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set SCM status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://eyesapi.applitools.com/scm/status",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set SCM status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
