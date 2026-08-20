@@ -95,6 +95,11 @@ apis:
   baseURL: https://eyes.applitools.com
   tags:
   - Autonomous
+  - Artificial Intelligence
+  - No-Code
+  - E2E Testing
+  tags_raw:
+  - Autonomous
   - AI
   - No-Code
   - E2E Testing
