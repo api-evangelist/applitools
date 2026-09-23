@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Applitools Eyes Server REST Batches Discussions API
+  title: Applitools Eyes Server REST Discussions API
   version: '1.0'
   description: 'REST API for the Applitools Eyes cloud server covering batch management,
 
@@ -8,9 +8,7 @@ info:
 
     user''s Applitools API key, typically passed as a query parameter
 
-    (`apiKey`) or via the Eyes server''s accepted header conventions.
-
-    '
+    (`apiKey`) or via the Eyes server''s accepted header conventions.'
   contact:
     name: Applitools Documentation
     url: https://applitools.com/docs/eyes/reference/server-api
@@ -39,6 +37,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getDiscussionsByDiscussionIdComments
+      x-operation-id-source: derived
 components:
   securitySchemes:
     ApiKeyQuery:

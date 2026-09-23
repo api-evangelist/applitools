@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Applitools Eyes Server REST Batches API
   version: '1.0'
@@ -8,9 +8,7 @@ info:
 
     user''s Applitools API key, typically passed as a query parameter
 
-    (`apiKey`) or via the Eyes server''s accepted header conventions.
-
-    '
+    (`apiKey`) or via the Eyes server''s accepted header conventions.'
   contact:
     name: Applitools Documentation
     url: https://applitools.com/docs/eyes/reference/server-api
@@ -35,6 +33,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getBatchesByBatchIdResults
+      x-operation-id-source: derived
   /batches/{batchId}/statistics:
     get:
       tags:
@@ -45,6 +45,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getBatchesByBatchIdStatistics
+      x-operation-id-source: derived
   /batches/{batchId}/properties:
     get:
       tags:
@@ -55,6 +57,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getBatchesByBatchIdProperties
+      x-operation-id-source: derived
     patch:
       tags:
       - Batches
@@ -71,6 +75,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: patchBatchesByBatchIdProperties
+      x-operation-id-source: derived
   /batches/{batchId}:
     delete:
       tags:
@@ -81,6 +87,8 @@ paths:
       responses:
         '204':
           description: Deleted
+      operationId: deleteBatchesByBatchId
+      x-operation-id-source: derived
 components:
   parameters:
     BatchId:
