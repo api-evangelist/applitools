@@ -185,6 +185,9 @@ apis:
   - type: OpenAPI
     url: openapi/applitools-scm-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/applitools-capability-edges.yml
+    name: Applitools Business Capability Map
   - type: AgenticAccess
     url: agentic-access/applitools-agentic-access.yml
   - type: TrustCenter
