@@ -1,0 +1,864 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Beta API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Beta
+paths:
+  /api/Beta/compare-images-as-session:
+    post:
+      tags:
+      - Beta
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompareImagesAsSession'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CompareImagesAsSessionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompareImagesAsSessionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CompareImagesAsSessionResult'
+      summary: Create api beta compare images as session
+      x-summary-source: derived
+      operationId: postApiBetaCompareImagesAsSession
+      x-operation-id-source: derived
+components:
+  schemas:
+    FloatingRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        maxLeftOffset:
+          type: integer
+          format: int32
+        maxRightOffset:
+          type: integer
+          format: int32
+        maxUpOffset:
+          type: integer
+          format: int32
+        maxDownOffset:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CompareImagesAsSessionResults:
+      type: object
+      properties:
+        status:
+          type:
+          - string
+          - 'null'
+        appName:
+          type:
+          - string
+          - 'null'
+        testName:
+          type:
+          - string
+          - 'null'
+        resultUrl:
+          type:
+          - string
+          - 'null'
+        diffImage:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Size:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ContrastDefinition:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    Location:
+      type: object
+      properties:
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    AccessibilityRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+        type:
+          $ref: '#/components/schemas/AccessibilityElementType'
+      additionalProperties: false
+    ContrastVersion:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    ServerDynamicMatchLevelSettings:
+      type: object
+      properties:
+        ignorePatterns:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        customPatterns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/InlineDynamicTextPattern'
+      additionalProperties: false
+    ImageInfo:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        domId:
+          type:
+          - string
+          - 'null'
+        domMappingId:
+          type:
+          - string
+          - 'null'
+        axTreeBlobId:
+          type:
+          - string
+          - 'null'
+        axTreePageNo:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        size:
+          $ref: '#/components/schemas/RectangleSize'
+        viewport:
+          $ref: '#/components/schemas/RectangleSize'
+        hasDom:
+          type: boolean
+        location:
+          $ref: '#/components/schemas/Location'
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        isMissing:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    InlineDynamicTextPattern:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        regex:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Point:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    PixelDiffThresholds:
+      type: object
+      properties:
+        minDiffIntensity:
+          type: integer
+          format: int32
+        minDiffWidth:
+          type: integer
+          format: int32
+        minDiffHeight:
+          type: integer
+          format: int32
+        matchThreshold:
+          type: number
+          format: float
+      additionalProperties: false
+    ImageMatchLevel:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      type: integer
+      format: int32
+    IdentifiedCodedRegions:
+      type: object
+      properties:
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicMutableRegion'
+      additionalProperties: false
+    MutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+      additionalProperties: false
+    DiffCategory:
+      enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 300
+      - 301
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 500
+      - 501
+      - 502
+      - 600
+      type: integer
+      format: int32
+    CompareImagesAsSessionResult:
+      type: object
+      properties:
+        batchName:
+          type:
+          - string
+          - 'null'
+        batchUrl:
+          type:
+          - string
+          - 'null'
+        batchId:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        results:
+          $ref: '#/components/schemas/CompareImagesAsSessionResults'
+      additionalProperties: false
+    AccessibilityElementType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      type: integer
+      format: int32
+    RectangleSize:
+      type: object
+      properties:
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Rectangle:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        left:
+          type: integer
+          format: int32
+          readOnly: true
+        top:
+          type: integer
+          format: int32
+          readOnly: true
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        isEmpty:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    DiffDescription:
+      type: object
+      properties:
+        baselineValue:
+          type:
+          - string
+          - 'null'
+        checkpointValue:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/DiffCategory'
+      additionalProperties: false
+    CompareImagesAsSession:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        image1:
+          $ref: '#/components/schemas/ImageInfo'
+        image2:
+          $ref: '#/components/schemas/ImageInfo'
+        matchSettings:
+          $ref: '#/components/schemas/ServerImageMatchSettings'
+        env:
+          $ref: '#/components/schemas/Env'
+      additionalProperties: false
+    DensityMetrics:
+      type: object
+      properties:
+        scaleRatio:
+          type: number
+          format: float
+        xdpi:
+          type: number
+          format: float
+        ydpi:
+          type: number
+          format: float
+      additionalProperties: false
+    ExternalRegionId:
+      type: object
+      properties:
+        target:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ServerImageMatchSettings:
+      type: object
+      properties:
+        matchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicMutableRegion'
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        accessibility:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRegion'
+        identifiedRegions:
+          $ref: '#/components/schemas/IdentifiedCodedRegions'
+        splitTopHeight:
+          type: integer
+          format: int32
+        splitBottomHeight:
+          type: integer
+          format: int32
+        ignoreCaret:
+          type: boolean
+        accessibilitySettings:
+          $ref: '#/components/schemas/AccessibilitySettings'
+        dynamicMatchLevelSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        ignoreDisplacements:
+          type: boolean
+        exact:
+          $ref: '#/components/schemas/PixelDiffThresholds'
+        scale:
+          type: number
+          format: double
+        remainder:
+          type: number
+          format: double
+        useDom:
+          type: boolean
+        useDL:
+          type: boolean
+        enablePatterns:
+          type: boolean
+        densityMetrics:
+          $ref: '#/components/schemas/DensityMetrics'
+      additionalProperties: false
+    AccessibilitySettings:
+      type: object
+      properties:
+        level:
+          $ref: '#/components/schemas/ContrastDefinition'
+        version:
+          $ref: '#/components/schemas/ContrastVersion'
+      additionalProperties: false
+    Env:
+      type: object
+      properties:
+        inferred:
+          type:
+          - string
+          - 'null'
+        os:
+          type:
+          - string
+          - 'null'
+        hostingApp:
+          type:
+          - string
+          - 'null'
+        displaySize:
+          $ref: '#/components/schemas/RectangleSize'
+        hostingAppInfo:
+          type:
+          - string
+          - 'null'
+        osInfo:
+          type:
+          - string
+          - 'null'
+        deviceInfo:
+          type:
+          - string
+          - 'null'
+        ufgJobType:
+          type:
+          - string
+          - 'null'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        renderer:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DynamicMutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+      additionalProperties: false

@@ -1,0 +1,91 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Discuss Public API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: DiscussPublicApi
+paths:
+  /api/v1/discuss/{DiscussionId}:
+    get:
+      tags:
+      - DiscussPublicApi
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetDiscussionCommentsRequest'
+      - name: DiscussionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DiscussionCommentResponse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DiscussionCommentResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DiscussionCommentResponse'
+      summary: Get api discuss by discussion id
+      x-summary-source: derived
+      operationId: getApiV1DiscussByDiscussionId
+      x-operation-id-source: derived
+components:
+  schemas:
+    GetDiscussionCommentsRequest:
+      type: object
+      properties:
+        discussionId:
+          type:
+          - string
+          - 'null'
+        count:
+          type: integer
+          format: int32
+        limit:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DiscussionCommentResponse:
+      type: object
+      properties:
+        commentId:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          type:
+          - string
+          - 'null'
+        content:
+          type:
+          - string
+          - 'null'
+        followers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false

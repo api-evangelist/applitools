@@ -1,0 +1,510 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Auth API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Auth
+paths:
+  /api/Auth/authredirect:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthAndRedirect'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth authredirect
+      x-summary-source: derived
+      operationId: getApiAuthAuthredirect
+      x-operation-id-source: derived
+  /api/Auth/signup:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/SignUpRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth signup
+      x-summary-source: derived
+      operationId: getApiAuthSignup
+      x-operation-id-source: derived
+  /api/Auth/relay:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthRelay'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth relay
+      x-summary-source: derived
+      operationId: getApiAuthRelay
+      x-operation-id-source: derived
+  /api/Auth/login:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/EstablishSession'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth login
+      x-summary-source: derived
+      operationId: getApiAuthLogin
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/EstablishSession'
+      responses:
+        '200':
+          description: OK
+      summary: Create api auth login
+      x-summary-source: derived
+      operationId: postApiAuthLogin
+      x-operation-id-source: derived
+  /api/Auth/logout:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/TerminateSession'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth logout
+      x-summary-source: derived
+      operationId: getApiAuthLogout
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/LogoutRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogoutRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LogoutRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LogoutRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Create api auth logout
+      x-summary-source: derived
+      operationId: postApiAuthLogout
+      x-operation-id-source: derived
+  /api/Auth/relaylogout:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/LogoutRelay'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth relaylogout
+      x-summary-source: derived
+      operationId: getApiAuthRelaylogout
+      x-operation-id-source: derived
+  /api/Auth/keepalive:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/KeepAliveSession'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth keepalive
+      x-summary-source: derived
+      operationId: getApiAuthKeepalive
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/KeepAliveSession'
+      responses:
+        '200':
+          description: OK
+      summary: Create api auth keepalive
+      x-summary-source: derived
+      operationId: postApiAuthKeepalive
+      x-operation-id-source: derived
+  /api/Auth/access:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAccessInfo'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAccessInfoResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccessInfoResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAccessInfoResult'
+      summary: Get api auth access
+      x-summary-source: derived
+      operationId: getApiAuthAccess
+      x-operation-id-source: derived
+  /api/Auth/auth:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthUser'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth auth
+      x-summary-source: derived
+      operationId: getApiAuthAuth
+      x-operation-id-source: derived
+  /api/Auth/jwks:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/JwksRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth jwks
+      x-summary-source: derived
+      operationId: getApiAuthJwks
+      x-operation-id-source: derived
+  /api/Auth/authorize:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: response_type
+        in: query
+        schema:
+          type: string
+      - name: client_id
+        in: query
+        schema:
+          type: string
+      - name: redirect_uri
+        in: query
+        schema:
+          type: string
+      - name: scope
+        in: query
+        schema:
+          type: string
+      - name: state
+        in: query
+        schema:
+          type: string
+      - name: account_id
+        in: query
+        schema:
+          type: string
+      - name: login_hint
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api auth authorize
+      x-summary-source: derived
+      operationId: getApiAuthAuthorize
+      x-operation-id-source: derived
+  /oauth/token:
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/OAuthTokenRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OAuthTokenRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OAuthTokenRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/OAuthTokenRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Create oauth token
+      x-summary-source: derived
+      operationId: postOauthToken
+      x-operation-id-source: derived
+  /api/Auth/eg_auth:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetExecutionGridAuth'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetExecutionGridAuthResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetExecutionGridAuthResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetExecutionGridAuthResult'
+      summary: Get api auth eg auth
+      x-summary-source: derived
+      operationId: getApiAuthEgAuth
+      x-operation-id-source: derived
+components:
+  schemas:
+    AuthUser:
+      type: object
+      properties:
+        targetUrl:
+          type:
+          - string
+          - 'null'
+        publicKey:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ExecutionGridSettings:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+        concurrency:
+          type: integer
+          format: int32
+        tunnelConcurrency:
+          type: integer
+          format: int32
+        videoUploadLinkTemplate:
+          type:
+          - string
+          - 'null'
+        consoleLogsUploadLinkTemplate:
+          type:
+          - string
+          - 'null'
+        driverLogsUploadLinkTemplate:
+          type:
+          - string
+          - 'null'
+        useSelfHealing:
+          type: boolean
+      additionalProperties: false
+    GetExecutionGridAuthResult:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        executionGridSettings:
+          $ref: '#/components/schemas/ExecutionGridSettings'
+      additionalProperties: false
+    AuthRelay:
+      type: object
+      properties:
+        userName:
+          type:
+          - string
+          - 'null'
+        spUrl:
+          type:
+          - string
+          - 'null'
+        app:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAccessInfoResult:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        isFree:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    OAuthTokenRequest:
+      type: object
+      properties:
+        grantType:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        redirectUri:
+          type:
+          - string
+          - 'null'
+        refreshToken:
+          type:
+          - string
+          - 'null'
+        clientId:
+          type:
+          - string
+          - 'null'
+        clientSecret:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    LogoutRelay:
+      type: object
+      properties:
+        userName:
+          type:
+          - string
+          - 'null'
+        app:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    EstablishSession:
+      type: object
+      properties:
+        targetUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    KeepAliveSession:
+      type: object
+      additionalProperties: false
+    GetExecutionGridAuth:
+      type: object
+      additionalProperties: false
+    LogoutRequest:
+      type: object
+      properties:
+        refreshToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    IHttpRestClient:
+      type: object
+      additionalProperties: false
+    SignUpRequest:
+      type: object
+      additionalProperties: false
+    AuthAndRedirect:
+      type: object
+      properties:
+        targetUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAccessInfo:
+      type: object
+      properties:
+        permission:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    TerminateSession:
+      type: object
+      properties:
+        client:
+          $ref: '#/components/schemas/IHttpRestClient'
+      additionalProperties: false
+    JwksRequest:
+      type: object
+      additionalProperties: false

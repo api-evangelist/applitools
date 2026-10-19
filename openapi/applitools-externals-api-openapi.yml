@@ -1,0 +1,5943 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Externals API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Externals
+paths:
+  /api/Externals/log:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/LogExternalClientEvents'
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals log
+      x-summary-source: derived
+      operationId: postApiExternalsLog
+      x-operation-id-source: derived
+  /api/Externals/{Target}/issues:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateIssue'
+      - name: Target
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+      summary: Create api externals by target issues
+      x-summary-source: derived
+      operationId: postApiExternalsByTargetIssues
+      x-operation-id-source: derived
+  /api/Externals/github/events:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: AccountId
+        in: query
+        schema:
+          type: string
+      - name: X-Hub-Signature
+        in: header
+        schema:
+          type: string
+      - name: X-GitHub-Event
+        in: header
+        schema:
+          type: string
+      - name: X-GitHub-Delivery
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals github events
+      x-summary-source: derived
+      operationId: postApiExternalsGithubEvents
+      x-operation-id-source: derived
+  /api/Externals/github/servers:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubServers'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  type: string
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+            text/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      summary: Get api externals github servers
+      x-summary-source: derived
+      operationId: getApiExternalsGithubServers
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitHubServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals github servers by server id
+      x-summary-source: derived
+      operationId: putApiExternalsGithubServersByServerId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveGitHubServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals github servers by server id
+      x-summary-source: derived
+      operationId: deleteApiExternalsGithubServersByServerId
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/auth-request:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GenerateGitHubAuthRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals github servers by server id auth request
+      x-summary-source: derived
+      operationId: getApiExternalsGithubServersByServerIdAuthRequest
+      x-operation-id-source: derived
+  /api/Externals/github/auth:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthorizeGitHubUser'
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals github auth
+      x-summary-source: derived
+      operationId: getApiExternalsGithubAuth
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/auth:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveGitHubUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals github servers by server id auth
+      x-summary-source: derived
+      operationId: deleteApiExternalsGithubServersByServerIdAuth
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/user:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitHubUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitHubUser'
+      summary: Get api externals github servers by server id user
+      x-summary-source: derived
+      operationId: getApiExternalsGithubServersByServerIdUser
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubRepos'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+      summary: Get api externals github servers by server id repos
+      x-summary-source: derived
+      operationId: getApiExternalsGithubServersByServerIdRepos
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/hooks:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubHookedRepos'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubHookedRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubHookedRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubHookedRepo'
+      summary: Get api externals github servers by server id hooks
+      x-summary-source: derived
+      operationId: getApiExternalsGithubServersByServerIdHooks
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitHubWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals github servers by server id hooks
+      x-summary-source: derived
+      operationId: postApiExternalsGithubServersByServerIdHooks
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/hooks/{RepoId}:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveGitHubWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: RepoId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals github servers by server id hooks by repo id
+      x-summary-source: derived
+      operationId: deleteApiExternalsGithubServersByServerIdHooksByRepoId
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/commit/{CommitSha}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteGithubCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals github servers by server id commit by commit sha complete
+      x-summary-source: derived
+      operationId: postApiExternalsGithubServersByServerIdCommitByCommitShaComplete
+      x-operation-id-source: derived
+  /api/Externals/github/servers/{ServerId}/commit/{CommitSha}/{buildId}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteGithubCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: buildId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals github servers by server id commit by commit sha by build…
+      x-summary-source: derived
+      operationId: postApiExternalsGithubServersByServerIdCommitByCommitShaByBuildIdComplete
+      x-operation-id-source: derived
+  /api/Externals/github/v2/events:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: OrgId
+        in: query
+        schema:
+          type: string
+      - name: ServerId
+        in: query
+        schema:
+          type: string
+      - name: X-Hub-Signature
+        in: header
+        schema:
+          type: string
+      - name: X-GitHub-Event
+        in: header
+        schema:
+          type: string
+      - name: X-GitHub-Delivery
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals github events
+      x-summary-source: derived
+      operationId: postApiExternalsGithubV2Events
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubServersV2'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetGitHubServersV2Response'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetGitHubServersV2Response'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetGitHubServersV2Response'
+      summary: Get api externals github servers
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2Servers
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/installation_permissions:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitHubServerInstallationPermissionsV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals github servers by server id installation permissions
+      x-summary-source: derived
+      operationId: putApiExternalsGithubV2ServersByServerIdInstallationPermissions
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitHubServerV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals github servers by server id
+      x-summary-source: derived
+      operationId: putApiExternalsGithubV2ServersByServerId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteGitHubServerV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+            text/json:
+              schema:
+                type: object
+                additionalProperties: {}
+      summary: Delete api externals github servers by server id
+      x-summary-source: derived
+      operationId: deleteApiExternalsGithubV2ServersByServerId
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/new_installation_link:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubAppInstallationLink'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GithubAppInstallationLinkResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GithubAppInstallationLinkResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GithubAppInstallationLinkResponse'
+      summary: Get api externals github servers by server id new installation link
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2ServersByServerIdNewInstallationLink
+      x-operation-id-source: derived
+  /api/Externals/github/v2/complete_installation:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GitHubCompleteInstallationRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals github complete installation
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2CompleteInstallation
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/installations/{installationId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GitHubAppInstallationV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: installationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+      summary: Replace api externals github servers by server id installations by installation…
+      x-summary-source: derived
+      operationId: putApiExternalsGithubV2ServersByServerIdInstallationsByInstallationId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GitHubAppInstallationV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: installationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+      summary: Delete api externals github servers by server id installations by installation…
+      x-summary-source: derived
+      operationId: deleteApiExternalsGithubV2ServersByServerIdInstallationsByInstallationId
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/installations:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubServerInstallationsV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+      summary: Get api externals github servers by server id installations
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2ServersByServerIdInstallations
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/notify-installation-events:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GitHubAppNotifyInstallationEventsRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: object
+                additionalProperties:
+                  type: boolean
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: boolean
+            text/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: boolean
+      summary: Create api externals github servers by server id notify installation events
+      x-summary-source: derived
+      operationId: postApiExternalsGithubV2ServersByServerIdNotifyInstallationEvents
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubServerReposV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+      summary: Get api externals github servers by server id repos
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2ServersByServerIdRepos
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/installations/{InstallationId}/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubServerReposV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: InstallationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitHubRepo'
+      summary: Get api externals github servers by server id installations by installation id…
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2ServersByServerIdInstallationsByInstallationIdRepos
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/installations/{InstallationId}/subscriptions:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubServerSubscriptionsV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: InstallationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+      summary: Get api externals github servers by server id installations by installation id…
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2ServersByServerIdInstallationsByInstallationIdSubscriptions
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitHubServerSubscriptionsV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: InstallationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+      summary: Replace api externals github servers by server id installations by installation…
+      x-summary-source: derived
+      operationId: putApiExternalsGithubV2ServersByServerIdInstallationsByInstallationIdSubscriptions
+      x-operation-id-source: derived
+  /api/Externals/github/v2/servers/{ServerId}/subscriptions:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitHubServerSubscriptionsV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+      summary: Get api externals github servers by server id subscriptions
+      x-summary-source: derived
+      operationId: getApiExternalsGithubV2ServersByServerIdSubscriptions
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitHubServerSubscriptionsV2'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitHubServerAccountSubscriptionsV2Response'
+      summary: Replace api externals github servers by server id subscriptions
+      x-summary-source: derived
+      operationId: putApiExternalsGithubV2ServersByServerIdSubscriptions
+      x-operation-id-source: derived
+  /api/Externals/github/push:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GithubPushEventRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals github push
+      x-summary-source: derived
+      operationId: postApiExternalsGithubPush
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/events:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: ServerId
+        in: query
+        schema:
+          type: string
+      - name: AccountId
+        in: query
+        schema:
+          type: string
+      - name: RequestStream.CanRead
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanWrite
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanSeek
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanTimeout
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.Length
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: RequestStream.Position
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: RequestStream.ReadTimeout
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: RequestStream.WriteTimeout
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals bitbucket events
+      x-summary-source: derived
+      operationId: postApiExternalsBitbucketEvents
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBitbucketServers'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketServer'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketServer'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketServer'
+      summary: Get api externals bitbucket servers
+      x-summary-source: derived
+      operationId: getApiExternalsBitbucketServers
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateBitbucketServer'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals bitbucket servers
+      x-summary-source: derived
+      operationId: putApiExternalsBitbucketServers
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateBitbucketServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals bitbucket servers by server id
+      x-summary-source: derived
+      operationId: putApiExternalsBitbucketServersByServerId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveBitbucketServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals bitbucket servers by server id
+      x-summary-source: derived
+      operationId: deleteApiExternalsBitbucketServersByServerId
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/auth-request:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GenerateBitbucketAuthRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals bitbucket servers by server id auth request
+      x-summary-source: derived
+      operationId: getApiExternalsBitbucketServersByServerIdAuthRequest
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/auth:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthorizeBitbucketUser'
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals bitbucket auth
+      x-summary-source: derived
+      operationId: getApiExternalsBitbucketAuth
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthorizeOnPremisesBitbucketUser'
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals bitbucket auth
+      x-summary-source: derived
+      operationId: postApiExternalsBitbucketAuth
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/auth:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveBitbucketUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals bitbucket servers by server id auth
+      x-summary-source: derived
+      operationId: deleteApiExternalsBitbucketServersByServerIdAuth
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/user:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBitbucketUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BitbucketUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitbucketUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BitbucketUser'
+      summary: Get api externals bitbucket servers by server id user
+      x-summary-source: derived
+      operationId: getApiExternalsBitbucketServersByServerIdUser
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBitbucketRepos'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketRepo'
+      summary: Get api externals bitbucket servers by server id repos
+      x-summary-source: derived
+      operationId: getApiExternalsBitbucketServersByServerIdRepos
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBitbucketRepos'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketRepo'
+      summary: Get api externals bitbucket repos
+      x-summary-source: derived
+      operationId: getApiExternalsBitbucketRepos
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/commit/{CommitSha}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteBitbucketCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals bitbucket servers by server id commit by commit sha…
+      x-summary-source: derived
+      operationId: postApiExternalsBitbucketServersByServerIdCommitByCommitShaComplete
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/commit/{CommitSha}/{BuildId}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteBitbucketCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: BuildId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals bitbucket servers by server id commit by commit sha by…
+      x-summary-source: derived
+      operationId: postApiExternalsBitbucketServersByServerIdCommitByCommitShaByBuildIdComplete
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/hooks:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBitbucketHookedRepos'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketHookedRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketHookedRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitbucketHookedRepo'
+      summary: Get api externals bitbucket servers by server id hooks
+      x-summary-source: derived
+      operationId: getApiExternalsBitbucketServersByServerIdHooks
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateBitbucketWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals bitbucket servers by server id hooks
+      x-summary-source: derived
+      operationId: postApiExternalsBitbucketServersByServerIdHooks
+      x-operation-id-source: derived
+  /api/Externals/bitbucket/servers/{ServerId}/hooks/{RepoId}:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveBitbucketWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: RepoId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals bitbucket servers by server id hooks by repo id
+      x-summary-source: derived
+      operationId: deleteApiExternalsBitbucketServersByServerIdHooksByRepoId
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/events:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: AzureOrgUrl
+        in: query
+        schema:
+          type: string
+      - name: AccountId
+        in: query
+        schema:
+          type: string
+      - name: RequestStream.CanRead
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanWrite
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanSeek
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanTimeout
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.Length
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: RequestStream.Position
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: RequestStream.ReadTimeout
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: RequestStream.WriteTimeout
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals azure devops events
+      x-summary-source: derived
+      operationId: postApiExternalsAzureDevopsEvents
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}/commit/{CommitSha}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteAzureDevOpsCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals azure devops orgs by server id by azure org id commit by…
+      x-summary-source: derived
+      operationId: postApiExternalsAzureDevopsOrgsByServerIdByAzureOrgIdCommitByCommitShaComplete
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}/commit/{CommitSha}/{BuildId}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteAzureDevOpsCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: BuildId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals azure devops orgs by server id by azure org id commit by…
+      x-summary-source: derived
+      operationId: postApiExternalsAzureDevopsOrgsByServerIdByAzureOrgIdCommitByCommitShaByBuildIdComplete
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAzureDevOpsOrg'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsOrgResponse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsOrgResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsOrgResponse'
+      summary: Get api externals azure devops orgs
+      x-summary-source: derived
+      operationId: getApiExternalsAzureDevopsOrgs
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateAzureDevOpsOrg'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals azure devops orgs by server id by azure org id
+      x-summary-source: derived
+      operationId: putApiExternalsAzureDevopsOrgsByServerIdByAzureOrgId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveAzureDevOpsOrg'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals azure devops orgs by server id by azure org id
+      x-summary-source: derived
+      operationId: deleteApiExternalsAzureDevopsOrgsByServerIdByAzureOrgId
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}/projects:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAzureDevOpsProject'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsProjectResponse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsProjectResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsProjectResponse'
+      summary: Get api externals azure devops orgs by server id by azure org id projects
+      x-summary-source: derived
+      operationId: getApiExternalsAzureDevopsOrgsByServerIdByAzureOrgIdProjects
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}/projects/{ProjectId}/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAzureDevOpsRepo'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ProjectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsRepoResponse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsRepoResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsRepoResponse'
+      summary: Get api externals azure devops orgs by server id by azure org id projects by…
+      x-summary-source: derived
+      operationId: getApiExternalsAzureDevopsOrgsByServerIdByAzureOrgIdProjectsByProjectIdRepos
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}/projects/{ProjectId}/hooks:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddHookToRepo'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ProjectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals azure devops orgs by server id by azure org id projects by…
+      x-summary-source: derived
+      operationId: postApiExternalsAzureDevopsOrgsByServerIdByAzureOrgIdProjectsByProjectIdHooks
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}/projects/{ProjectId}/hooks/{RepoId}:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveHook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ProjectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: RepoId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals azure devops orgs by server id by azure org id projects by…
+      x-summary-source: derived
+      operationId: deleteApiExternalsAzureDevopsOrgsByServerIdByAzureOrgIdProjectsByProjectIdHooksByRepoId
+      x-operation-id-source: derived
+  /api/Externals/azure-devops/orgs/{ServerId}/{AzureOrgId}/hooks:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAzureDevOpsHook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AzureOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsHookResponse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsHookResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetAzureDevOpsHookResponse'
+      summary: Get api externals azure devops orgs by server id by azure org id hooks
+      x-summary-source: derived
+      operationId: getApiExternalsAzureDevopsOrgsByServerIdByAzureOrgIdHooks
+      x-operation-id-source: derived
+  /api/Externals/gitlab/events:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: ServerId
+        in: query
+        schema:
+          type: string
+      - name: AccountId
+        in: query
+        schema:
+          type: string
+      - name: RequestStream.CanRead
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanWrite
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanSeek
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.CanTimeout
+        in: query
+        schema:
+          type: boolean
+      - name: RequestStream.Length
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: RequestStream.Position
+        in: query
+        schema:
+          type: integer
+          format: int64
+      - name: RequestStream.ReadTimeout
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: RequestStream.WriteTimeout
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals gitlab events
+      x-summary-source: derived
+      operationId: postApiExternalsGitlabEvents
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitLabServers'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabServer'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabServer'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabServer'
+      summary: Get api externals gitlab servers
+      x-summary-source: derived
+      operationId: getApiExternalsGitlabServers
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitLabServer'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals gitlab servers
+      x-summary-source: derived
+      operationId: putApiExternalsGitlabServers
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitLabServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api externals gitlab servers by server id
+      x-summary-source: derived
+      operationId: putApiExternalsGitlabServersByServerId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveGitLabServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals gitlab servers by server id
+      x-summary-source: derived
+      operationId: deleteApiExternalsGitlabServersByServerId
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/auth-request:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GenerateGitLabAuthRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals gitlab servers by server id auth request
+      x-summary-source: derived
+      operationId: getApiExternalsGitlabServersByServerIdAuthRequest
+      x-operation-id-source: derived
+  /api/Externals/gitlab/auth:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthorizeGitLabUser'
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals gitlab auth
+      x-summary-source: derived
+      operationId: getApiExternalsGitlabAuth
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthorizeOnPremisesGitLabUser'
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals gitlab auth
+      x-summary-source: derived
+      operationId: postApiExternalsGitlabAuth
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/auth:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveGitLabUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals gitlab servers by server id auth
+      x-summary-source: derived
+      operationId: deleteApiExternalsGitlabServersByServerIdAuth
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/user:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitLabUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GitLabUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitLabUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GitLabUser'
+      summary: Get api externals gitlab servers by server id user
+      x-summary-source: derived
+      operationId: getApiExternalsGitlabServersByServerIdUser
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitLabRepos'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabRepo'
+      summary: Get api externals gitlab servers by server id repos
+      x-summary-source: derived
+      operationId: getApiExternalsGitlabServersByServerIdRepos
+      x-operation-id-source: derived
+  /api/Externals/gitlab/repos:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitLabRepos'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabRepo'
+      summary: Get api externals gitlab repos
+      x-summary-source: derived
+      operationId: getApiExternalsGitlabRepos
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/commit/{CommitSha}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteGitLabCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals gitlab servers by server id commit by commit sha complete
+      x-summary-source: derived
+      operationId: postApiExternalsGitlabServersByServerIdCommitByCommitShaComplete
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/commit/{CommitSha}/{BuildId}/complete:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompleteGitLabCommit'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommitSha
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: BuildId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals gitlab servers by server id commit by commit sha by build…
+      x-summary-source: derived
+      operationId: postApiExternalsGitlabServersByServerIdCommitByCommitShaByBuildIdComplete
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/hooks:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetGitLabHookedRepos'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabHookedRepo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabHookedRepo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GitLabHookedRepo'
+      summary: Get api externals gitlab servers by server id hooks
+      x-summary-source: derived
+      operationId: getApiExternalsGitlabServersByServerIdHooks
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGitLabWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals gitlab servers by server id hooks
+      x-summary-source: derived
+      operationId: postApiExternalsGitlabServersByServerIdHooks
+      x-operation-id-source: derived
+  /api/Externals/gitlab/servers/{ServerId}/hooks/{RepoId}:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveGitLabWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: RepoId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals gitlab servers by server id hooks by repo id
+      x-summary-source: derived
+      operationId: deleteApiExternalsGitlabServersByServerIdHooksByRepoId
+      x-operation-id-source: derived
+  /api/Externals/slack/servers:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSlackServers'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  type: string
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+            text/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      summary: Get api externals slack servers
+      x-summary-source: derived
+      operationId: getApiExternalsSlackServers
+      x-operation-id-source: derived
+  /api/Externals/slack/servers/{ServerId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateSlackServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SlackServer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SlackServer'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SlackServer'
+      summary: Replace api externals slack servers by server id
+      x-summary-source: derived
+      operationId: putApiExternalsSlackServersByServerId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveSlackServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals slack servers by server id
+      x-summary-source: derived
+      operationId: deleteApiExternalsSlackServersByServerId
+      x-operation-id-source: derived
+  /api/Externals/slack/servers/{ServerId}/auth-request:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GenerateSlackAuthRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals slack servers by server id auth request
+      x-summary-source: derived
+      operationId: getApiExternalsSlackServersByServerIdAuthRequest
+      x-operation-id-source: derived
+  /api/Externals/slack/auth:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthorizeSlackUser'
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals slack auth
+      x-summary-source: derived
+      operationId: getApiExternalsSlackAuth
+      x-operation-id-source: derived
+  /api/Externals/slack/servers/{ServerId}/auth:
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveSlackUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals slack servers by server id auth
+      x-summary-source: derived
+      operationId: deleteApiExternalsSlackServersByServerIdAuth
+      x-operation-id-source: derived
+  /api/Externals/slack/servers/{ServerId}/hooks:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSlackHookedChannels'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SlackHookedChannel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SlackHookedChannel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SlackHookedChannel'
+      summary: Get api externals slack servers by server id hooks
+      x-summary-source: derived
+      operationId: getApiExternalsSlackServersByServerIdHooks
+      x-operation-id-source: derived
+  /api/Externals/slack/servers/{ServerId}/hooks/{HookId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateSlackWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: HookId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SlackWebhook'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SlackWebhook'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SlackWebhook'
+      summary: Replace api externals slack servers by server id hooks by hook id
+      x-summary-source: derived
+      operationId: putApiExternalsSlackServersByServerIdHooksByHookId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveSlackWebhook'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: HookId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals slack servers by server id hooks by hook id
+      x-summary-source: derived
+      operationId: deleteApiExternalsSlackServersByServerIdHooksByHookId
+      x-operation-id-source: derived
+  /api/Externals/teams/config:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetTeamsNotificationsConfig'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FrameNotificationsConfig'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FrameNotificationsConfig'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FrameNotificationsConfig'
+      summary: Get api externals teams config
+      x-summary-source: derived
+      operationId: getApiExternalsTeamsConfig
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddTeamsNotificationsConfig'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FrameNotificationsConfig'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrameNotificationsConfig'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FrameNotificationsConfig'
+      summary: Create api externals teams config
+      x-summary-source: derived
+      operationId: postApiExternalsTeamsConfig
+      x-operation-id-source: derived
+  /api/Externals/teams/config/{id}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateTeamsNotificationConfig'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FrameNotificationsConfig'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrameNotificationsConfig'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FrameNotificationsConfig'
+      summary: Replace api externals teams config by id
+      x-summary-source: derived
+      operationId: putApiExternalsTeamsConfigById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteTeamsNotificationsConfig'
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: boolean
+            application/json:
+              schema:
+                type: boolean
+            text/json:
+              schema:
+                type: boolean
+      summary: Delete api externals teams config by id
+      x-summary-source: derived
+      operationId: deleteApiExternalsTeamsConfigById
+      x-operation-id-source: derived
+  /api/Externals/mail/subscriptions:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSubscriptions'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MailSubscription'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MailSubscription'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MailSubscription'
+      summary: Get api externals mail subscriptions
+      x-summary-source: derived
+      operationId: getApiExternalsMailSubscriptions
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateSubscription'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/MailSubscription'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailSubscription'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/MailSubscription'
+      summary: Create api externals mail subscriptions
+      x-summary-source: derived
+      operationId: postApiExternalsMailSubscriptions
+      x-operation-id-source: derived
+  /api/Externals/mail/subscriptions/{SubscriptionId}:
+    put:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateSubscription'
+      - name: SubscriptionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/MailSubscription'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailSubscription'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/MailSubscription'
+      summary: Replace api externals mail subscriptions by subscription id
+      x-summary-source: derived
+      operationId: putApiExternalsMailSubscriptionsBySubscriptionId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveSubscription'
+      - name: SubscriptionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals mail subscriptions by subscription id
+      x-summary-source: derived
+      operationId: deleteApiExternalsMailSubscriptionsBySubscriptionId
+      x-operation-id-source: derived
+  /api/Externals/mail/subscriptions/{SubscriptionId}/unsubscribe:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/Unsubscribe'
+      - name: SubscriptionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals mail subscriptions by subscription id unsubscribe
+      x-summary-source: derived
+      operationId: getApiExternalsMailSubscriptionsBySubscriptionIdUnsubscribe
+      x-operation-id-source: derived
+  /api/Externals/rally/servers:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyServers'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyServerResponse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyServerResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyServerResponse'
+      summary: Get api externals rally servers
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServers
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateRallyServer'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RallyServer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RallyServer'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RallyServer'
+      summary: Create api externals rally servers
+      x-summary-source: derived
+      operationId: postApiExternalsRallyServers
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}:
+    patch:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateRallyServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RallyServerResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RallyServerResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RallyServerResponse'
+      summary: Update api externals rally servers by server id
+      x-summary-source: derived
+      operationId: patchApiExternalsRallyServersByServerId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveRallyServer'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api externals rally servers by server id
+      x-summary-source: derived
+      operationId: deleteApiExternalsRallyServersByServerId
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workspaces:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyWorkspaces'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyWorkspace'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyWorkspace'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyWorkspace'
+      summary: Get api externals rally servers by server id workspaces
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdWorkspaces
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workspaces/{WorkspaceId}/projects:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyProjects'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: WorkspaceId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyProject'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyProject'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyProject'
+      summary: Get api externals rally servers by server id workspaces by workspace id projects
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdWorkspacesByWorkspaceIdProjects
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/projects:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAllRallyProjects'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyProject'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyProject'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyProject'
+      summary: Get api externals rally servers by server id projects
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdProjects
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workspaces/{WorkspaceId}/projects/{ProjectId}/itemtypes:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyItemTypes'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: WorkspaceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ProjectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyItemType'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyItemType'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyItemType'
+      summary: Get api externals rally servers by server id workspaces by workspace id…
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdWorkspacesByWorkspaceIdProjectsByProjectIdItemtypes
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workspaces/{WorkspaceId}/projects/{ProjectId}/itemtypes/{ItemTypeId}/attributes:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyItemAttributes'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: WorkspaceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ProjectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ItemTypeId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyItemAttribute'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyItemAttribute'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallyItemAttribute'
+      summary: Get api externals rally servers by server id workspaces by workspace id…
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdWorkspacesByWorkspaceIdProjectsByProjectIdItemtypesByItemTypeIdAttributes
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/artifacts:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyArtifacts'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallySchedulableArtifact'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallySchedulableArtifact'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RallySchedulableArtifact'
+      summary: Get api externals rally servers by server id artifacts
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdArtifacts
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workitems:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RallyItemRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+      summary: Create api externals rally servers by server id workitems
+      x-summary-source: derived
+      operationId: postApiExternalsRallyServersByServerIdWorkitems
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workitems/link:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/LinkRallyItemRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+      summary: Create api externals rally servers by server id workitems link
+      x-summary-source: derived
+      operationId: postApiExternalsRallyServersByServerIdWorkitemsLink
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workitems/{WorkItemId}/url:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyWorkItemUrl'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: WorkItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RallyWorkItemResponse'
+      summary: Get api externals rally servers by server id workitems by work item id url
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdWorkitemsByWorkItemIdUrl
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/workitems/{WorkItemTypeAndId}/close:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CloseWorkItemRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: WorkItemTypeAndId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals rally servers by server id workitems by work item type and…
+      x-summary-source: derived
+      operationId: postApiExternalsRallyServersByServerIdWorkitemsByWorkItemTypeAndIdClose
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/auth-request:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GenerateRallyAuthRequest'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals rally servers by server id auth request
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdAuthRequest
+      x-operation-id-source: derived
+  /api/Externals/rally/auth:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AuthorizeRallyUser'
+      responses:
+        '200':
+          description: OK
+      summary: Get api externals rally auth
+      x-summary-source: derived
+      operationId: getApiExternalsRallyAuth
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/user:
+    get:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RallyUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RallyUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RallyUser'
+      summary: Get api externals rally servers by server id user
+      x-summary-source: derived
+      operationId: getApiExternalsRallyServersByServerIdUser
+      x-operation-id-source: derived
+  /api/Externals/rally/servers/{ServerId}/user/logout:
+    post:
+      tags:
+      - Externals
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRallyUser'
+      - name: ServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api externals rally servers by server id user logout
+      x-summary-source: derived
+      operationId: postApiExternalsRallyServersByServerIdUserLogout
+      x-operation-id-source: derived
+components:
+  schemas:
+    JToken:
+      type: array
+      items:
+        $ref: '#/components/schemas/JToken'
+    SlackChannel:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        teamName:
+          type:
+          - string
+          - 'null'
+        teamId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateGitLabWebhook:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        repo:
+          $ref: '#/components/schemas/GitLabRepo'
+        accountId:
+          type:
+          - string
+          - 'null'
+        webhookSecret:
+          type:
+          - string
+          - 'null'
+        skipBatchCompletion:
+          type: boolean
+      additionalProperties: false
+    AuthorizeGitHubUser:
+      type: object
+      properties:
+        state:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyWorkspace:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallySchedulableArtifact:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        reference:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        project:
+          $ref: '#/components/schemas/RallyProject'
+      additionalProperties: false
+    RemoveAzureDevOpsOrg:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        azureOrgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitHubServersV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateSlackServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveBitbucketWebhook:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        repoId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        force:
+          type: boolean
+      additionalProperties: false
+    UpdateRallyServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        clientId:
+          type:
+          - string
+          - 'null'
+        clientSecret:
+          type:
+          - string
+          - 'null'
+        rallyApiKey:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveGitLabUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAzureDevOpsOrgResponse:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        hasAccessToken:
+          type: boolean
+      additionalProperties: false
+    GitLabRepo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        slug:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        defaultBranchName:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GenerateBitbucketAuthRequest:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateGitHubServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAllRallyProjects:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyItemAttributes:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        workspaceId:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+        itemTypeId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyServerResponse:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        hasClientId:
+          type: boolean
+        hasClientSecret:
+          type: boolean
+        hasRallyApiKey:
+          type: boolean
+      additionalProperties: false
+    UpdateSubscription:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        mailAddresses:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isDisabled:
+          type: boolean
+        appId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        unresolvedOnly:
+          type: boolean
+        subscriptionId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BitbucketUser:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        bitbucketName:
+          type:
+          - string
+          - 'null'
+        userAuth:
+          $ref: '#/components/schemas/BitbucketUserAuth'
+      additionalProperties: false
+    FrameNotificationsConfig:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        mode:
+          $ref: '#/components/schemas/Mode'
+        channelName:
+          type:
+          - string
+          - 'null'
+        memberName:
+          type:
+          - string
+          - 'null'
+        selectedApp:
+          type:
+          - string
+          - 'null'
+        selectedBranch:
+          type:
+          - string
+          - 'null'
+        propId:
+          type:
+          - string
+          - 'null'
+        propValue:
+          type:
+          - string
+          - 'null'
+        onlyUnresolved:
+          type: boolean
+      additionalProperties: false
+    GetAzureDevOpsRepo:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        azureOrgId:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetSubscriptions:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveSlackWebhook:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        hookId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitLabHookedRepo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        slug:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        skipBatchCompletion:
+          type: boolean
+        addedBy:
+          $ref: '#/components/schemas/GitLabUser'
+      additionalProperties: false
+    User:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GenerateGitHubAuthRequest:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubHookedRepo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type: integer
+          format: int64
+        skipBatchCompletion:
+          type: boolean
+        addedBy:
+          $ref: '#/components/schemas/GitHubUser'
+      additionalProperties: false
+    GetGitLabUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateGitHubServerSubscriptionsV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        installationId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        subscribedToRepos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/RepoSubscriptionPayload'
+      additionalProperties: false
+    RemoveGitHubWebhook:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        repoId:
+          type: integer
+          format: int64
+        accountId:
+          type:
+          - string
+          - 'null'
+        force:
+          type: boolean
+      additionalProperties: false
+    UpdateGitHubWebhook:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        repo:
+          $ref: '#/components/schemas/GitHubRepo'
+        accountId:
+          type:
+          - string
+          - 'null'
+        skipBatchCompletion:
+          type: boolean
+      additionalProperties: false
+    CompleteAzureDevOpsCommit:
+      type: object
+      properties:
+        azureOrgUrl:
+          type:
+          - string
+          - 'null'
+        commitSha:
+          type:
+          - string
+          - 'null'
+        buildId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BitbucketServer:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        family:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        onPremises:
+          type: boolean
+        siloed:
+          type: boolean
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+        users:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BitbucketUser'
+        auths:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/BitbucketUserAuth'
+      additionalProperties: false
+    ClientEvent:
+      type: object
+      properties:
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        event:
+          $ref: '#/components/schemas/JToken'
+        eventType:
+          type:
+          - string
+          - 'null'
+        level:
+          $ref: '#/components/schemas/TraceLevels'
+      additionalProperties: false
+    SlackUser:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        slackId:
+          type:
+          - string
+          - 'null'
+        accessToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetSlackHookedChannels:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CreateSubscription:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        mailAddresses:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isDisabled:
+          type: boolean
+        appId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        unresolvedOnly:
+          type: boolean
+      additionalProperties: false
+    RemoveGitLabWebhook:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        repoId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        force:
+          type: boolean
+      additionalProperties: false
+    RemoveBitbucketServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubRepo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type: integer
+          format: int64
+        defaultBranch:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveBitbucketUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetBitbucketUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BitbucketHookedRepo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        slug:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        skipBatchCompletion:
+          type: boolean
+        addedBy:
+          $ref: '#/components/schemas/BitbucketUser'
+      additionalProperties: false
+    RemoveGitHubUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubAppInstallationPermissions:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+        installationsByAccount:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items:
+              type: integer
+              format: int64
+      additionalProperties: false
+    BitbucketRepo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        slug:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        defaultBranchName:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubAppInstallationV2Resp:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        installationId:
+          type: integer
+          format: int64
+        installationName:
+          type:
+          - string
+          - 'null'
+        subscribedAccounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    GetTeamsNotificationsConfig:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitLabHookedRepos:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveSlackUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BitbucketUserAuth:
+      type: object
+      properties:
+        refreshToken:
+          type:
+          - string
+          - 'null'
+        bitbucketAccountName:
+          type:
+          - string
+          - 'null'
+        personalAccessToken:
+          type:
+          - string
+          - 'null'
+        basicAuthenticationToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubAppNotifyInstallationEventsRequest:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        error:
+          type:
+          - string
+          - 'null'
+        token:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetBitbucketRepos:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitHubRepos:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubAppInstallationV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        installationId:
+          type: integer
+          format: int64
+        forceDelete:
+          type: boolean
+      additionalProperties: false
+    GetGitHubServers:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitLabServers:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubServerAccountSubscriptionsV2Response:
+      type: object
+      properties:
+        subscribedToRepos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/RepoSubscriptionPayload'
+      additionalProperties: false
+    AddHookToRepo:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        azureOrgId:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+        projectName:
+          type:
+          - string
+          - 'null'
+        repo:
+          $ref: '#/components/schemas/AzureDevopsRepo'
+        skipBatchCompletion:
+          type: boolean
+      additionalProperties: false
+    GetGitHubHookedRepos:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitHubServerReposV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        search:
+          type:
+          - string
+          - 'null'
+        paging:
+          type: boolean
+        pageRef:
+          type:
+          - string
+          - 'null'
+        installationId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    UpdateTeamsNotificationConfig:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        selectedApp:
+          type:
+          - string
+          - 'null'
+        selectedBranch:
+          type:
+          - string
+          - 'null'
+        mode:
+          type:
+          - string
+          - 'null'
+        propId:
+          type:
+          - string
+          - 'null'
+        propValue:
+          type:
+          - string
+          - 'null'
+        onlyUnresolved:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateSlackWebhook:
+      type: object
+      properties:
+        hookId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        appId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        customPropertyName:
+          type:
+          - string
+          - 'null'
+        customPropertyValue:
+          type:
+          - string
+          - 'null'
+        unresolvedOnly:
+          type: boolean
+      additionalProperties: false
+    GetGitHubServerInstallationsV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitLabRepos:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        search:
+          type:
+          - string
+          - 'null'
+        pageRef:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CompleteGitLabCommit:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        commitSha:
+          type:
+          - string
+          - 'null'
+        buildId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CompleteBitbucketCommit:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        buildId:
+          type:
+          - string
+          - 'null'
+        commitSha:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RepoSubscriptionPayload:
+      type: object
+      properties:
+        repoName:
+          type:
+          - string
+          - 'null'
+        skipBatchCompletion:
+          type: boolean
+        addedBy:
+          $ref: '#/components/schemas/User'
+      additionalProperties: false
+    AddTeamsNotificationsConfig:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        mode:
+          type:
+          - string
+          - 'null'
+        channelId:
+          type:
+          - string
+          - 'null'
+        channelName:
+          type:
+          - string
+          - 'null'
+        serviceUrl:
+          type:
+          - string
+          - 'null'
+        memberId:
+          type:
+          - string
+          - 'null'
+        memberName:
+          type:
+          - string
+          - 'null'
+        memberAad:
+          type: string
+          format: uuid
+        tenantId:
+          type: string
+          format: uuid
+        selectedApp:
+          type:
+          - string
+          - 'null'
+        selectedBranch:
+          type:
+          - string
+          - 'null'
+        propId:
+          type:
+          - string
+          - 'null'
+        propValue:
+          type:
+          - string
+          - 'null'
+        onlyUnresolved:
+          type: boolean
+      additionalProperties: false
+    AuthorizeGitLabUser:
+      type: object
+      properties:
+        state:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AuthorizeSlackUser:
+      type: object
+      properties:
+        state:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveGitLabServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitHubAppInstallationLink:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CompleteGithubCommit:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        buildId:
+          type:
+          - string
+          - 'null'
+        commitSha:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetGitHubServersV2Response:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        onPrem:
+          type: boolean
+        subscribedAccounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        installations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GitHubAppInstallationV2Resp'
+        hasPendingInstallation:
+          type: boolean
+        installationPermissions:
+          $ref: '#/components/schemas/GitHubAppInstallationPermissions'
+      additionalProperties: false
+    RemoveHook:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        azureOrgId:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+        repoId:
+          type:
+          - string
+          - 'null'
+        force:
+          type: boolean
+      additionalProperties: false
+    AzureDevOpsUser:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAzureDevOpsHook:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        azureOrgId:
+          type:
+          - string
+          - 'null'
+        repoId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAzureDevOpsOrg:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Mode:
+      enum:
+      - 0
+      - 1
+      type: integer
+      format: int32
+    UpdateGitHubServerInstallationPermissionsV2:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        installationPermissions:
+          $ref: '#/components/schemas/GitHubAppInstallationPermissions'
+      additionalProperties: false
+    LinkRallyItemRequest:
+      type: object
+      properties:
+        workItemUrl:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        baselineImageId:
+          type:
+          - string
+          - 'null'
+        testImageId:
+          type:
+          - string
+          - 'null'
+        settings:
+          $ref: '#/components/schemas/RallySetting'
+      additionalProperties: false
+    CloseWorkItemRequest:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        workItemTypeAndId:
+          type:
+          - string
+          - 'null'
+        annotationId:
+          type:
+          - string
+          - 'null'
+        applicationId:
+          type:
+          - string
+          - 'null'
+        closeMappings:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    GetGitHubUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Unsubscribe:
+      type: object
+      properties:
+        subscriptionId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        secret:
+          type:
+          - string
+          - 'null'
+        address:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    LogExternalClientEvents:
+      type: object
+      properties:
+        source:
+          type:
+          - string
+          - 'null'
+        events:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ClientEvent'
+      additionalProperties: false
+    UpdateAzureDevOpsOrg:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        azureOrgId:
+          type:
+          - string
+          - 'null'
+        token:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AuthorizeRallyUser:
+      type: object
+      properties:
+        state:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyWorkItemResponse:
+      type: object
+      properties:
+        workItemId:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveRallyServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateBitbucketServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+        onPremises:
+          type: boolean
+        siloed:
+          type: boolean
+      additionalProperties: false
+    UpdateBitbucketWebhook:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        repo:
+          $ref: '#/components/schemas/BitbucketRepo'
+        accountId:
+          type:
+          - string
+          - 'null'
+        skipBatchCompletion:
+          type: boolean
+      additionalProperties: false
+    GitHubCompleteInstallationRequest:
+      type: object
+      additionalProperties: false
+    SlackHookedChannel:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        channelName:
+          type:
+          - string
+          - 'null'
+        channelId:
+          type:
+          - string
+          - 'null'
+        teamName:
+          type:
+          - string
+          - 'null'
+        teamId:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        appId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        customPropertyName:
+          type:
+          - string
+          - 'null'
+        customPropertyValue:
+          type:
+          - string
+          - 'null'
+        unresolvedOnly:
+          type: boolean
+        addedBy:
+          $ref: '#/components/schemas/SlackUser'
+        isAvailable:
+          type: boolean
+      additionalProperties: false
+    GetBitbucketServers:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyServer:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+        apiKey:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        users:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/RallyUser'
+        tokens:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    AzureDevopsRepo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        defaultBranchName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetBitbucketHookedRepos:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAzureDevOpsHookResponse:
+      type: object
+      properties:
+        projectId:
+          type:
+          - string
+          - 'null'
+        projectName:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        skipBatchCompletion:
+          type: boolean
+        addedBy:
+          $ref: '#/components/schemas/AzureDevOpsUser'
+      additionalProperties: false
+    AttributeMapping:
+      type: object
+      properties:
+        attributeId:
+          type:
+          - string
+          - 'null'
+        attributeValue:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CreateIssue:
+      type: object
+      properties:
+        target:
+          type:
+          - string
+          - 'null'
+        reporter:
+          type:
+          - string
+          - 'null'
+        project:
+          type:
+          - string
+          - 'null'
+        summary:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAzureDevOpsProjectResponse:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    TraceLevels:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      format: int32
+    RemoveGitHubServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GenerateGitLabAuthRequest:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitLabServer:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        family:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        onPremises:
+          type: boolean
+        siloed:
+          type: boolean
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+        users:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GitLabUser'
+        auths:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/GitLabUserAuth'
+      additionalProperties: false
+    GitLabUser:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        gitLabName:
+          type:
+          - string
+          - 'null'
+        userAuth:
+          $ref: '#/components/schemas/GitLabUserAuth'
+      additionalProperties: false
+    RemoveSubscription:
+      type: object
+      properties:
+        subscriptionId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MailSubscription:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        mailAddresses:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isDisabled:
+          type: boolean
+        appId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        unresolvedOnly:
+          type: boolean
+        accountId:
+          type:
+          - string
+          - 'null'
+        unsubscribeSecret:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAzureDevOpsRepoResponse:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        defaultBranchName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallySetting:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        workspaceId:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+        itemTypeId:
+          type:
+          - string
+          - 'null'
+        applicationId:
+          type:
+          - string
+          - 'null'
+        mappings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AttributeMapping'
+        closeItemOnBugDelete:
+          type: boolean
+        closeMappings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AttributeMapping'
+      additionalProperties: false
+    SlackServer:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+        users:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SlackUser'
+        tokens:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    DeleteTeamsNotificationsConfig:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateGitHubServerV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        onPrem:
+          type: boolean
+        appWebhookSecret:
+          type:
+          - string
+          - 'null'
+        gitHubAppUrl:
+          type:
+          - string
+          - 'null'
+        gitHubAppBaseInstallationLink:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyUser:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        rallyName:
+          type:
+          - string
+          - 'null'
+        accessToken:
+          type:
+          - string
+          - 'null'
+        objectId:
+          type: integer
+          format: int64
+      additionalProperties: false
+    SlackWebhook:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        accessToken:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        configurationUrl:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        customPropertyName:
+          type:
+          - string
+          - 'null'
+        customPropertyValue:
+          type:
+          - string
+          - 'null'
+        unresolvedOnly:
+          type: boolean
+        channel:
+          $ref: '#/components/schemas/SlackChannel'
+        user:
+          $ref: '#/components/schemas/SlackUser'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyArtifacts:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AuthorizeBitbucketUser:
+      type: object
+      properties:
+        state:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveSlackServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GenerateSlackAuthRequest:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyProjects:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        workspaceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AuthorizeOnPremisesBitbucketUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        personalAccessToken:
+          type:
+          - string
+          - 'null'
+        basicAuthenticationToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GithubPushEventRequest:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        commitSha:
+          type:
+          - string
+          - 'null'
+        branchName:
+          type:
+          - string
+          - 'null'
+        parentBranchName:
+          type:
+          - string
+          - 'null'
+        serverUrl:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyItemTypes:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        workspaceId:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DeleteGitHubServerV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyProject:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        parentUUID:
+          type:
+          - string
+          - 'null'
+        workspaceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyServers:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitHubUser:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        gitHubName:
+          type:
+          - string
+          - 'null'
+        accessToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AuthorizeOnPremisesGitLabUser:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        personalAccessToken:
+          type:
+          - string
+          - 'null'
+        basicAuthenticationToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GenerateRallyAuthRequest:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GithubAppInstallationLinkResponse:
+      type: object
+      properties:
+        link:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyItemRequest:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        values:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+        baselineImageId:
+          type:
+          - string
+          - 'null'
+        testImageId:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        linkToRegion:
+          type:
+          - string
+          - 'null'
+        settings:
+          $ref: '#/components/schemas/RallySetting'
+      additionalProperties: false
+    UpdateGitLabServer:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        oAuthClientId:
+          type:
+          - string
+          - 'null'
+        oAuthClientSecret:
+          type:
+          - string
+          - 'null'
+        onPremises:
+          type: boolean
+        siloed:
+          type: boolean
+      additionalProperties: false
+    Item:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyWorkspaces:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAzureDevOpsProject:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        azureOrgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GitLabUserAuth:
+      type: object
+      properties:
+        accessToken:
+          type:
+          - string
+          - 'null'
+        personalAccessToken:
+          type:
+          - string
+          - 'null'
+        refreshToken:
+          type:
+          - string
+          - 'null'
+        expiresAtUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    GetGitHubServerSubscriptionsV2:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        serverId:
+          type:
+          - string
+          - 'null'
+        installationId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    RallyItemAttribute:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        required:
+          type: boolean
+        type:
+          type:
+          - string
+          - 'null'
+        objectId:
+          type: integer
+          format: int64
+        allowedValues:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        allowedItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Item'
+      additionalProperties: false
+    GetSlackServers:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyItemType:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRallyWorkItemUrl:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        workItemId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

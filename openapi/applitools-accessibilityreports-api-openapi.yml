@@ -1,0 +1,1419 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Accessibility Reports API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: AccessibilityReports
+paths:
+  /api/accessibility-reports/batches/{BatchId}/{SessionId}/steps/{StepIndex}:
+    get:
+      tags:
+      - AccessibilityReports
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSessionAccessibilityReport'
+      - name: BatchId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: SessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: StepIndex
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccessibilityReportResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessibilityReportResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccessibilityReportResult'
+      summary: Get api accessibility reports batches by batch id by session id steps by step…
+      x-summary-source: derived
+      operationId: getApiAccessibilityReportsBatchesByBatchIdBySessionIdStepsByStepIndex
+      x-operation-id-source: derived
+  /api/accessibility-reports/batches/{BatchId}/{SessionId}/issues:
+    get:
+      tags:
+      - AccessibilityReports
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSessionAccessibilityIssues'
+      - name: BatchId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: SessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/SessionAccessibilityIssues'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionAccessibilityIssues'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SessionAccessibilityIssues'
+      summary: Get api accessibility reports batches by batch id by session id issues
+      x-summary-source: derived
+      operationId: getApiAccessibilityReportsBatchesByBatchIdBySessionIdIssues
+      x-operation-id-source: derived
+  /api/accessibility-reports/combined:
+    post:
+      tags:
+      - AccessibilityReports
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CombineAccessibilityReports'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CombinedAccessibilityReport'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CombinedAccessibilityReport'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CombinedAccessibilityReport'
+      summary: Create api accessibility reports combined
+      x-summary-source: derived
+      operationId: postApiAccessibilityReportsCombined
+      x-operation-id-source: derived
+  /api/accessibility-reports/combined/flat:
+    post:
+      tags:
+      - AccessibilityReports
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CombineAccessibilityReportsFlat'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FlatAccessibilityReport'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlatAccessibilityReport'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FlatAccessibilityReport'
+      summary: Create api accessibility reports combined flat
+      x-summary-source: derived
+      operationId: postApiAccessibilityReportsCombinedFlat
+      x-operation-id-source: derived
+components:
+  schemas:
+    StepAccessibilityIssues:
+      type: object
+      properties:
+        open:
+          $ref: '#/components/schemas/AccessibilityIssueGroups'
+        suppressed:
+          $ref: '#/components/schemas/AccessibilityIssueGroups'
+        truncated:
+          type:
+          - boolean
+          - 'null'
+        count:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    AccessibilityReport:
+      type: object
+      properties:
+        testEngine:
+          $ref: '#/components/schemas/AccessibilityReportTestEngine'
+        testRunner:
+          $ref: '#/components/schemas/AccessibilityReportTestRunner'
+        testEnvironment:
+          $ref: '#/components/schemas/AccessibilityReportTestEnvironment'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        url:
+          type:
+          - string
+          - 'null'
+        ufgRenderEnvironment:
+          $ref: '#/components/schemas/AccessibilityReportRenderEnvironment'
+        toolOptions:
+          $ref: '#/components/schemas/AccessibilityReportToolOptions'
+        errorCode:
+          type:
+          - string
+          - 'null'
+        violations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportRule'
+        passes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportRule'
+        incomplete:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportRule'
+        inapplicable:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportRule'
+      additionalProperties: false
+    JToken:
+      type: array
+      items:
+        $ref: '#/components/schemas/JToken'
+    AccessibilityReportResult:
+      type: object
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        sessionId:
+          type:
+          - string
+          - 'null'
+        stepIndex:
+          type: integer
+          format: int32
+        reportId:
+          type:
+          - string
+          - 'null'
+        report:
+          $ref: '#/components/schemas/AccessibilityReport'
+      additionalProperties: false
+    AccessibilityReportTestEngine:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        version:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetSessionAccessibilityIssues:
+      type: object
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        sessionId:
+          type:
+          - string
+          - 'null'
+        accessToken:
+          type:
+          - string
+          - 'null'
+        steps:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityIssueGroups:
+      type: object
+      properties:
+        critical:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        serious:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        moderate:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        minor:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        ungraded:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        count:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    CombinedAccessibilityReportComponent:
+      type: object
+      properties:
+        component:
+          $ref: '#/components/schemas/AccessibilityComponent'
+        issues:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CombinedAccessibilityReportIssue'
+      additionalProperties: false
+    CombinedAccessibilityReportSummary:
+      type: object
+      properties:
+        reportCount:
+          type: integer
+          format: int32
+        failedScanCount:
+          type: integer
+          format: int32
+        urlsScanned:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        urlsPartiallyScanned:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        urlsFailedToScan:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        successfulScanUrlCount:
+          type: integer
+          format: int32
+        partialScanUrlCount:
+          type: integer
+          format: int32
+        failedScanUrlCount:
+          type: integer
+          format: int32
+        urlsWithIssuesCount:
+          type: integer
+          format: int32
+        urlsWithoutIssuesCount:
+          type: integer
+          format: int32
+        urlsAffected:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        sourceGroups:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilitySourceGroup'
+        sources:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilitySourceReport'
+        environmentsExecuted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityEnvironment'
+        environmentsAffected:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        wcagVersion:
+          type:
+          - string
+          - 'null'
+        wcagLevel:
+          type:
+          - string
+          - 'null'
+        firstScanAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastScanAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        toolVersions:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+        componentCount:
+          type: integer
+          format: int32
+        issueCount:
+          type: integer
+          format: int32
+        occurrenceCount:
+          type: integer
+          format: int32
+        violationCount:
+          type: integer
+          format: int32
+        needsReviewCount:
+          type: integer
+          format: int32
+        bySeverity:
+          $ref: '#/components/schemas/AccessibilityIssueSeverityCounts'
+        unresolvedComponentCount:
+          type: integer
+          format: int32
+      additionalProperties: false
+    AccessibilityReportCheckData:
+      type: object
+      properties:
+        messageKey:
+          type:
+          - string
+          - 'null'
+        measurements:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+        value:
+          $ref: '#/components/schemas/JToken'
+      additionalProperties: false
+    CombinedAccessibilityReportNode:
+      type: object
+      properties:
+        target:
+          type:
+          - string
+          - 'null'
+        elementPath:
+          type:
+          - string
+          - 'null'
+        html:
+          type:
+          - string
+          - 'null'
+        failureSummary:
+          type:
+          - string
+          - 'null'
+        checkData:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccessibilityReportCheckData'
+        urls:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        environments:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        sourceGroupIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        reportIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    AccessibilityReportToolOptions:
+      type: object
+      properties:
+        runOnly:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+        resultTypes:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        ancestry:
+          type: boolean
+        selectors:
+          type: boolean
+        xPath:
+          type: boolean
+        absolutePaths:
+          type: boolean
+        reporter:
+          type:
+          - string
+          - 'null'
+        other:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+      additionalProperties: false
+    AccessibilityRuleInfo:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        help:
+          type:
+          - string
+          - 'null'
+        helpUrl:
+          type:
+          - string
+          - 'null'
+        criteria:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityWcagCriterion'
+        tags:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        failureSummary:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityReportRelatedNode:
+      type: object
+      properties:
+        html:
+          type:
+          - string
+          - 'null'
+        target:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        ancestry:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    FlatAccessibilityReport:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        toolVersions:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+        summary:
+          $ref: '#/components/schemas/FlatAccessibilityReportSummary'
+        sources:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportSource'
+        occurrences:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityOccurrence'
+        rules:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRuleInfo'
+        messages:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        components:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityComponent'
+        environments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityEnvironment'
+        rows:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRow'
+        sourceGroups:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilitySourceGroup'
+      additionalProperties: false
+    CombinedAccessibilityReportIssue:
+      type: object
+      properties:
+        ruleId:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        help:
+          type:
+          - string
+          - 'null'
+        helpUrl:
+          type:
+          - string
+          - 'null'
+        severity:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        criteria:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityWcagCriterion'
+        urls:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        environments:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        occurrenceCount:
+          type: integer
+          format: int32
+        nodes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CombinedAccessibilityReportNode'
+      additionalProperties: false
+    AccessibilityComponent:
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        signature:
+          type:
+          - string
+          - 'null'
+        path:
+          type:
+          - string
+          - 'null'
+        origin:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityOccurrence:
+      type: object
+      properties:
+        target:
+          type:
+          - string
+          - 'null'
+        elementPath:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        html:
+          type:
+          - string
+          - 'null'
+        suggestedFix:
+          type:
+          - string
+          - 'null'
+        failureReason:
+          type:
+          - string
+          - 'null'
+        checkData:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccessibilityReportCheckData'
+        messageRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        relatedTargets:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        sourceRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        environmentRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        sourceGroupRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    AccessibilitySourceGroup:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityIssueSeverityCounts:
+      type: object
+      properties:
+        critical:
+          type: integer
+          format: int32
+        serious:
+          type: integer
+          format: int32
+        moderate:
+          type: integer
+          format: int32
+        minor:
+          type: integer
+          format: int32
+      additionalProperties: false
+    AccessibilityWcagCriterion:
+      type: object
+      properties:
+        tag:
+          type:
+          - string
+          - 'null'
+        criterion:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        level:
+          type:
+          - string
+          - 'null'
+        understandingUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityEnvironment:
+      type: object
+      properties:
+        browserName:
+          type:
+          - string
+          - 'null'
+        browserVersion:
+          type:
+          - string
+          - 'null'
+        deviceName:
+          type:
+          - string
+          - 'null'
+        screenOrientation:
+          type:
+          - string
+          - 'null'
+        windowWidth:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        windowHeight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        key:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityWcagStandard:
+      type: object
+      properties:
+        version:
+          type:
+          - string
+          - 'null'
+        level:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CombineAccessibilityReports:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        sourceGroups:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportGroup'
+      additionalProperties: false
+    AccessibilityStepIssues:
+      type: object
+      properties:
+        stepIndex:
+          type: integer
+          format: int32
+        accessibilityIssues:
+          $ref: '#/components/schemas/StepAccessibilityIssues'
+      additionalProperties: false
+    AccessibilityReportIosDeviceInfo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        screenOrientation:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityReportSource:
+      type: object
+      properties:
+        reportId:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        stepNumber:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        url:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        occurrenceCount:
+          type: integer
+          format: int32
+        errorCode:
+          type:
+          - string
+          - 'null'
+        wcag:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityWcagStandard'
+        environmentRef:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        sourceGroupRef:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    CombinedAccessibilityReport:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        summary:
+          $ref: '#/components/schemas/CombinedAccessibilityReportSummary'
+        components:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CombinedAccessibilityReportComponent'
+        issues:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CombinedAccessibilityReportIssue'
+      additionalProperties: false
+    AccessibilityReportCheck:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        impact:
+          type:
+          - string
+          - 'null'
+        message:
+          type:
+          - string
+          - 'null'
+        data:
+          $ref: '#/components/schemas/AccessibilityReportCheckData'
+        relatedNodes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportRelatedNode'
+      additionalProperties: false
+    AccessibilityReportNode:
+      type: object
+      properties:
+        html:
+          type:
+          - string
+          - 'null'
+        impact:
+          type:
+          - string
+          - 'null'
+        target:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        xPath:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        ancestry:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        failureSummary:
+          type:
+          - string
+          - 'null'
+        any:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportCheck'
+        all:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportCheck'
+        none:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportCheck'
+      additionalProperties: false
+    AccessibilityReportRenderEnvironment:
+      type: object
+      properties:
+        rendererName:
+          type:
+          - string
+          - 'null'
+        version:
+          type:
+          - string
+          - 'null'
+        iosDeviceInfo:
+          $ref: '#/components/schemas/AccessibilityReportIosDeviceInfo'
+        emulationInfo:
+          $ref: '#/components/schemas/AccessibilityReportEmulationInfo'
+      additionalProperties: false
+    SessionAccessibilityIssues:
+      type: object
+      properties:
+        revision:
+          type: integer
+          format: int32
+        steps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityStepIssues'
+      additionalProperties: false
+    AccessibilityReportTestEnvironment:
+      type: object
+      properties:
+        userAgent:
+          type:
+          - string
+          - 'null'
+        windowWidth:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        windowHeight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        orientationAngle:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        orientationType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    FlatAccessibilityReportSummary:
+      type: object
+      properties:
+        reportCount:
+          type: integer
+          format: int32
+        sourceGroupCount:
+          type: integer
+          format: int32
+        pageCount:
+          type: integer
+          format: int32
+        failedScanCount:
+          type: integer
+          format: int32
+        successfulScanUrlCount:
+          type: integer
+          format: int32
+        partialScanUrlCount:
+          type: integer
+          format: int32
+        failedScanUrlCount:
+          type: integer
+          format: int32
+        urlsWithIssuesCount:
+          type: integer
+          format: int32
+        urlsWithoutIssuesCount:
+          type: integer
+          format: int32
+        occurrenceCount:
+          type: integer
+          format: int32
+        violationCount:
+          type: integer
+          format: int32
+        needsReviewCount:
+          type: integer
+          format: int32
+        bySeverity:
+          $ref: '#/components/schemas/AccessibilityIssueSeverityCounts'
+        componentCount:
+          type: integer
+          format: int32
+        rowCount:
+          type: integer
+          format: int32
+        pageScopedCount:
+          type: integer
+          format: int32
+        unresolvedComponentCount:
+          type: integer
+          format: int32
+        wcag:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityWcagStandard'
+      additionalProperties: false
+    AccessibilityReportEmulationInfo:
+      type: object
+      properties:
+        deviceName:
+          type:
+          - string
+          - 'null'
+        screenOrientation:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CombineAccessibilityReportsFlat:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        sourceGroups:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportGroup'
+        includeEvidence:
+          type: boolean
+      additionalProperties: false
+    AccessibilityRow:
+      type: object
+      properties:
+        rowId:
+          type:
+          - string
+          - 'null'
+        componentRef:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ruleRef:
+          type: integer
+          format: int32
+        severity:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        occurrenceCount:
+          type: integer
+          format: int32
+        sourceRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        environmentRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        occurrenceRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        sourceGroupRefs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    AccessibilityReportGroup:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        reports:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportRef'
+      additionalProperties: false
+    AccessibilityReportRule:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        impact:
+          type:
+          - string
+          - 'null'
+        tags:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        description:
+          type:
+          - string
+          - 'null'
+        help:
+          type:
+          - string
+          - 'null'
+        helpUrl:
+          type:
+          - string
+          - 'null'
+        nodes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityReportNode'
+      additionalProperties: false
+    AccessibilityReportTestRunner:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetSessionAccessibilityReport:
+      type: object
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        sessionId:
+          type:
+          - string
+          - 'null'
+        stepIndex:
+          type: integer
+          format: int32
+        accessToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilitySourceReport:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        stepNumber:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        url:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityReportRef:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        stepNumber:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false

@@ -1,0 +1,43 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Tiny Link API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: TinyLink
+paths:
+  /api/tiny-link/{LinkId}:
+    get:
+      tags:
+      - TinyLink
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetTinyLink'
+      - name: LinkId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api tiny link by link id
+      x-summary-source: derived
+      operationId: getApiTinyLinkByLinkId
+      x-operation-id-source: derived
+components:
+  schemas:
+    GetTinyLink:
+      type: object
+      properties:
+        linkId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

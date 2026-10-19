@@ -1,0 +1,2068 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Images API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Images
+paths:
+  /api/Images/{IdAndProcessors}:
+    get:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetImage'
+      - name: IdAndProcessors
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+      summary: Get api images by id and processors
+      x-summary-source: derived
+      operationId: getApiImagesByIdAndProcessors
+      x-operation-id-source: derived
+  /api/Images/dom/{DomId}:
+    get:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetImageDom'
+      - name: DomId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+      summary: Get api images dom by dom id
+      x-summary-source: derived
+      operationId: getApiImagesDomByDomId
+      x-operation-id-source: derived
+  /api/Images/{ImageId}/dom:
+    get:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetImageDom'
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+      summary: Get api images by image id dom
+      x-summary-source: derived
+      operationId: getApiImagesByImageIdDom
+      x-operation-id-source: derived
+  /api/Images/dom/{DomId}/pruned:
+    get:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetPrunedImageDom'
+      - name: DomId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+      summary: Get api images dom by dom id pruned
+      x-summary-source: derived
+      operationId: getApiImagesDomByDomIdPruned
+      x-operation-id-source: derived
+  /api/Images/dom/diff:
+    get:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetImageDomDiff'
+      responses:
+        '200':
+          description: OK
+      summary: Get api images dom diff
+      x-summary-source: derived
+      operationId: getApiImagesDomDiff
+      x-operation-id-source: derived
+  /api/Images/{ImageId}:
+    put:
+      tags:
+      - Images
+      parameters:
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api images by image id
+      x-summary-source: derived
+      operationId: putApiImagesByImageId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteImage'
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api images by image id
+      x-summary-source: derived
+      operationId: deleteApiImagesByImageId
+      x-operation-id-source: derived
+  /api/Images/{Store}:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateImage'
+      - name: Store
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+      summary: Create api images by store
+      x-summary-source: derived
+      operationId: postApiImagesByStore
+      x-operation-id-source: derived
+  /api/Images/delete:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteImage'
+      responses:
+        '200':
+          description: OK
+      summary: Create api images delete
+      x-summary-source: derived
+      operationId: postApiImagesDelete
+      x-operation-id-source: derived
+  /api/Images/{ImageId}/annotate:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AnnotateImage'
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IRegion'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IRegion'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IRegion'
+      summary: Create api images by image id annotate
+      x-summary-source: derived
+      operationId: postApiImagesByImageIdAnnotate
+      x-operation-id-source: derived
+  /api/Images/{ImageId}/find:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/FindMatchingRegions'
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api images by image id find
+      x-summary-source: derived
+      operationId: postApiImagesByImageIdFind
+      x-operation-id-source: derived
+  /api/Images/find:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/FindMatchingRegionsWithImageInfos'
+      responses:
+        '200':
+          description: OK
+      summary: Create api images find
+      x-summary-source: derived
+      operationId: postApiImagesFind
+      x-operation-id-source: derived
+  /api/Images/findfloating:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/FindFloatingRegions'
+      responses:
+        '200':
+          description: OK
+      summary: Create api images findfloating
+      x-summary-source: derived
+      operationId: postApiImagesFindfloating
+      x-operation-id-source: derived
+  /api/Images/{ImageIds}/findfloating:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/FindFloatingRegions'
+      - name: ImageIds
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api images by image ids findfloating
+      x-summary-source: derived
+      operationId: postApiImagesByImageIdsFindfloating
+      x-operation-id-source: derived
+  /api/Images/attach-regions-to-dom:
+    post:
+      tags:
+      - Images
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AttachToDomRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttachToDomRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AttachToDomRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AttachToDomRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AttachToDomResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttachToDomResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AttachToDomResponse'
+      summary: Create api images attach regions to dom
+      x-summary-source: derived
+      operationId: postApiImagesAttachRegionsToDom
+      x-operation-id-source: derived
+  /api/Images/get-compatible-selectors:
+    post:
+      tags:
+      - Images
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GetCompatibleSelectorsRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetCompatibleSelectorsRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetCompatibleSelectorsRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetCompatibleSelectorsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetCompatibleSelectorsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCompatibleSelectorsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetCompatibleSelectorsResponse'
+      summary: Create api images get compatible selectors
+      x-summary-source: derived
+      operationId: postApiImagesGetCompatibleSelectors
+      x-operation-id-source: derived
+  /api/Images/compare:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompareImages'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TwoWayImageDiff'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TwoWayImageDiff'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TwoWayImageDiff'
+      summary: Create api images compare
+      x-summary-source: derived
+      operationId: postApiImagesCompare
+      x-operation-id-source: derived
+  /api/Images/{ImageIds}/compare:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompareImages'
+      - name: ImageIds
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TwoWayImageDiff'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TwoWayImageDiff'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TwoWayImageDiff'
+      summary: Create api images by image ids compare
+      x-summary-source: derived
+      operationId: postApiImagesByImageIdsCompare
+      x-operation-id-source: derived
+  /api/Images/{ImageId}/accessibility:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AnalyzeImageAccessibility'
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api images by image id accessibility
+      x-summary-source: derived
+      operationId: postApiImagesByImageIdAccessibility
+      x-operation-id-source: derived
+  /api/Images/stitching:
+    post:
+      tags:
+      - Images
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/StartStitching'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StitchingPlan'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StitchingPlan'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StitchingPlan'
+      summary: Create api images stitching
+      x-summary-source: derived
+      operationId: postApiImagesStitching
+      x-operation-id-source: derived
+  /api/Images/stitching/{StitchingId}:
+    get:
+      tags:
+      - Images
+      parameters:
+      - name: StitchingId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api images stitching by stitching id
+      x-summary-source: derived
+      operationId: getApiImagesStitchingByStitchingId
+      x-operation-id-source: derived
+  /api/Images/convert-to-algo-match-settings:
+    post:
+      tags:
+      - Images
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ConvertToAlgoMatchSettingsRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvertToAlgoMatchSettingsRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ConvertToAlgoMatchSettingsRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ConvertToAlgoMatchSettingsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ImageMatchSettings'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageMatchSettings'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ImageMatchSettings'
+      summary: Create api images convert to algo match settings
+      x-summary-source: derived
+      operationId: postApiImagesConvertToAlgoMatchSettings
+      x-operation-id-source: derived
+components:
+  schemas:
+    FloatingRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        maxLeftOffset:
+          type: integer
+          format: int32
+        maxRightOffset:
+          type: integer
+          format: int32
+        maxUpOffset:
+          type: integer
+          format: int32
+        maxDownOffset:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Size:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ContrastDefinition:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    CompareImages:
+      type: object
+      properties:
+        imageIds:
+          type:
+          - string
+          - 'null'
+        image1:
+          $ref: '#/components/schemas/ImageInfo'
+        image2:
+          $ref: '#/components/schemas/ImageInfo'
+        shouldRunOnExtQueue:
+          type: boolean
+        matchSettings:
+          $ref: '#/components/schemas/ServerImageMatchSettings'
+        rawDiff:
+          type:
+          - boolean
+          - 'null'
+        context:
+          type:
+          - string
+          - 'null'
+        useCache:
+          type: boolean
+        updateCache:
+          type: boolean
+      additionalProperties: false
+    Location:
+      type: object
+      properties:
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    AccessibilityRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+        type:
+          $ref: '#/components/schemas/AccessibilityElementType'
+      additionalProperties: false
+    Position:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ContrastVersion:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    ServerDynamicMatchLevelSettings:
+      type: object
+      properties:
+        ignorePatterns:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        customPatterns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/InlineDynamicTextPattern'
+      additionalProperties: false
+    ImageInfo:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        domId:
+          type:
+          - string
+          - 'null'
+        domMappingId:
+          type:
+          - string
+          - 'null'
+        axTreeBlobId:
+          type:
+          - string
+          - 'null'
+        axTreePageNo:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        size:
+          $ref: '#/components/schemas/RectangleSize'
+        viewport:
+          $ref: '#/components/schemas/RectangleSize'
+        hasDom:
+          type: boolean
+        location:
+          $ref: '#/components/schemas/Location'
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        isMissing:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    StitchingPart:
+      type: object
+      properties:
+        partId:
+          type:
+          - string
+          - 'null'
+        uploadUrl:
+          type:
+          - string
+          - 'null'
+        region:
+          $ref: '#/components/schemas/MutableRegion'
+        regionToScreenshotInViewport:
+          $ref: '#/components/schemas/MutableRegion'
+        innerRegion:
+          $ref: '#/components/schemas/MutableRegion'
+        contentPosition:
+          $ref: '#/components/schemas/Position'
+        innerContentPosition:
+          $ref: '#/components/schemas/Position'
+        viewportPosition:
+          $ref: '#/components/schemas/Position'
+        rectInStitchedImageOffsetted:
+          $ref: '#/components/schemas/MutableRegion'
+        rectInStitchedImageOffsetted2:
+          $ref: '#/components/schemas/MutableRegion'
+        livePixels:
+          $ref: '#/components/schemas/MutableRegion'
+      additionalProperties: false
+    InlineDynamicTextPattern:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        regex:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Point:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    DynamicMatchLevelSettings:
+      type: object
+      properties:
+        ignoreTextBoxContent:
+          type: boolean
+        ignoreDates:
+          type: boolean
+        ignoreNumbers:
+          type: boolean
+        ignoreImages:
+          type: boolean
+        ignoreCurrencies:
+          type: boolean
+        ignoreAnyTextChange:
+          type: boolean
+        ignoreLinks:
+          type: boolean
+        ignoreEmails:
+          type: boolean
+        extraUserPatterns:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    PixelDiffThresholds:
+      type: object
+      properties:
+        minDiffIntensity:
+          type: integer
+          format: int32
+        minDiffWidth:
+          type: integer
+          format: int32
+        minDiffHeight:
+          type: integer
+          format: int32
+        matchThreshold:
+          type: number
+          format: float
+      additionalProperties: false
+    ImageMatchLevel:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      type: integer
+      format: int32
+    ImageMatchSettings:
+      type: object
+      properties:
+        matchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AlgoRegion'
+          readOnly: true
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AlgoRegion'
+          readOnly: true
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicAlgoRegion'
+          readOnly: true
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AlgoRegion'
+          readOnly: true
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AlgoRegion'
+          readOnly: true
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+          readOnly: true
+        accessibility:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRegion'
+          readOnly: true
+        splitTopHeight:
+          type: integer
+          format: int32
+        splitBottomHeight:
+          type: integer
+          format: int32
+        ignoreCaret:
+          type: boolean
+        accessibilitySettings:
+          $ref: '#/components/schemas/AccessibilitySettings'
+        dynamicMLSettings:
+          $ref: '#/components/schemas/DynamicMatchLevelSettings'
+        ignoreDisplacements:
+          type: boolean
+        ignoreDisplacementsTimeout:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ignoreDisplacementsVerticallyOnly:
+          type:
+          - boolean
+          - 'null'
+        exact:
+          $ref: '#/components/schemas/PixelDiffThresholds'
+        scale:
+          type: number
+          format: double
+        remainder:
+          type: number
+          format: double
+        useDom:
+          type: boolean
+        useDL:
+          type: boolean
+        enablePatterns:
+          type: boolean
+      additionalProperties: false
+    FindMatchingRegionsWithImageInfos:
+      type: object
+      properties:
+        sourceImage:
+          $ref: '#/components/schemas/ImageInfo'
+        regions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        targets:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageInfo'
+        maxMismatches:
+          type: integer
+          format: int32
+        firstOnly:
+          type: boolean
+      additionalProperties: false
+    GetCompatibleSelectorsResponse:
+      type: object
+      properties:
+        selectors:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    IdentifiedCodedRegions:
+      type: object
+      properties:
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicMutableRegion'
+      additionalProperties: false
+    MutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+      additionalProperties: false
+    DiffCategory:
+      enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 300
+      - 301
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 500
+      - 501
+      - 502
+      - 600
+      type: integer
+      format: int32
+    GetImageDomDiff:
+      type: object
+      properties:
+        baselineDomId:
+          type:
+          - string
+          - 'null'
+        checkpointDomId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AttachToDomResponse:
+      type: object
+      properties:
+        domRegions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+      additionalProperties: false
+    AccessibilityElementType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      type: integer
+      format: int32
+    RectangleSize:
+      type: object
+      properties:
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ConvertToAlgoMatchSettingsRequest:
+      type: object
+      properties:
+        serverImageMatchSettings:
+          $ref: '#/components/schemas/ServerImageMatchSettings'
+      additionalProperties: false
+    DynamicAlgoRegion:
+      type: object
+      properties:
+        region:
+          $ref: '#/components/schemas/AlgoRegion'
+        settings:
+          $ref: '#/components/schemas/DynamicMatchLevelSettings'
+      additionalProperties: false
+    GetPrunedImageDom:
+      type: object
+      properties:
+        domId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetImage:
+      type: object
+      properties:
+        idAndProcessors:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CreateImage:
+      type: object
+      properties:
+        store:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Rectangle:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        left:
+          type: integer
+          format: int32
+          readOnly: true
+        top:
+          type: integer
+          format: int32
+          readOnly: true
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        isEmpty:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    GetCompatibleSelectorsRequest:
+      type: object
+      properties:
+        imageIds:
+          type:
+          - string
+          - 'null'
+        image1:
+          $ref: '#/components/schemas/ImageInfo'
+        image2:
+          $ref: '#/components/schemas/ImageInfo'
+        selectors:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    DeleteImage:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        domId:
+          type:
+          - string
+          - 'null'
+        domMappingId:
+          type:
+          - string
+          - 'null'
+        axTreeBlobId:
+          type:
+          - string
+          - 'null'
+        axTreePageNo:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        size:
+          $ref: '#/components/schemas/RectangleSize'
+        viewport:
+          $ref: '#/components/schemas/RectangleSize'
+        hasDom:
+          type: boolean
+        location:
+          $ref: '#/components/schemas/Location'
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        isMissing:
+          type:
+          - boolean
+          - 'null'
+        imageId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DiffDescription:
+      type: object
+      properties:
+        baselineValue:
+          type:
+          - string
+          - 'null'
+        checkpointValue:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/DiffCategory'
+      additionalProperties: false
+    FindMatchingRegions:
+      type: object
+      properties:
+        imageId:
+          type:
+          - string
+          - 'null'
+        regions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IRegion'
+        targets:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        maxMismatches:
+          type: integer
+          format: int32
+        firstOnly:
+          type: boolean
+      additionalProperties: false
+    TwoWayImageDiff:
+      type: object
+      properties:
+        image1Size:
+          $ref: '#/components/schemas/RectangleSize'
+        image1:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        image2Size:
+          $ref: '#/components/schemas/RectangleSize'
+        image2:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        regions1:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TypedMutableRegion'
+        regions2:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TypedMutableRegion'
+        wasDomUsed:
+          type: boolean
+        isApprox:
+          type: boolean
+        recommendEnablingIgnoreDisplacement:
+          type: boolean
+        settings:
+          $ref: '#/components/schemas/ImageMatchSettings'
+        cachedResult:
+          type: boolean
+        updatedCache:
+          type: boolean
+      additionalProperties: false
+    DensityMetrics:
+      type: object
+      properties:
+        scaleRatio:
+          type: number
+          format: float
+        xdpi:
+          type: number
+          format: float
+        ydpi:
+          type: number
+          format: float
+      additionalProperties: false
+    ExternalRegionId:
+      type: object
+      properties:
+        target:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StitchingPlan:
+      type: object
+      properties:
+        imageScaleFactor:
+          type:
+          - number
+          - 'null'
+          format: double
+        viewportPositionInStitch:
+          $ref: '#/components/schemas/Position'
+        stitchingId:
+          type:
+          - string
+          - 'null'
+        region:
+          $ref: '#/components/schemas/MutableRegion'
+        viewPort:
+          $ref: '#/components/schemas/RectangleSize'
+        content:
+          $ref: '#/components/schemas/RectangleSize'
+        parts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StitchingPart'
+        imageUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    TypedMutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        type:
+          type:
+          - string
+          - 'null'
+        patterns:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        patternsRegex:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    ServerImageMatchSettings:
+      type: object
+      properties:
+        matchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicMutableRegion'
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        accessibility:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRegion'
+        identifiedRegions:
+          $ref: '#/components/schemas/IdentifiedCodedRegions'
+        splitTopHeight:
+          type: integer
+          format: int32
+        splitBottomHeight:
+          type: integer
+          format: int32
+        ignoreCaret:
+          type: boolean
+        accessibilitySettings:
+          $ref: '#/components/schemas/AccessibilitySettings'
+        dynamicMatchLevelSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        ignoreDisplacements:
+          type: boolean
+        exact:
+          $ref: '#/components/schemas/PixelDiffThresholds'
+        scale:
+          type: number
+          format: double
+        remainder:
+          type: number
+          format: double
+        useDom:
+          type: boolean
+        useDL:
+          type: boolean
+        enablePatterns:
+          type: boolean
+        densityMetrics:
+          $ref: '#/components/schemas/DensityMetrics'
+      additionalProperties: false
+    AccessibilitySettings:
+      type: object
+      properties:
+        level:
+          $ref: '#/components/schemas/ContrastDefinition'
+        version:
+          $ref: '#/components/schemas/ContrastVersion'
+      additionalProperties: false
+    GetImageDom:
+      type: object
+      properties:
+        domId:
+          type:
+          - string
+          - 'null'
+        imageId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    FindFloatingRegions:
+      type: object
+      properties:
+        imageIds:
+          type:
+          - string
+          - 'null'
+        image1:
+          $ref: '#/components/schemas/ImageInfo'
+        image2:
+          $ref: '#/components/schemas/ImageInfo'
+        regions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        matchSettings:
+          $ref: '#/components/schemas/ServerImageMatchSettings'
+      additionalProperties: false
+    AnnotateImage:
+      type: object
+      properties:
+        retainLines:
+          type: boolean
+        hasDarkBackground:
+          type: boolean
+        minGradient:
+          type: integer
+          format: int32
+        minHLineLength:
+          type: integer
+          format: int32
+        minVLineLength:
+          type: integer
+          format: int32
+        minBrightElementSize:
+          type: integer
+          format: int32
+        minDarkElementSize:
+          type: integer
+          format: int32
+        similarity:
+          type: integer
+          format: int32
+        adjacency:
+          type: integer
+          format: int32
+        innermost:
+          $ref: '#/components/schemas/Size'
+        minSize:
+          $ref: '#/components/schemas/Size'
+        unifyAsymmetricRegions:
+          type: boolean
+        asymmetricRegionMaxSize:
+          $ref: '#/components/schemas/Size'
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IRegion'
+        imageId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StitchingBoundaryBehavior:
+      type: object
+      properties:
+        noisyTop:
+          type: integer
+          format: int32
+        noisyLeft:
+          type: integer
+          format: int32
+        noisyBottom:
+          type: integer
+          format: int32
+        noisyRight:
+          type: integer
+          format: int32
+        avoidNoisyPixelsOnTop:
+          type: boolean
+        avoidNoisyPixelsOnBottom:
+          type: boolean
+        avoidNoisyPixelsOnLeft:
+          type: boolean
+        avoidNoisyPixelsOnRight:
+          type: boolean
+      additionalProperties: false
+    AnalyzeImageAccessibility:
+      type: object
+      properties:
+        imageId:
+          type:
+          - string
+          - 'null'
+        matchSettings:
+          $ref: '#/components/schemas/ServerImageMatchSettings'
+      additionalProperties: false
+    AlgoRegion:
+      type: object
+      properties:
+        baseline:
+          $ref: '#/components/schemas/MutableRegion'
+        checkpoint:
+          $ref: '#/components/schemas/MutableRegion'
+        regionID:
+          type:
+          - string
+          - 'null'
+        isCoded:
+          type: boolean
+        boundingBox:
+          $ref: '#/components/schemas/Rectangle'
+      additionalProperties: false
+    AttachToDomRequest:
+      type: object
+      properties:
+        imageIds:
+          type:
+          - string
+          - 'null'
+        image1:
+          $ref: '#/components/schemas/ImageInfo'
+        image2:
+          $ref: '#/components/schemas/ImageInfo'
+        regions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        maxEdgeDistance:
+          type: integer
+          format: int32
+      additionalProperties: false
+    DynamicMutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+      additionalProperties: false
+    IRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+          readOnly: true
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        top:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        width:
+          type: integer
+          format: int32
+          readOnly: true
+        height:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+      additionalProperties: false
+    StartStitching:
+      type: object
+      properties:
+        stitchingId:
+          type:
+          - string
+          - 'null'
+        region:
+          $ref: '#/components/schemas/MutableRegion'
+        viewPort:
+          $ref: '#/components/schemas/RectangleSize'
+        content:
+          $ref: '#/components/schemas/RectangleSize'
+        pixelRatio:
+          type: number
+          format: double
+        flexibleRegions:
+          type: boolean
+        fullPageOnly:
+          type: boolean
+        inBoundariesOnly:
+          type: boolean
+        isViewportInBoundariesOnly:
+          type:
+          - boolean
+          - 'null'
+        isContentInBoundariesOnly:
+          type:
+          - boolean
+          - 'null'
+        flexibleViewport:
+          type:
+          - boolean
+          - 'null'
+        ignoredBoundryWidth:
+          type: integer
+          format: int32
+        imageScaleFactor:
+          type:
+          - number
+          - 'null'
+          format: double
+        viewportPositionInStitch:
+          $ref: '#/components/schemas/Position'
+        boundaryBehavior:
+          $ref: '#/components/schemas/StitchingBoundaryBehavior'
+        contentBoundaryBehavior:
+          $ref: '#/components/schemas/StitchingBoundaryBehavior'
+        viewportBoundaryBehavior:
+          $ref: '#/components/schemas/StitchingBoundaryBehavior'
+      additionalProperties: false

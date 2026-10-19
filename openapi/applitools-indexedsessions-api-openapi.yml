@@ -1,0 +1,3822 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Indexed Sessions API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: IndexedSessions
+paths:
+  /api/indexed-sessions/applications:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsApplications'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+      summary: Get api indexed sessions applications
+      x-summary-source: derived
+      operationId: getApiIndexedSessionsApplications
+      x-operation-id-source: derived
+  /api/required-attention-v2/applications:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsApplications'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+      summary: Get api required attention v2 applications
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionV2Applications
+      x-operation-id-source: derived
+  /api/required-attention/applications:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsApplications'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationsResult'
+      summary: Get api required attention applications
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionApplications
+      x-operation-id-source: derived
+  /api/indexed-sessions/branches:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsBranches'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+      summary: Get api indexed sessions branches
+      x-summary-source: derived
+      operationId: getApiIndexedSessionsBranches
+      x-operation-id-source: derived
+  /api/required-attention-v2/branches:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsBranches'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+      summary: Get api required attention v2 branches
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionV2Branches
+      x-operation-id-source: derived
+  /api/required-attention/branches:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsBranches'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BranchesResult'
+      summary: Get api required attention branches
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionBranches
+      x-operation-id-source: derived
+  /api/indexed-sessions/tests:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRequiredAttentionTestsQueryV2'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+      summary: Get api indexed sessions tests
+      x-summary-source: derived
+      operationId: getApiIndexedSessionsTests
+      x-operation-id-source: derived
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRequiredAttentionTestsPostQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+      summary: Create api indexed sessions tests
+      x-summary-source: derived
+      operationId: postApiIndexedSessionsTests
+      x-operation-id-source: derived
+  /api/required-attention-v2/tests:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRequiredAttentionTestsQueryV2'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+      summary: Get api required attention v2 tests
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionV2Tests
+      x-operation-id-source: derived
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRequiredAttentionTestsPostQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+      summary: Create api required attention v2 tests
+      x-summary-source: derived
+      operationId: postApiRequiredAttentionV2Tests
+      x-operation-id-source: derived
+  /api/required-attention/tests:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRequiredAttentionTestsQueryV2'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+      summary: Get api required attention tests
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionTests
+      x-operation-id-source: derived
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRequiredAttentionTestsPostQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RequiredAttentionTestsResult'
+      summary: Create api required attention tests
+      x-summary-source: derived
+      operationId: postApiRequiredAttentionTests
+      x-operation-id-source: derived
+  /api/indexed-sessions/self-healed:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSelfHealedSessionsQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+      summary: Get api indexed sessions self healed
+      x-summary-source: derived
+      operationId: getApiIndexedSessionsSelfHealed
+      x-operation-id-source: derived
+  /api/required-attention-v2/self-healed:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSelfHealedSessionsQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+      summary: Get api required attention v2 self healed
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionV2SelfHealed
+      x-operation-id-source: derived
+  /api/required-attention/self-healed:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSelfHealedSessionsQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IndexedSessionsResponse'
+      summary: Get api required attention self healed
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionSelfHealed
+      x-operation-id-source: derived
+  /api/indexed-sessions/statistics:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsStatistics'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+      summary: Get api indexed sessions statistics
+      x-summary-source: derived
+      operationId: getApiIndexedSessionsStatistics
+      x-operation-id-source: derived
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsStatisticsPost'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+      summary: Create api indexed sessions statistics
+      x-summary-source: derived
+      operationId: postApiIndexedSessionsStatistics
+      x-operation-id-source: derived
+  /api/required-attention-v2/statistics:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsStatistics'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+      summary: Get api required attention v2 statistics
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionV2Statistics
+      x-operation-id-source: derived
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsStatisticsPost'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+      summary: Create api required attention v2 statistics
+      x-summary-source: derived
+      operationId: postApiRequiredAttentionV2Statistics
+      x-operation-id-source: derived
+  /api/required-attention/statistics:
+    get:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsStatistics'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+      summary: Get api required attention statistics
+      x-summary-source: derived
+      operationId: getApiRequiredAttentionStatistics
+      x-operation-id-source: derived
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsStatisticsPost'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResult'
+      summary: Create api required attention statistics
+      x-summary-source: derived
+      operationId: postApiRequiredAttentionStatistics
+      x-operation-id-source: derived
+  /api/indexed-sessions/filters:
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsFilters'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+      summary: Create api indexed sessions filters
+      x-summary-source: derived
+      operationId: postApiIndexedSessionsFilters
+      x-operation-id-source: derived
+  /api/required-attention-v2/filters:
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsFilters'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+      summary: Create api required attention v2 filters
+      x-summary-source: derived
+      operationId: postApiRequiredAttentionV2Filters
+      x-operation-id-source: derived
+  /api/required-attention/filters:
+    post:
+      tags:
+      - IndexedSessions
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIndexedSessionsFilters'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FiltersResult'
+      summary: Create api required attention filters
+      x-summary-source: derived
+      operationId: postApiRequiredAttentionFilters
+      x-operation-id-source: derived
+components:
+  schemas:
+    FloatingRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        maxLeftOffset:
+          type: integer
+          format: int32
+        maxRightOffset:
+          type: integer
+          format: int32
+        maxUpOffset:
+          type: integer
+          format: int32
+        maxDownOffset:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ContrastDefinition:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    CommitData:
+      type: object
+      properties:
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sha:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SessionAppOutputResolution:
+      type: object
+      properties:
+        sessionDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        isChanged:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    ImageInfo:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        domId:
+          type:
+          - string
+          - 'null'
+        domMappingId:
+          type:
+          - string
+          - 'null'
+        axTreeBlobId:
+          type:
+          - string
+          - 'null'
+        axTreePageNo:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        size:
+          $ref: '#/components/schemas/RectangleSize'
+        viewport:
+          $ref: '#/components/schemas/RectangleSize'
+        hasDom:
+          type: boolean
+        location:
+          $ref: '#/components/schemas/Location'
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        isMissing:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    InlineDynamicTextPattern:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        regex:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Point:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CrossEnvSourceBaselineStepInfo:
+      type: object
+      properties:
+        modelId:
+          type:
+          - string
+          - 'null'
+        stepState:
+          type:
+          - string
+          - 'null'
+        variantId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StepChangeInfo:
+      type: object
+      properties:
+        user:
+          type:
+          - string
+          - 'null'
+        sessionId:
+          type:
+          - string
+          - 'null'
+        time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    LegacySessionState:
+      enum:
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    AggregateSession:
+      type: object
+      properties:
+        lastRunTime:
+          type: string
+          format: date-time
+        abortedMissingCount:
+          type: integer
+          format: int32
+        abortedMissingRate:
+          type: integer
+          format: int32
+        appName:
+          type:
+          - string
+          - 'null'
+        assignTo:
+          type:
+          - string
+          - 'null'
+        baselineId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        branchName:
+          type:
+          - string
+          - 'null'
+        browser:
+          type:
+          - string
+          - 'null'
+        device:
+          type:
+          - string
+          - 'null'
+        executions:
+          type: integer
+          format: int32
+        isAborted:
+          type: integer
+          format: int32
+        isEmpty:
+          type: integer
+          format: int32
+        isFailedWithIssues:
+          type: integer
+          format: int32
+        isRejectedSteps:
+          type: integer
+          format: int32
+        isMissing:
+          type: integer
+          format: int32
+        isNew:
+          type: integer
+          format: int32
+        isUnsaved:
+          type: integer
+          format: int32
+        lastRunBatchId:
+          type:
+          - string
+          - 'null'
+        lastRunBatchName:
+          type:
+          - string
+          - 'null'
+        lastRunSessionId:
+          type:
+          - string
+          - 'null'
+        lastRunStatus:
+          type:
+          - string
+          - 'null'
+        os:
+          type:
+          - string
+          - 'null'
+        passedCount:
+          type: integer
+          format: int32
+        passingRate:
+          type: integer
+          format: int32
+        stabilizationWeight:
+          type: integer
+          format: int32
+        testName:
+          type:
+          - string
+          - 'null'
+        unresolvedCount:
+          type: integer
+          format: int32
+        unresolvedRate:
+          type: integer
+          format: int32
+        viewport:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityElementType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      type: integer
+      format: int32
+    RectangleSize:
+      type: object
+      properties:
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BranchResolutionInfo:
+      type: object
+      properties:
+        branchName:
+          type:
+          - string
+          - 'null'
+        latestViableTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    SessionTypes:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    Rectangle:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        left:
+          type: integer
+          format: int32
+          readOnly: true
+        top:
+          type: integer
+          format: int32
+          readOnly: true
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        isEmpty:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    PageInfo:
+      type: object
+      properties:
+        pageId:
+          type:
+          - string
+          - 'null'
+        height:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        imagePositionInPage:
+          $ref: '#/components/schemas/Location'
+      additionalProperties: false
+    GetIndexedSessionsFilters:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        applications:
+          type:
+          - string
+          - 'null'
+        branches:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ExternalRegionId:
+      type: object
+      properties:
+        target:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ServerImageMatchSettings:
+      type: object
+      properties:
+        matchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicMutableRegion'
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        accessibility:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRegion'
+        identifiedRegions:
+          $ref: '#/components/schemas/IdentifiedCodedRegions'
+        splitTopHeight:
+          type: integer
+          format: int32
+        splitBottomHeight:
+          type: integer
+          format: int32
+        ignoreCaret:
+          type: boolean
+        accessibilitySettings:
+          $ref: '#/components/schemas/AccessibilitySettings'
+        dynamicMatchLevelSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        ignoreDisplacements:
+          type: boolean
+        exact:
+          $ref: '#/components/schemas/PixelDiffThresholds'
+        scale:
+          type: number
+          format: double
+        remainder:
+          type: number
+          format: double
+        useDom:
+          type: boolean
+        useDL:
+          type: boolean
+        enablePatterns:
+          type: boolean
+        densityMetrics:
+          $ref: '#/components/schemas/DensityMetrics'
+      additionalProperties: false
+    AccessibilitySettings:
+      type: object
+      properties:
+        level:
+          $ref: '#/components/schemas/ContrastDefinition'
+        version:
+          $ref: '#/components/schemas/ContrastVersion'
+      additionalProperties: false
+    AccessibilityScanStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    ExpectedStepOutput:
+      type: object
+      properties:
+        tag:
+          type:
+          - string
+          - 'null'
+        image:
+          $ref: '#/components/schemas/ImageInfo'
+        thumbprint:
+          $ref: '#/components/schemas/ImageInfo'
+        occurredAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastMatchedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedBy:
+          type:
+          - string
+          - 'null'
+        lastUpdatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastAccept:
+          $ref: '#/components/schemas/StepChangeInfo'
+        lastReject:
+          $ref: '#/components/schemas/StepChangeInfo'
+        createdAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        renderId:
+          type:
+          - string
+          - 'null'
+        annotations:
+          $ref: '#/components/schemas/ImageAnnotations'
+        identifiedRegions:
+          $ref: '#/components/schemas/IdentifiedCodedRegions'
+        defaultMatchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+        refState:
+          type:
+          - string
+          - 'null'
+        refStateEq:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        env:
+          $ref: '#/components/schemas/Env'
+        variantId:
+          type:
+          - string
+          - 'null'
+        variantName:
+          type:
+          - string
+          - 'null'
+        nextVariant:
+          $ref: '#/components/schemas/ExpectedStepOutput'
+        crossEnvInfo:
+          $ref: '#/components/schemas/CrossEnvSourceBaselineStepInfo'
+        isRejected:
+          type: boolean
+        matchingRejected:
+          type: boolean
+        lastRejectedOutput:
+          $ref: '#/components/schemas/ExpectedStepOutput'
+        branchRejections:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/PerBranchRejectionInfo'
+        stepDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        hasMatchRegionsDefined:
+          type: boolean
+          readOnly: true
+        legacyAppEnvironment:
+          $ref: '#/components/schemas/Env'
+        legacyMatchSettings:
+          $ref: '#/components/schemas/ImageAnnotations'
+      additionalProperties: false
+    SessionStartInfo:
+      type: object
+      properties:
+        enforceUnifiedConcurrency:
+          type: boolean
+        enforcedWithTemporal:
+          type: boolean
+        sessionType:
+          $ref: '#/components/schemas/SessionTypes'
+        displayName:
+          type:
+          - string
+          - 'null'
+        render:
+          type: boolean
+        saveDiffs:
+          type: boolean
+        isTransient:
+          type: boolean
+        ignoreBaseline:
+          type: boolean
+        useLatestEnvBaseline:
+          type: boolean
+        baselineEnvName:
+          type:
+          - string
+          - 'null'
+        baselineEnv:
+          $ref: '#/components/schemas/Env'
+        appName:
+          type:
+          - string
+          - 'null'
+        branchName:
+          type:
+          - string
+          - 'null'
+        baselineBranchName:
+          type:
+          - string
+          - 'null'
+        parentBranchName:
+          type:
+          - string
+          - 'null'
+        parentBranchBaselineSavedBefore:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        scenarioName:
+          type:
+          - string
+          - 'null'
+        fallbackExpectedOutput:
+          type:
+          - string
+          - 'null'
+        batchInfo:
+          $ref: '#/components/schemas/BatchInfo'
+        environmentName:
+          type:
+          - string
+          - 'null'
+        environment:
+          $ref: '#/components/schemas/Env'
+        defaultMatchSettings:
+          $ref: '#/components/schemas/ServerImageMatchSettings'
+        isComponentAgent:
+          type: boolean
+        agentId:
+          type:
+          - string
+          - 'null'
+        agentSessionId:
+          type:
+          - string
+          - 'null'
+        agentRunId:
+          type:
+          - string
+          - 'null'
+        properties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StringNamedProperty'
+        concurrencyVersion:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        timeout:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        processId:
+          type:
+          - string
+          - 'null'
+        latestCommitInfo:
+          $ref: '#/components/schemas/CommitData'
+        replaceExisting:
+          type: boolean
+        branchLookupFallbackList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BranchResolutionInfo'
+        gitBranchName:
+          type:
+          - string
+          - 'null'
+        cherryPicks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/CherryPickInfo'
+        egSessionId:
+          type:
+          - string
+          - 'null'
+        nonVisual:
+          type:
+          - boolean
+          - 'null'
+        legacyEnvName:
+          type:
+          - string
+          - 'null'
+        legacyMatchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+        legacyCompareWithParentBranch:
+          type:
+          - boolean
+          - 'null'
+        legacyAppIdOrName:
+          type:
+          - string
+          - 'null'
+        legacyScenarioIdOrName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ImageRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+      additionalProperties: false
+    StepOutput:
+      type: object
+      properties:
+        image:
+          $ref: '#/components/schemas/ImageInfo'
+        thumbprint:
+          $ref: '#/components/schemas/ImageInfo'
+        imageMatchSettings:
+          $ref: '#/components/schemas/ServerImageMatchSettings'
+        ignoreExpectedOutputSettings:
+          type: boolean
+        expectedImage:
+          $ref: '#/components/schemas/ImageInfo'
+        expectedThumbprintId:
+          type:
+          - string
+          - 'null'
+        isMatching:
+          type: boolean
+        areImagesMatching:
+          type: boolean
+        hasDynamicDiffs:
+          type: boolean
+        domChangedSelectorMapping:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/MutableRegion'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        diffDescriptionsCount:
+          type: integer
+          format: int32
+        hasUnclassifiedDiffs:
+          type: boolean
+        accessibilityStatus:
+          $ref: '#/components/schemas/SessionAccessibilityStatus'
+        accessibilityReportId:
+          type:
+          - string
+          - 'null'
+        accessibilityScan:
+          $ref: '#/components/schemas/AccessibilityScanStatus'
+        accessibilityScanFailureReason:
+          type:
+          - string
+          - 'null'
+        accessibilityScanFailureCode:
+          type:
+          - string
+          - 'null'
+        wasDomUsed:
+          type: boolean
+        occurredAt:
+          type: string
+          format: date-time
+        userInputs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/UnifiedTrigger'
+        windowTitle:
+          type:
+          - string
+          - 'null'
+        tag:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        renderId:
+          type:
+          - string
+          - 'null'
+        isPrimary:
+          type: boolean
+        isAutoAcceptedInfraUpdate:
+          type: boolean
+        activeExpectedMismatchRegions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        variantId:
+          type:
+          - string
+          - 'null'
+        knownVariantId:
+          type:
+          - string
+          - 'null'
+        pageCoverageInfo:
+          $ref: '#/components/schemas/PageInfo'
+        hasMatchRegionsDefined:
+          type: boolean
+          readOnly: true
+        legacyExpectedImageId:
+          type:
+          - string
+          - 'null'
+        pdfCheckpointPageNo:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    NlpData:
+      type: object
+      properties:
+        successCount:
+          type: integer
+          format: int32
+        failCount:
+          type: integer
+          format: int32
+        parserVersion:
+          type:
+          - string
+          - 'null'
+        hasNlpSteps:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    DynamicMutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+      additionalProperties: false
+    StepAccessibilityIssues:
+      type: object
+      properties:
+        open:
+          $ref: '#/components/schemas/AccessibilityIssueGroups'
+        suppressed:
+          $ref: '#/components/schemas/AccessibilityIssueGroups'
+        truncated:
+          type:
+          - boolean
+          - 'null'
+        count:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    GetIndexedSessionsBranches:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Size:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    SessionAccessibilityStatus:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/AccessibilityStatus'
+        level:
+          $ref: '#/components/schemas/ContrastDefinition'
+        version:
+          $ref: '#/components/schemas/ContrastVersion'
+        violations:
+          type: integer
+          format: int32
+      additionalProperties: false
+    AccessibilityRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+        type:
+          $ref: '#/components/schemas/AccessibilityElementType'
+      additionalProperties: false
+    ContrastVersion:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    UnifiedTrigger:
+      type: object
+      properties:
+        control:
+          $ref: '#/components/schemas/IRegion'
+        mouseAction:
+          $ref: '#/components/schemas/MouseActionType'
+        location:
+          $ref: '#/components/schemas/Location'
+        text:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        triggerType:
+          $ref: '#/components/schemas/TriggerTypes'
+        key:
+          $ref: '#/components/schemas/Keys'
+        modifiers:
+          $ref: '#/components/schemas/Keys'
+        character:
+          type: string
+      additionalProperties: false
+    CherryPickInfo:
+      type: object
+      properties:
+        pickedSha:
+          type:
+          - string
+          - 'null'
+        pickedCommitTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        originalBranch:
+          type:
+          - string
+          - 'null'
+        originalSha:
+          type:
+          - string
+          - 'null'
+        originalCommitTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    TriggerTypes:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    ApplicationsResult:
+      type: object
+      properties:
+        applications:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/NameIdPair'
+      additionalProperties: false
+    PixelDiffThresholds:
+      type: object
+      properties:
+        minDiffIntensity:
+          type: integer
+          format: int32
+        minDiffWidth:
+          type: integer
+          format: int32
+        minDiffHeight:
+          type: integer
+          format: int32
+        matchThreshold:
+          type: number
+          format: float
+      additionalProperties: false
+    IndexedSessionsResponse:
+      type: object
+      properties:
+        aggregatedSessions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AggregateSession'
+      additionalProperties: false
+    IdentifiedCodedRegions:
+      type: object
+      properties:
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicMutableRegion'
+      additionalProperties: false
+    MutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+      additionalProperties: false
+    Session:
+      type: object
+      properties:
+        displayName:
+          type:
+          - string
+          - 'null'
+        secretToken:
+          type:
+          - string
+          - 'null'
+        scenarioId:
+          type:
+          - string
+          - 'null'
+        scenarioName:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        baselineModelId:
+          type:
+          - string
+          - 'null'
+        baselineEnvId:
+          type:
+          - string
+          - 'null'
+        baselineEnv:
+          $ref: '#/components/schemas/Env'
+        appName:
+          type:
+          - string
+          - 'null'
+        baselineBranchName:
+          type:
+          - string
+          - 'null'
+        branchResolutionInfoList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BranchResolutionInfo'
+        isNew:
+          type: boolean
+        eTag:
+          $ref: '#/components/schemas/ETag'
+        partitionKey:
+          type:
+          - string
+          - 'null'
+        rowKey:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        entityVersion:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        revision:
+          type: integer
+          format: int32
+        remark:
+          $ref: '#/components/schemas/Remark'
+        runningSessionId:
+          type:
+          - string
+          - 'null'
+        isConcurrencyEnforcementEnabled:
+          type: boolean
+        isAborted:
+          type: boolean
+        abortType:
+          $ref: '#/components/schemas/AbortType'
+        abortReason:
+          type:
+          - string
+          - 'null'
+        timedOutAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isStarred:
+          type: boolean
+        runBy:
+          type:
+          - string
+          - 'null'
+        assignedTo:
+          type:
+          - string
+          - 'null'
+        startInfo:
+          $ref: '#/components/schemas/SessionStartInfo'
+        batchId:
+          type:
+          - string
+          - 'null'
+        batchSequenceId:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/SessionStatus'
+        nonVisualStatus:
+          $ref: '#/components/schemas/NonVisualSessionStatus'
+        isDefaultStatus:
+          type: boolean
+        accessibilityStatus:
+          $ref: '#/components/schemas/SessionAccessibilityStatus'
+        accessibilityScan:
+          $ref: '#/components/schemas/AccessibilityScanStatus'
+        accessibilityScanFailureReason:
+          type:
+          - string
+          - 'null'
+        scanAccessibilityIssues:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/StepAccessibilityIssues'
+        createdAt:
+          type: string
+          format: date-time
+        startedAt:
+          type: string
+          format: date-time
+        endedAt:
+          type: string
+          format: date-time
+        pendingEnd:
+          type: string
+          format: date-time
+        pendingInQueueEnd:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+          format: int32
+        isDifferent:
+          type: boolean
+        allMismatchesAreInfra:
+          type: boolean
+        env:
+          $ref: '#/components/schemas/Env'
+        envId:
+          type:
+          - string
+          - 'null'
+        branch:
+          $ref: '#/components/schemas/Branch'
+        expectedAppOutput:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExpectedStepOutput'
+        actualAppOutput:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StepOutput'
+        appOutputResolution:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StepOutputResolution'
+        sessionAppOutputResolution:
+          $ref: '#/components/schemas/SessionAppOutputResolution'
+        sessionExpectedAppOutput:
+          $ref: '#/components/schemas/SessionExpectedAppOutput'
+        appDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        baselineId:
+          type:
+          - string
+          - 'null'
+        baselineRev:
+          type:
+          - string
+          - 'null'
+        baselineState:
+          type:
+          - string
+          - 'null'
+        savedTo:
+          $ref: '#/components/schemas/BaselineIdRev'
+        savedBy:
+          type:
+          - string
+          - 'null'
+        endSessionActivityTimestamp:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isCrossEnv:
+          type:
+          - boolean
+          - 'null'
+        isCrossEnv2:
+          type:
+          - boolean
+          - 'null'
+        isCrossEnvRun:
+          type:
+          - boolean
+          - 'null'
+        egSessionId:
+          type:
+          - string
+          - 'null'
+        selfHealingInfo:
+          $ref: '#/components/schemas/SelfHealingInfo'
+        nlpData:
+          $ref: '#/components/schemas/NlpData'
+        isModified:
+          type: boolean
+        legacyState:
+          $ref: '#/components/schemas/LegacySessionState'
+        legacyAppEnvironment:
+          $ref: '#/components/schemas/Env'
+        legacyModelId:
+          type:
+          - string
+          - 'null'
+        legacyBaselineRevId:
+          type:
+          - string
+          - 'null'
+        baselineLastUpdate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        storeId:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        nonVisual:
+          type:
+          - boolean
+          - 'null'
+        baselineResolutionInfo:
+          $ref: '#/components/schemas/BaselineResolutionInfo'
+        baselineMergeInfo:
+          $ref: '#/components/schemas/BaselineMergeInfo'
+        sessionIdOfSessionSavingTheBaseline:
+          type:
+          - string
+          - 'null'
+        batchIdOfSessionSavingTheBaseline:
+          type:
+          - string
+          - 'null'
+        batchPointerIdOfSessionSavingTheBaseline:
+          type:
+          - string
+          - 'null'
+        trimmedBatchProps:
+          type: boolean
+      additionalProperties: false
+    TestResult:
+      type: object
+      properties:
+        lastRunTime:
+          type: string
+          format: date-time
+        abortedMissingCount:
+          type: integer
+          format: int32
+        abortedMissingRate:
+          type: integer
+          format: int32
+        appId:
+          type:
+          - string
+          - 'null'
+        appName:
+          type:
+          - string
+          - 'null'
+        assignTo:
+          type:
+          - string
+          - 'null'
+        baselineId:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        branchName:
+          type:
+          - string
+          - 'null'
+        browser:
+          type:
+          - string
+          - 'null'
+        device:
+          type:
+          - string
+          - 'null'
+        executions:
+          type: integer
+          format: int32
+        isAborted:
+          type: integer
+          format: int32
+        isEmpty:
+          type: integer
+          format: int32
+        isFailedWithIssues:
+          type: integer
+          format: int32
+        isRejectedSteps:
+          type: integer
+          format: int32
+        isMissing:
+          type: integer
+          format: int32
+        isNew:
+          type: integer
+          format: int32
+        isUnsaved:
+          type: integer
+          format: int32
+        lastRunBatchId:
+          type:
+          - string
+          - 'null'
+        lastRunBatchName:
+          type:
+          - string
+          - 'null'
+        lastRunBy:
+          type:
+          - string
+          - 'null'
+        lastRunSessionId:
+          type:
+          - string
+          - 'null'
+        lastRunStatus:
+          type:
+          - string
+          - 'null'
+        lastSavedBy:
+          type:
+          - string
+          - 'null'
+        lastSavedTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        os:
+          type:
+          - string
+          - 'null'
+        passedCount:
+          type: integer
+          format: int32
+        passingRate:
+          type: integer
+          format: int32
+        stabilizationWeight:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        unresolvedCount:
+          type: integer
+          format: int32
+        unresolvedRate:
+          type: integer
+          format: int32
+        viewport:
+          type:
+          - string
+          - 'null'
+        lastRunSession:
+          $ref: '#/components/schemas/Session'
+      additionalProperties: false
+    ETag:
+      type: object
+      additionalProperties: false
+    Remark:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetIndexedSessionsStatisticsPost:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        applications:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        branches:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    DensityMetrics:
+      type: object
+      properties:
+        scaleRatio:
+          type: number
+          format: float
+        xdpi:
+          type: number
+          format: float
+        ydpi:
+          type: number
+          format: float
+      additionalProperties: false
+    BaselineIdRev:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        rev:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        legacyRevId:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+      additionalProperties: false
+    PerBranchRejectionInfo:
+      type: object
+      properties:
+        isRejected:
+          type: boolean
+        lastRejectedOutput:
+          $ref: '#/components/schemas/ExpectedStepOutput'
+      additionalProperties: false
+    NameIdPair:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    IRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+          readOnly: true
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        top:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        width:
+          type: integer
+          format: int32
+          readOnly: true
+        height:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+      additionalProperties: false
+    Location:
+      type: object
+      properties:
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    SessionStatus:
+      enum:
+      - 0
+      - 1
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    SessionId:
+      type: object
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SelfHealingInfo:
+      type: object
+      properties:
+        operations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SelfHealingOperation'
+      additionalProperties: false
+    BaselineResolutionInfo:
+      type: object
+      properties:
+        conflictingWithParent:
+          type: boolean
+        existsInBranch:
+          type: boolean
+        existsInParentBranch:
+          type: boolean
+        tookFromBranch:
+          type: boolean
+        tookFromParentBranch:
+          type: boolean
+        tookFromDefault:
+          type: boolean
+        usedCommitTimestamp:
+          type: boolean
+        lookedForConflicts:
+          type: boolean
+        tookFromFallbackBaseline:
+          type: boolean
+        resolvedParentBranchName:
+          type:
+          - string
+          - 'null'
+        tookFromCherryPick:
+          type: boolean
+        cherryPickPickedSha:
+          type:
+          - string
+          - 'null'
+        cherryPickOriginalSha:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ImageAnnotations:
+      type: object
+      properties:
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageFloatingRegion'
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        remarks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        mismatching:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageDynamicMutableRegion'
+        accessibility:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRegion'
+      additionalProperties: false
+    ImageDynamicMutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+      additionalProperties: false
+    BaselineUpdateInfo:
+      type: object
+      properties:
+        by:
+          type:
+          - string
+          - 'null'
+        at:
+          type: string
+          format: date-time
+        session:
+          $ref: '#/components/schemas/SessionId'
+        sessionBatchPointerId:
+          type:
+          - string
+          - 'null'
+        resolution:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StepOutputResolution'
+        baselineChangeType:
+          $ref: '#/components/schemas/BaselineChangeType'
+      additionalProperties: false
+    RequiredAttentionTestsResult:
+      type: object
+      properties:
+        testsRequiredAttention:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TestResult'
+      additionalProperties: false
+    BranchesResult:
+      type: object
+      properties:
+        branches:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/NameIdPair'
+      additionalProperties: false
+    StringNamedProperty:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BaselineChangeType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    DiffDescription:
+      type: object
+      properties:
+        baselineValue:
+          type:
+          - string
+          - 'null'
+        checkpointValue:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/DiffCategory'
+      additionalProperties: false
+    GetRequiredAttentionTestsQueryV2:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        limit:
+          type: integer
+          format: int32
+        applications:
+          type:
+          - string
+          - 'null'
+        branches:
+          type:
+          - string
+          - 'null'
+        where:
+          type:
+          - string
+          - 'null'
+        pageToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Keys:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 8
+      - 9
+      - 10
+      - 12
+      - 13
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 23
+      - 24
+      - 25
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+      - 44
+      - 45
+      - 46
+      - 47
+      - 48
+      - 49
+      - 50
+      - 51
+      - 52
+      - 53
+      - 54
+      - 55
+      - 56
+      - 57
+      - 65
+      - 66
+      - 67
+      - 68
+      - 69
+      - 70
+      - 71
+      - 72
+      - 73
+      - 74
+      - 75
+      - 76
+      - 77
+      - 78
+      - 79
+      - 80
+      - 81
+      - 82
+      - 83
+      - 84
+      - 85
+      - 86
+      - 87
+      - 88
+      - 89
+      - 90
+      - 91
+      - 92
+      - 93
+      - 95
+      - 96
+      - 97
+      - 98
+      - 99
+      - 100
+      - 101
+      - 102
+      - 103
+      - 104
+      - 105
+      - 106
+      - 107
+      - 108
+      - 109
+      - 110
+      - 111
+      - 112
+      - 113
+      - 114
+      - 115
+      - 116
+      - 117
+      - 118
+      - 119
+      - 120
+      - 121
+      - 122
+      - 123
+      - 124
+      - 125
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+      - 132
+      - 133
+      - 134
+      - 135
+      - 144
+      - 145
+      - 160
+      - 161
+      - 162
+      - 163
+      - 164
+      - 165
+      - 166
+      - 167
+      - 168
+      - 169
+      - 170
+      - 171
+      - 172
+      - 173
+      - 174
+      - 175
+      - 176
+      - 177
+      - 178
+      - 179
+      - 180
+      - 181
+      - 182
+      - 183
+      - 186
+      - 187
+      - 188
+      - 189
+      - 190
+      - 191
+      - 192
+      - 219
+      - 220
+      - 221
+      - 222
+      - 223
+      - 226
+      - 229
+      - 231
+      - 246
+      - 247
+      - 248
+      - 249
+      - 250
+      - 251
+      - 252
+      - 253
+      - 254
+      - 65535
+      - 65536
+      - 131072
+      - 262144
+      - -65536
+      type: integer
+      format: int32
+    Env:
+      type: object
+      properties:
+        inferred:
+          type:
+          - string
+          - 'null'
+        os:
+          type:
+          - string
+          - 'null'
+        hostingApp:
+          type:
+          - string
+          - 'null'
+        displaySize:
+          $ref: '#/components/schemas/RectangleSize'
+        hostingAppInfo:
+          type:
+          - string
+          - 'null'
+        osInfo:
+          type:
+          - string
+          - 'null'
+        deviceInfo:
+          type:
+          - string
+          - 'null'
+        ufgJobType:
+          type:
+          - string
+          - 'null'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        renderer:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetIndexedSessionsStatistics:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        applications:
+          type:
+          - string
+          - 'null'
+        branches:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    FiltersResult:
+      type: object
+      additionalProperties: false
+    AccessibilityIssueGroups:
+      type: object
+      properties:
+        critical:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        serious:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        moderate:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        minor:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        ungraded:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        count:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    GetRequiredAttentionTestsPostQuery:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        limit:
+          maximum: 1000
+          minimum: 1
+          type: integer
+          format: int32
+        applications:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        branches:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        where:
+          type:
+          - string
+          - 'null'
+        pageToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetCountersQueryResult:
+      type: object
+      properties:
+        abortedCount:
+          type: integer
+          format: int32
+        emptyCount:
+          type: integer
+          format: int32
+        failedCount:
+          type: integer
+          format: int32
+        failedWithIssuesCount:
+          type: integer
+          format: int32
+        missingCount:
+          type: integer
+          format: int32
+        newCount:
+          type: integer
+          format: int32
+        passedCount:
+          type: integer
+          format: int32
+        withRejectedStepsCount:
+          type: integer
+          format: int32
+        totalCount:
+          type: integer
+          format: int32
+        totalRequiredAttentionCount:
+          type: integer
+          format: int32
+        unresolvedCount:
+          type: integer
+          format: int32
+        unsavedCount:
+          type: integer
+          format: int32
+      additionalProperties: false
+    GetIndexedSessionsApplications:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+      additionalProperties: false
+    AbortType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    ServerDynamicMatchLevelSettings:
+      type: object
+      properties:
+        ignorePatterns:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        customPatterns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/InlineDynamicTextPattern'
+      additionalProperties: false
+    NonVisualSessionStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    ImageFloatingRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        maxLeftOffset:
+          type: integer
+          format: int32
+        maxRightOffset:
+          type: integer
+          format: int32
+        maxUpOffset:
+          type: integer
+          format: int32
+        maxDownOffset:
+          type: integer
+          format: int32
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+      additionalProperties: false
+    ScmType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      format: int32
+    SelfHealingOperation:
+      type: object
+      properties:
+        old:
+          $ref: '#/components/schemas/SelfHealingOperationValue'
+        new:
+          $ref: '#/components/schemas/SelfHealingOperationValue'
+        timeStamp:
+          type: string
+          format: date-time
+      additionalProperties: false
+    ImageMatchLevel:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      type: integer
+      format: int32
+    BatchInfo:
+      type: object
+      properties:
+        context:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isImplicit:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        startedAt:
+          type: string
+          format: date-time
+        lastRunAt:
+          type: string
+          format: date-time
+        closedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        duration:
+          type: integer
+          format: int32
+        branchName:
+          type:
+          - string
+          - 'null'
+        parentBranchName:
+          type:
+          - string
+          - 'null'
+        baselineBranchName:
+          type:
+          - string
+          - 'null'
+        scmSourceBranch:
+          type:
+          - string
+          - 'null'
+        scmTargetBranch:
+          type:
+          - string
+          - 'null'
+        batchSequenceId:
+          type:
+          - string
+          - 'null'
+        batchSequenceName:
+          type:
+          - string
+          - 'null'
+        notifyOnCompletion:
+          type: boolean
+        properties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StringNamedProperty'
+        parentBranchBaselineSavedBefore:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        buildId:
+          type:
+          - string
+          - 'null'
+        contextCreatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        executionReports:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isOfflineExecution:
+          type: boolean
+        hasLocalChanges:
+          type: boolean
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MouseActionType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    SessionExpectedAppOutput:
+      type: object
+      properties:
+        sessionDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+      additionalProperties: false
+    DiffCategory:
+      enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 300
+      - 301
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 500
+      - 501
+      - 502
+      - 600
+      type: integer
+      format: int32
+    GetSelfHealedSessionsQuery:
+      required:
+      - end
+      - start
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        limit:
+          maximum: 1000
+          minimum: 1
+          type: integer
+          format: int32
+      additionalProperties: false
+    BaselineMergeInfo:
+      type: object
+      properties:
+        sourceBranch:
+          type:
+          - string
+          - 'null'
+        mergedAt:
+          type: string
+          format: date-time
+        mergedBy:
+          type:
+          - string
+          - 'null'
+        mergeCommitSha:
+          type:
+          - string
+          - 'null'
+        isFromScm:
+          type: boolean
+        scmType:
+          $ref: '#/components/schemas/ScmType'
+      additionalProperties: false
+    StatisticsResult:
+      type: object
+      properties:
+        counters:
+          $ref: '#/components/schemas/GetCountersQueryResult'
+        topFive:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AggregateSession'
+      additionalProperties: false
+    SelfHealingOperationValue:
+      type: object
+      properties:
+        using:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccessibilityStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    StepOutputResolution:
+      type: object
+      properties:
+        isStarred:
+          type: boolean
+        isChanged:
+          type: boolean
+        replaceExpected:
+          type:
+          - boolean
+          - 'null'
+        isAutoRejected:
+          type: boolean
+        legacyMatchSettings:
+          $ref: '#/components/schemas/ImageAnnotations'
+        annotations:
+          $ref: '#/components/schemas/ImageAnnotations'
+        removedAnnotations:
+          $ref: '#/components/schemas/ImageAnnotations'
+        variantId:
+          type:
+          - string
+          - 'null'
+        expectedVariantId:
+          type:
+          - string
+          - 'null'
+        variantName:
+          type:
+          - string
+          - 'null'
+        removeVariant:
+          type:
+          - boolean
+          - 'null'
+        removeOtherVariants:
+          type:
+          - boolean
+          - 'null'
+        lastUpdatedBy:
+          type:
+          - string
+          - 'null'
+        lastUpdatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastAccept:
+          $ref: '#/components/schemas/StepChangeInfo'
+        lastReject:
+          $ref: '#/components/schemas/StepChangeInfo'
+        nextVariant:
+          $ref: '#/components/schemas/StepOutputResolution'
+        stepDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        isResolvedByAutomaintenance:
+          type: boolean
+        isManuallyRejected:
+          type: boolean
+        hasMatchRegionsDefined:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    Branch:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        scmBranchName:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        updateInfo:
+          $ref: '#/components/schemas/BaselineUpdateInfo'
+      additionalProperties: false

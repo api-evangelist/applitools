@@ -1,0 +1,424 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Discuss API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Discuss
+paths:
+  /api/Discuss:
+    post:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateTopic'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+      summary: Create api discuss
+      x-summary-source: derived
+      operationId: postApiDiscuss
+      x-operation-id-source: derived
+  /api/Discuss/{TopicId}/info:
+    get:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetTopic'
+      - name: TopicId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+      summary: Get api discuss by topic id info
+      x-summary-source: derived
+      operationId: getApiDiscussByTopicIdInfo
+      x-operation-id-source: derived
+  /api/Discuss/{TopicId}/followers:
+    put:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateTopicFollowers'
+      - name: TopicId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+      summary: Replace api discuss by topic id followers
+      x-summary-source: derived
+      operationId: putApiDiscussByTopicIdFollowers
+      x-operation-id-source: derived
+  /api/Discuss/{TopicId}/title:
+    put:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateTopicTitle'
+      - name: TopicId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+      summary: Replace api discuss by topic id title
+      x-summary-source: derived
+      operationId: putApiDiscussByTopicIdTitle
+      x-operation-id-source: derived
+  /api/Discuss/{TopicId}:
+    get:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetLastTopicComments'
+      - name: TopicId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+      summary: Get api discuss by topic id
+      x-summary-source: derived
+      operationId: getApiDiscussByTopicId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteTopic'
+      - name: TopicId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api discuss by topic id
+      x-summary-source: derived
+      operationId: deleteApiDiscussByTopicId
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddTopicComment'
+      - name: TopicId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Comment'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+      summary: Create api discuss by topic id
+      x-summary-source: derived
+      operationId: postApiDiscussByTopicId
+      x-operation-id-source: derived
+  /api/Discuss/{TopicId}/{CommentId}:
+    delete:
+      tags:
+      - Discuss
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteTopicComment'
+      - name: TopicId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: CommentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api discuss by topic id by comment id
+      x-summary-source: derived
+      operationId: deleteApiDiscussByTopicIdByCommentId
+      x-operation-id-source: derived
+components:
+  schemas:
+    DeleteTopic:
+      type: object
+      properties:
+        topicId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateTopicTitle:
+      type: object
+      properties:
+        topicId:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Topic:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        followers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        now:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CreateTopic:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        followers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        now:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AddTopicComment:
+      type: object
+      properties:
+        topicId:
+          type:
+          - string
+          - 'null'
+        content:
+          type:
+          - string
+          - 'null'
+        commenter:
+          type:
+          - string
+          - 'null'
+        text:
+          type:
+          - string
+          - 'null'
+        resourceUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Comment:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        at:
+          type: string
+          format: date-time
+        by:
+          type:
+          - string
+          - 'null'
+        content:
+          type:
+          - string
+          - 'null'
+        followers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    UpdateTopicFollowers:
+      type: object
+      properties:
+        topicId:
+          type:
+          - string
+          - 'null'
+        add:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        remove:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    GetLastTopicComments:
+      type: object
+      properties:
+        topicId:
+          type:
+          - string
+          - 'null'
+        count:
+          type: integer
+          format: int32
+        limit:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetTopic:
+      type: object
+      properties:
+        topicId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DeleteTopicComment:
+      type: object
+      properties:
+        topicId:
+          type:
+          - string
+          - 'null'
+        commentId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

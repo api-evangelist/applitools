@@ -154,36 +154,316 @@ apis:
   properties:
   - type: ProductPage
     url: https://applitools.com/platform/ultrafast-grid/
-- aid: applitools:applitools-batches-api
-  name: Applitools Batches API
-  description: Batch management endpoints
+- aid: applitools:applitools-accessibilityreports-api
+  name: Applitools Accessibility Reports API
+  description: The AccessibilityReports API from Applitools — 4 operation(s) for accessibilityreports.
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
-  - Batches
+  - AccessibilityReports
   properties:
   - type: OpenAPI
-    url: openapi/applitools-batches-api-openapi.yml
-- aid: applitools:applitools-discussions-api
-  name: Applitools Discussions API
-  description: Discussion and comment endpoints
+    url: openapi/applitools-accessibilityreports-api-openapi.yml
+- aid: applitools:applitools-activities-api
+  name: Applitools Activities API
+  description: The Activities API from Applitools — 3 operation(s) for activities.
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
-  - Discussions
+  - Activities
   properties:
   - type: OpenAPI
-    url: openapi/applitools-discussions-api-openapi.yml
-- aid: applitools:applitools-scm-api
-  name: Applitools SCM API
-  description: Source-control management integrations
+    url: openapi/applitools-activities-api-openapi.yml
+- aid: applitools:applitools-admin-api
+  name: Applitools Admin API
+  description: The Admin API from Applitools — 53 operation(s) for admin.
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
-  - SCM
+  - Admin
   properties:
   - type: OpenAPI
-    url: openapi/applitools-scm-api-openapi.yml
+    url: openapi/applitools-admin-api-openapi.yml
+- aid: applitools:applitools-app-api
+  name: Applitools App API
+  description: The App API from Applitools — 42 operation(s) for app.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - App
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-app-api-openapi.yml
+- aid: applitools:applitools-auth-api
+  name: Applitools Auth API
+  description: The Auth API from Applitools — 13 operation(s) for auth.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-auth-api-openapi.yml
+- aid: applitools:applitools-authpublicapi-api
+  name: Applitools Auth Public API
+  description: The AuthPublicApi API from Applitools — 1 operation(s) for authpublicapi.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - AuthPublicApi
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-authpublicapi-api-openapi.yml
+- aid: applitools:applitools-autonomous-api
+  name: Applitools Autonomous API
+  description: The Autonomous API from Applitools — 1 operation(s) for autonomous.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Autonomous
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-autonomous-api-openapi.yml
+- aid: applitools:applitools-baselines-api
+  name: Applitools Baselines API
+  description: The Baselines API from Applitools — 32 operation(s) for baselines.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Baselines
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-baselines-api-openapi.yml
+- aid: applitools:applitools-batchespublicapi-api
+  name: Applitools Batches Public API
+  description: The BatchesPublicApi API from Applitools — 7 operation(s) for batchespublicapi.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - BatchesPublicApi
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-batchespublicapi-api-openapi.yml
+- aid: applitools:applitools-beta-api
+  name: Applitools Beta API
+  description: The Beta API from Applitools — 1 operation(s) for beta.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Beta
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-beta-api-openapi.yml
+- aid: applitools:applitools-debug-api
+  name: Applitools Debug API
+  description: The Debug API from Applitools — 3 operation(s) for debug.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Debug
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-debug-api-openapi.yml
+- aid: applitools:applitools-discuss-api
+  name: Applitools Discuss API
+  description: The Discuss API from Applitools — 6 operation(s) for discuss.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Discuss
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-discuss-api-openapi.yml
+- aid: applitools:applitools-discusspublicapi-api
+  name: Applitools Discuss Public API
+  description: The DiscussPublicApi API from Applitools — 1 operation(s) for discusspublicapi.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - DiscussPublicApi
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-discusspublicapi-api-openapi.yml
+- aid: applitools:applitools-executionreports-api
+  name: Applitools Execution Reports API
+  description: The ExecutionReports API from Applitools — 1 operation(s) for executionreports.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - ExecutionReports
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-executionreports-api-openapi.yml
+- aid: applitools:applitools-externals-api
+  name: Applitools Externals API
+  description: The Externals API from Applitools — 92 operation(s) for externals.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Externals
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-externals-api-openapi.yml
+- aid: applitools:applitools-files-api
+  name: Applitools Files API
+  description: The Files API from Applitools — 5 operation(s) for files.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-files-api-openapi.yml
+- aid: applitools:applitools-health-api
+  name: Applitools Health API
+  description: The Health API from Applitools — 1 operation(s) for health.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-health-api-openapi.yml
+- aid: applitools:applitools-images-api
+  name: Applitools Images API
+  description: The Images API from Applitools — 21 operation(s) for images.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Images
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-images-api-openapi.yml
+- aid: applitools:applitools-indexedsessions-api
+  name: Applitools Indexed Sessions API
+  description: The IndexedSessions API from Applitools — 18 operation(s) for indexedsessions.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - IndexedSessions
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-indexedsessions-api-openapi.yml
+- aid: applitools:applitools-insights-api
+  name: Applitools Insights API
+  description: The Insights API from Applitools — 6 operation(s) for insights.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Insights
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-insights-api-openapi.yml
+- aid: applitools:applitools-locators-api
+  name: Applitools Locators API
+  description: The Locators API from Applitools — 6 operation(s) for locators.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Locators
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-locators-api-openapi.yml
+- aid: applitools:applitools-messages-api
+  name: Applitools Messages API
+  description: The Messages API from Applitools — 2 operation(s) for messages.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-messages-api-openapi.yml
+- aid: applitools:applitools-metrics-api
+  name: Applitools Metrics API
+  description: The Metrics API from Applitools — 2 operation(s) for metrics.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-metrics-api-openapi.yml
+- aid: applitools:applitools-productusage-api
+  name: Applitools Product Usage API
+  description: The ProductUsage API from Applitools — 5 operation(s) for productusage.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - ProductUsage
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-productusage-api-openapi.yml
+- aid: applitools:applitools-scmintegrations-api
+  name: Applitools Scm Integrations API
+  description: The ScmIntegrations API from Applitools — 1 operation(s) for scmintegrations.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - ScmIntegrations
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-scmintegrations-api-openapi.yml
+- aid: applitools:applitools-sessions-api
+  name: Applitools Sessions API
+  description: The Sessions API from Applitools — 77 operation(s) for sessions.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-sessions-api-openapi.yml
+- aid: applitools:applitools-summaries-api
+  name: Applitools Summaries API
+  description: The Summaries API from Applitools — 1 operation(s) for summaries.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Summaries
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-summaries-api-openapi.yml
+- aid: applitools:applitools-tasks-api
+  name: Applitools Tasks API
+  description: The Tasks API from Applitools — 2 operation(s) for tasks.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-tasks-api-openapi.yml
+- aid: applitools:applitools-tasksv2-api
+  name: Applitools Tasks V2 API
+  description: The TasksV2 API from Applitools — 1 operation(s) for tasksv2.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - TasksV2
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-tasksv2-api-openapi.yml
+- aid: applitools:applitools-tinylink-api
+  name: Applitools Tiny Link API
+  description: The TinyLink API from Applitools — 1 operation(s) for tinylink.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - TinyLink
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-tinylink-api-openapi.yml
+- aid: applitools:applitools-tutorial-api
+  name: Applitools Tutorial API
+  description: The Tutorial API from Applitools — 2 operation(s) for tutorial.
+  humanURL: https://applitools.com/docs/eyes/reference/server-api
+  baseURL: https://eyesapi.applitools.com
+  tags:
+  - Tutorial
+  properties:
+  - type: OpenAPI
+    url: openapi/applitools-tutorial-api-openapi.yml
 common:
   - type: CapabilityMap
     url: capabilities/applitools-capability-edges.yml

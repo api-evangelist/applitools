@@ -1,0 +1,113 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Messages API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Messages
+paths:
+  /api/Messages/sessions:
+    post:
+      tags:
+      - Messages
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateMessageSessionRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/MessageSession'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageSession'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/MessageSession'
+      summary: Create api messages sessions
+      x-summary-source: derived
+      operationId: postApiMessagesSessions
+      x-operation-id-source: derived
+  /api/Messages/sessions/{SessionId}/{MessageId}:
+    post:
+      tags:
+      - Messages
+      parameters:
+      - name: SessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: MessageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api messages sessions by session id by message id
+      x-summary-source: derived
+      operationId: postApiMessagesSessionsBySessionIdByMessageId
+      x-operation-id-source: derived
+    get:
+      tags:
+      - Messages
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetMessageFromSessionRequest'
+      - name: SessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: MessageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api messages sessions by session id by message id
+      x-summary-source: derived
+      operationId: getApiMessagesSessionsBySessionIdByMessageId
+      x-operation-id-source: derived
+components:
+  schemas:
+    MessageSession:
+      type: object
+      properties:
+        sessionId:
+          type:
+          - string
+          - 'null'
+        delayBetweenPolls:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CreateMessageSessionRequest:
+      type: object
+      additionalProperties: false
+    GetMessageFromSessionRequest:
+      type: object
+      properties:
+        sessionId:
+          type:
+          - string
+          - 'null'
+        messageId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

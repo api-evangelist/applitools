@@ -1,0 +1,71 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Metrics API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Metrics
+paths:
+  /api/Metrics/browsers/concurrency:
+    post:
+      tags:
+      - Metrics
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ConcurrencyReport'
+      responses:
+        '200':
+          description: OK
+      summary: Create api metrics browsers concurrency
+      x-summary-source: derived
+      operationId: postApiMetricsBrowsersConcurrency
+      x-operation-id-source: derived
+  /api/Metrics/checkpoints/concurrency:
+    post:
+      tags:
+      - Metrics
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ConcurrencyReport'
+      responses:
+        '200':
+          description: OK
+      summary: Create api metrics checkpoints concurrency
+      x-summary-source: derived
+      operationId: postApiMetricsCheckpointsConcurrency
+      x-operation-id-source: derived
+components:
+  schemas:
+    ConcurrencyReport:
+      type: object
+      properties:
+        concurrencies:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ConcurrencyReportOrgOrAccount'
+      additionalProperties: false
+    ConcurrencyReportOrgOrAccount:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        concurrency:
+          type: integer
+          format: int32
+      additionalProperties: false

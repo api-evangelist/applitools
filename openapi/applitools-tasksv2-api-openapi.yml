@@ -1,0 +1,56 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Tasks V2 API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: TasksV2
+paths:
+  /api/v2/tasks/{TaskId}/result:
+    get:
+      tags:
+      - TasksV2
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetTaskResultV2'
+      - name: TaskId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api tasks by task id result
+      x-summary-source: derived
+      operationId: getApiV2TasksByTaskIdResult
+      x-operation-id-source: derived
+components:
+  schemas:
+    GetTaskResultV2:
+      type: object
+      properties:
+        taskId:
+          type:
+          - string
+          - 'null'
+        expiresAt:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        accountId:
+          type:
+          - string
+          - 'null'
+        userName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

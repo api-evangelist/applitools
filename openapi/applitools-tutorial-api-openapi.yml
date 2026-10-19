@@ -1,0 +1,114 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Tutorial API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Tutorial
+paths:
+  /api/Tutorial/start:
+    get:
+      tags:
+      - Tutorial
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/StartTutorial'
+      responses:
+        '200':
+          description: OK
+      summary: Get api tutorial start
+      x-summary-source: derived
+      operationId: getApiTutorialStart
+      x-operation-id-source: derived
+  /api/Tutorial/session:
+    post:
+      tags:
+      - Tutorial
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateTutorialSession'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TutorialSessionResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorialSessionResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TutorialSessionResult'
+      summary: Create api tutorial session
+      x-summary-source: derived
+      operationId: postApiTutorialSession
+      x-operation-id-source: derived
+components:
+  schemas:
+    TutorialSessionResult:
+      type: object
+      properties:
+        apiKey:
+          type:
+          - string
+          - 'null'
+        serverUrl:
+          type:
+          - string
+          - 'null'
+        dashboardUrl:
+          type:
+          - string
+          - 'null'
+        identity:
+          $ref: '#/components/schemas/TutorialSessionIdentity'
+      additionalProperties: false
+    StartTutorial:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    TutorialSessionIdentity:
+      type: object
+      properties:
+        username:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        displayName:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    CreateTutorialSession:
+      type: object
+      properties:
+        token:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

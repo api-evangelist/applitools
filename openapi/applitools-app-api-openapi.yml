@@ -1,0 +1,728 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes App API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: App
+paths:
+  /app/batchesnoauth:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app batchesnoauth
+      x-summary-source: derived
+      operationId: getAppBatchesnoauth
+      x-operation-id-source: derived
+  /app/batchesnoauth/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app batchesnoauth by path
+      x-summary-source: derived
+      operationId: getAppBatchesnoauthByPath
+      x-operation-id-source: derived
+  /app/environments:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app environments
+      x-summary-source: derived
+      operationId: getAppEnvironments
+      x-operation-id-source: derived
+  /app/sessions:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app sessions
+      x-summary-source: derived
+      operationId: getAppSessions
+      x-operation-id-source: derived
+  /app/sessions/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app sessions by path
+      x-summary-source: derived
+      operationId: getAppSessionsByPath
+      x-operation-id-source: derived
+  /app/batches:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app batches
+      x-summary-source: derived
+      operationId: getAppBatches
+      x-operation-id-source: derived
+  /app/batches/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app batches by path
+      x-summary-source: derived
+      operationId: getAppBatchesByPath
+      x-operation-id-source: derived
+  /app/insights/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app insights by path
+      x-summary-source: derived
+      operationId: getAppInsightsByPath
+      x-operation-id-source: derived
+  /app/test-results:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app test results
+      x-summary-source: derived
+      operationId: getAppTestResults
+      x-operation-id-source: derived
+  /app/test-results/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app test results by path
+      x-summary-source: derived
+      operationId: getAppTestResultsByPath
+      x-operation-id-source: derived
+  /app/visual-locators:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app visual locators
+      x-summary-source: derived
+      operationId: getAppVisualLocators
+      x-operation-id-source: derived
+  /app/visual-locators/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app visual locators by path
+      x-summary-source: derived
+      operationId: getAppVisualLocatorsByPath
+      x-operation-id-source: derived
+  /app/tests:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app tests
+      x-summary-source: derived
+      operationId: getAppTests
+      x-operation-id-source: derived
+  /app/tests/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app tests by path
+      x-summary-source: derived
+      operationId: getAppTestsByPath
+      x-operation-id-source: derived
+  /app/baselines:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app baselines
+      x-summary-source: derived
+      operationId: getAppBaselines
+      x-operation-id-source: derived
+  /app/baselines/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app baselines by path
+      x-summary-source: derived
+      operationId: getAppBaselinesByPath
+      x-operation-id-source: derived
+  /app/required-attention:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app required attention
+      x-summary-source: derived
+      operationId: getAppRequiredAttention
+      x-operation-id-source: derived
+  /app/required-attention/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app required attention by path
+      x-summary-source: derived
+      operationId: getAppRequiredAttentionByPath
+      x-operation-id-source: derived
+  /app/merge:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app merge
+      x-summary-source: derived
+      operationId: getAppMerge
+      x-operation-id-source: derived
+  /app/merge/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app merge by path
+      x-summary-source: derived
+      operationId: getAppMergeByPath
+      x-operation-id-source: derived
+  /app/concurrency:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app concurrency
+      x-summary-source: derived
+      operationId: getAppConcurrency
+      x-operation-id-source: derived
+  /app/concurrency/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app concurrency by path
+      x-summary-source: derived
+      operationId: getAppConcurrencyByPath
+      x-operation-id-source: derived
+  /app/tutorial:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetTutorial'
+      responses:
+        '200':
+          description: OK
+      summary: Get app tutorial
+      x-summary-source: derived
+      operationId: getAppTutorial
+      x-operation-id-source: derived
+  /app/express:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetTutorial'
+      responses:
+        '200':
+          description: OK
+      summary: Get app express
+      x-summary-source: derived
+      operationId: getAppExpress
+      x-operation-id-source: derived
+  /app/admin:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app admin
+      x-summary-source: derived
+      operationId: getAppAdmin
+      x-operation-id-source: derived
+  /app/admin/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app admin by path
+      x-summary-source: derived
+      operationId: getAppAdminByPath
+      x-operation-id-source: derived
+  /app/fileupload:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetFieUploadMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app fileupload
+      x-summary-source: derived
+      operationId: getAppFileupload
+      x-operation-id-source: derived
+  /app/v/{Version}/Deploy/Integrations/Tfs/scripts/{ScriptName}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ScriptName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app v by version deploy integrations tfs scripts by script name
+      x-summary-source: derived
+      operationId: getAppVByVersionDeployIntegrationsTfsScriptsByScriptName
+      x-operation-id-source: derived
+  /app/tfs:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetTfsMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app tfs
+      x-summary-source: derived
+      operationId: getAppTfs
+      x-operation-id-source: derived
+  /app/info/mobile/devices:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetMobileDeviceInfo'
+      responses:
+        '200':
+          description: OK
+      summary: Get app info mobile devices
+      x-summary-source: derived
+      operationId: getAppInfoMobileDevices
+      x-operation-id-source: derived
+  /app/html-report/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app html report by path
+      x-summary-source: derived
+      operationId: getAppHtmlReportByPath
+      x-operation-id-source: derived
+  /app/admin/backoffice:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetBackofficeMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app admin backoffice
+      x-summary-source: derived
+      operationId: getAppAdminBackoffice
+      x-operation-id-source: derived
+  /app/admin/backoffice/files:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetBackofficeMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app admin backoffice files
+      x-summary-source: derived
+      operationId: getAppAdminBackofficeFiles
+      x-operation-id-source: derived
+  /app/msteams/signin:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: header
+        schema:
+          $ref: '#/components/schemas/GetSignInMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app msteams signin
+      x-summary-source: derived
+      operationId: getAppMsteamsSignin
+      x-operation-id-source: derived
+  /app/msteams/managenotifications:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetMSTeamsMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app msteams managenotifications
+      x-summary-source: derived
+      operationId: getAppMsteamsManagenotifications
+      x-operation-id-source: derived
+  /app/demo:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetDemoMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app demo
+      x-summary-source: derived
+      operationId: getAppDemo
+      x-operation-id-source: derived
+  /app/demo/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetDemoMainFile'
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app demo by path
+      x-summary-source: derived
+      operationId: getAppDemoByPath
+      x-operation-id-source: derived
+  /app/accessdenied:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetAccessDeniedMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app accessdenied
+      x-summary-source: derived
+      operationId: getAppAccessdenied
+      x-operation-id-source: derived
+  /app/images:
+    get:
+      tags:
+      - App
+      responses:
+        '200':
+          description: OK
+      summary: Get app images
+      x-summary-source: derived
+      operationId: getAppImages
+      x-operation-id-source: derived
+  /app/images/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app images by path
+      x-summary-source: derived
+      operationId: getAppImagesByPath
+      x-operation-id-source: derived
+  /app/basiclogin:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: request
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/GetBasicLoginMainFile'
+      responses:
+        '200':
+          description: OK
+      summary: Get app basiclogin
+      x-summary-source: derived
+      operationId: getAppBasiclogin
+      x-operation-id-source: derived
+  /app/v/{Version}/{Path}:
+    get:
+      tags:
+      - App
+      parameters:
+      - name: Version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Path
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get app v by version by path
+      x-summary-source: derived
+      operationId: getAppVByVersionByPath
+      x-operation-id-source: derived
+components:
+  schemas:
+    GetDemoMainFile:
+      type: object
+      additionalProperties: false
+    GetBasicLoginMainFile:
+      type: object
+      additionalProperties: false
+    GetMobileDeviceInfo:
+      type: object
+      additionalProperties: false
+    GetTutorial:
+      type: object
+      additionalProperties: false
+    GetFieUploadMainFile:
+      type: object
+      additionalProperties: false
+    GetTfsMainFile:
+      type: object
+      additionalProperties: false
+    GetBackofficeMainFile:
+      type: object
+      additionalProperties: false
+    IHttpRestClient:
+      type: object
+      additionalProperties: false
+    GetAccessDeniedMainFile:
+      type: object
+      additionalProperties: false
+    GetSignInMainFile:
+      type: object
+      properties:
+        teamsChannelId:
+          type:
+          - string
+          - 'null'
+        serviceUrl:
+          type:
+          - string
+          - 'null'
+        site:
+          type:
+          - string
+          - 'null'
+        memberId:
+          type:
+          - string
+          - 'null'
+        memberName:
+          type:
+          - string
+          - 'null'
+        memberAad:
+          type:
+          - string
+          - 'null'
+        tenantId:
+          type:
+          - string
+          - 'null'
+        client:
+          $ref: '#/components/schemas/IHttpRestClient'
+      additionalProperties: false
+    GetMSTeamsMainFile:
+      type: object
+      additionalProperties: false

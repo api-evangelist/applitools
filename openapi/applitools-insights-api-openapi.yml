@@ -1,0 +1,182 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Insights API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Insights
+paths:
+  /api/Insights/sessions:
+    post:
+      tags:
+      - Insights
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSessionsInsights'
+      responses:
+        '200':
+          description: OK
+      summary: Create api insights sessions
+      x-summary-source: derived
+      operationId: postApiInsightsSessions
+      x-operation-id-source: derived
+  /api/Insights/sessions/byapp:
+    post:
+      tags:
+      - Insights
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSessionsInsightsByApp'
+      responses:
+        '200':
+          description: OK
+      summary: Create api insights sessions byapp
+      x-summary-source: derived
+      operationId: postApiInsightsSessionsByapp
+      x-operation-id-source: derived
+  /api/Insights/sessions/byscenario:
+    post:
+      tags:
+      - Insights
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSessionsInsightsByScenario'
+      responses:
+        '200':
+          description: OK
+      summary: Create api insights sessions byscenario
+      x-summary-source: derived
+      operationId: postApiInsightsSessionsByscenario
+      x-operation-id-source: derived
+  /api/Insights/sessions/bybatchsequence:
+    post:
+      tags:
+      - Insights
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSessionsInsightsByBatchSequence'
+      responses:
+        '200':
+          description: OK
+      summary: Create api insights sessions bybatchsequence
+      x-summary-source: derived
+      operationId: postApiInsightsSessionsBybatchsequence
+      x-operation-id-source: derived
+  /api/Insights/definedtests:
+    post:
+      tags:
+      - Insights
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetInsightsDefinedTests'
+      responses:
+        '200':
+          description: OK
+      summary: Create api insights definedtests
+      x-summary-source: derived
+      operationId: postApiInsightsDefinedtests
+      x-operation-id-source: derived
+  /api/Insights/detectedissues:
+    post:
+      tags:
+      - Insights
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetInsightsDetectedIssues'
+      responses:
+        '200':
+          description: OK
+      summary: Create api insights detectedissues
+      x-summary-source: derived
+      operationId: postApiInsightsDetectedissues
+      x-operation-id-source: derived
+components:
+  schemas:
+    GetSessionsInsightsByApp:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/InsightsQueryFrom'
+        read:
+          $ref: '#/components/schemas/InsightsQueryRead'
+      additionalProperties: false
+    GetInsightsDetectedIssues:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/InsightsQueryFrom'
+        read:
+          $ref: '#/components/schemas/InsightsQueryRead'
+      additionalProperties: false
+    GetSessionsInsights:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/InsightsQueryFrom'
+        read:
+          $ref: '#/components/schemas/InsightsQueryRead'
+      additionalProperties: false
+    GetSessionsInsightsByBatchSequence:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/InsightsQueryFrom'
+        read:
+          $ref: '#/components/schemas/InsightsQueryRead'
+      additionalProperties: false
+    InsightsQueryFrom:
+      type: object
+      properties:
+        org:
+          type: boolean
+        accounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    GetSessionsInsightsByScenario:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/InsightsQueryFrom'
+        read:
+          $ref: '#/components/schemas/InsightsQueryRead'
+      additionalProperties: false
+    InsightsQueryRead:
+      type: object
+      properties:
+        after:
+          type:
+          - string
+          - 'null'
+        before:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetInsightsDefinedTests:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/InsightsQueryFrom'
+        read:
+          $ref: '#/components/schemas/InsightsQueryRead'
+      additionalProperties: false

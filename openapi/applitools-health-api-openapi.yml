@@ -1,0 +1,50 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Health API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Health
+paths:
+  /api/Health:
+    get:
+      tags:
+      - Health
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetHealthStatus'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+      summary: Get api health
+      x-summary-source: derived
+      operationId: getApiHealth
+      x-operation-id-source: derived
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        freeDiskSpacePercentage:
+          type: number
+          format: double
+      additionalProperties: false
+    GetHealthStatus:
+      type: object
+      additionalProperties: false

@@ -1,0 +1,78 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Auth Public API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: AuthPublicApi
+paths:
+  /api/v1/auth/api-key-validation:
+    get:
+      tags:
+      - AuthPublicApi
+      parameters:
+      - name: _
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetApiKeyValidationRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetApiKeyValidationResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiKeyValidationResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetApiKeyValidationResponse'
+      summary: Get api auth api key validation
+      x-summary-source: derived
+      operationId: getApiV1AuthApiKeyValidation
+      x-operation-id-source: derived
+components:
+  schemas:
+    GetApiKeyValidationResponse:
+      type: object
+      properties:
+        teamId:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        user:
+          type:
+          - string
+          - 'null'
+        permissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        createdBy:
+          type:
+          - string
+          - 'null'
+        purpose:
+          type:
+          - string
+          - 'null'
+        expiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    GetApiKeyValidationRequest:
+      type: object
+      additionalProperties: false

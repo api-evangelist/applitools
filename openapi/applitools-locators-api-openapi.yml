@@ -1,0 +1,540 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Locators API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Locators
+paths:
+  /api/Locators/apps/{AppId}:
+    get:
+      tags:
+      - Locators
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetLocators'
+      - name: AppId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Locator'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Locator'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Locator'
+      summary: Get api locators apps by app id
+      x-summary-source: derived
+      operationId: getApiLocatorsAppsByAppId
+      x-operation-id-source: derived
+  /api/Locators/validate:
+    post:
+      tags:
+      - Locators
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ValidateLocator'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/VisualLocatorStatus'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VisualLocatorStatus'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/VisualLocatorStatus'
+      summary: Create api locators validate
+      x-summary-source: derived
+      operationId: postApiLocatorsValidate
+      x-operation-id-source: derived
+  /api/Locators:
+    post:
+      tags:
+      - Locators
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateLocator'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Locator'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Locator'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Locator'
+      summary: Create api locators
+      x-summary-source: derived
+      operationId: postApiLocators
+      x-operation-id-source: derived
+  /api/Locators/apps/{AppId}/{Id}/rename:
+    put:
+      tags:
+      - Locators
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RenameLocator'
+      - name: AppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Locator'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Locator'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Locator'
+      summary: Replace api locators apps by app id by id rename
+      x-summary-source: derived
+      operationId: putApiLocatorsAppsByAppIdByIdRename
+      x-operation-id-source: derived
+  /api/Locators/apps/{AppId}/{Id}:
+    delete:
+      tags:
+      - Locators
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteLocator'
+      - name: AppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api locators apps by app id by id
+      x-summary-source: derived
+      operationId: deleteApiLocatorsAppsByAppIdById
+      x-operation-id-source: derived
+  /api/Locators/locate:
+    post:
+      tags:
+      - Locators
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/LocateLocatorsAndDelete'
+      responses:
+        '200':
+          description: OK
+      summary: Create api locators locate
+      x-summary-source: derived
+      operationId: postApiLocatorsLocate
+      x-operation-id-source: derived
+components:
+  schemas:
+    RenameLocator:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+      additionalProperties: false
+    DiffCategory:
+      enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 300
+      - 301
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 500
+      - 501
+      - 502
+      - 600
+      type: integer
+      format: int32
+    Size:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    LocateLocatorsAndDelete:
+      type: object
+      properties:
+        appName:
+          type:
+          - string
+          - 'null'
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        delete:
+          type:
+          - boolean
+          - 'null'
+        locatorNames:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        firstOnly:
+          type: boolean
+      additionalProperties: false
+    DeleteLocator:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ValidateLocator:
+      type: object
+      properties:
+        sourceImageId:
+          type:
+          - string
+          - 'null'
+        region:
+          $ref: '#/components/schemas/MutableRegion'
+      additionalProperties: false
+    Point:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Location:
+      type: object
+      properties:
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Locator:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        sourceImageId:
+          type:
+          - string
+          - 'null'
+        imageId:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        batchId:
+          type:
+          - string
+          - 'null'
+        sessionId:
+          type:
+          - string
+          - 'null'
+        stepIndex:
+          type: integer
+          format: int32
+        baselineId:
+          type:
+          - string
+          - 'null'
+        baselineRev:
+          type:
+          - string
+          - 'null'
+        region:
+          $ref: '#/components/schemas/MutableRegion'
+        createdBy:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        updatedBy:
+          type:
+          - string
+          - 'null'
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    VisualLocatorStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    CreateLocator:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        batchId:
+          type:
+          - string
+          - 'null'
+        sessionId:
+          type:
+          - string
+          - 'null'
+        stepIndex:
+          type: integer
+          format: int32
+        baselineId:
+          type:
+          - string
+          - 'null'
+        baselineRev:
+          type:
+          - string
+          - 'null'
+        sourceImageId:
+          type:
+          - string
+          - 'null'
+        region:
+          $ref: '#/components/schemas/MutableRegion'
+      additionalProperties: false
+    Rectangle:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        left:
+          type: integer
+          format: int32
+          readOnly: true
+        top:
+          type: integer
+          format: int32
+          readOnly: true
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        isEmpty:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    GetLocators:
+      type: object
+      properties:
+        appId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DiffDescription:
+      type: object
+      properties:
+        baselineValue:
+          type:
+          - string
+          - 'null'
+        checkpointValue:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/DiffCategory'
+      additionalProperties: false

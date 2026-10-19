@@ -1,0 +1,277 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Debug API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Debug
+paths:
+  /api/Debug/test/json:
+    put:
+      tags:
+      - Debug
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/TestJsonRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetTestJsonResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTestJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetTestJsonResponse'
+      summary: Replace api debug test json
+      x-summary-source: derived
+      operationId: putApiDebugTestJson
+      x-operation-id-source: derived
+  /api/Debug/test/echo:
+    get:
+      tags:
+      - Debug
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/TestEchoRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TestEchoRequest'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestEchoRequest'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TestEchoRequest'
+      summary: Get api debug test echo
+      x-summary-source: derived
+      operationId: getApiDebugTestEcho
+      x-operation-id-source: derived
+  /api/Debug/test/json/batchinfo:
+    put:
+      tags:
+      - Debug
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/TestJsonBatchInfoRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BatchInfo'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchInfo'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BatchInfo'
+      summary: Replace api debug test json batchinfo
+      x-summary-source: derived
+      operationId: putApiDebugTestJsonBatchinfo
+      x-operation-id-source: derived
+components:
+  schemas:
+    TestEchoRequest:
+      type: object
+      properties:
+        strContent:
+          type:
+          - string
+          - 'null'
+        intContent:
+          type: integer
+          format: int32
+        booleanContent:
+          type: boolean
+      additionalProperties: false
+    GetTestJsonResponse:
+      type: object
+      properties:
+        someString:
+          type:
+          - string
+          - 'null'
+        someEnum:
+          $ref: '#/components/schemas/AccessibilityStatus'
+        someDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        someInt:
+          type: integer
+          format: int32
+        someDouble:
+          type: number
+          format: double
+        someNull: {}
+      additionalProperties: false
+    AccessibilityStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    StringNamedProperty:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BatchInfo:
+      type: object
+      properties:
+        context:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isImplicit:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        startedAt:
+          type: string
+          format: date-time
+        lastRunAt:
+          type: string
+          format: date-time
+        closedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        duration:
+          type: integer
+          format: int32
+        branchName:
+          type:
+          - string
+          - 'null'
+        parentBranchName:
+          type:
+          - string
+          - 'null'
+        baselineBranchName:
+          type:
+          - string
+          - 'null'
+        scmSourceBranch:
+          type:
+          - string
+          - 'null'
+        scmTargetBranch:
+          type:
+          - string
+          - 'null'
+        batchSequenceId:
+          type:
+          - string
+          - 'null'
+        batchSequenceName:
+          type:
+          - string
+          - 'null'
+        notifyOnCompletion:
+          type: boolean
+        properties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StringNamedProperty'
+        parentBranchBaselineSavedBefore:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        buildId:
+          type:
+          - string
+          - 'null'
+        contextCreatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        executionReports:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isOfflineExecution:
+          type: boolean
+        hasLocalChanges:
+          type: boolean
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    TestJsonBatchInfoRequest:
+      type: object
+      properties:
+        batchInfo:
+          $ref: '#/components/schemas/BatchInfo'
+      additionalProperties: false
+    AccountMember:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        isViewer:
+          type: boolean
+        isAdmin:
+          type: boolean
+      additionalProperties: false
+    TestJsonRequest:
+      type: object
+      properties:
+        members_:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccountMember'
+        someString:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

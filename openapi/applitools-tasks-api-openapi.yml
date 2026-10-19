@@ -1,0 +1,92 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Tasks API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Tasks
+paths:
+  /api/Tasks/{TaskId}/status:
+    get:
+      tags:
+      - Tasks
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetTaskStatus'
+      - name: TaskId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api tasks by task id status
+      x-summary-source: derived
+      operationId: getApiTasksByTaskIdStatus
+      x-operation-id-source: derived
+  /api/Tasks/{TaskId}/result:
+    get:
+      tags:
+      - Tasks
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetTaskResult'
+      - name: TaskId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api tasks by task id result
+      x-summary-source: derived
+      operationId: getApiTasksByTaskIdResult
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Tasks
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetTaskResult'
+      - name: TaskId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api tasks by task id result
+      x-summary-source: derived
+      operationId: deleteApiTasksByTaskIdResult
+      x-operation-id-source: derived
+components:
+  schemas:
+    GetTaskStatus:
+      type: object
+      properties:
+        taskId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetTaskResult:
+      type: object
+      properties:
+        taskId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

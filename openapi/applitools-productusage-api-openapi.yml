@@ -1,0 +1,244 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Product Usage API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: ProductUsage
+paths:
+  /api/product-usage/track:
+    post:
+      tags:
+      - ProductUsage
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ReportTrack'
+      responses:
+        '200':
+          description: OK
+      summary: Create api product usage track
+      x-summary-source: derived
+      operationId: postApiProductUsageTrack
+      x-operation-id-source: derived
+  /api/product-usage/page:
+    post:
+      tags:
+      - ProductUsage
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ReportPage'
+      responses:
+        '200':
+          description: OK
+      summary: Create api product usage page
+      x-summary-source: derived
+      operationId: postApiProductUsagePage
+      x-operation-id-source: derived
+  /api/product-usage/identify:
+    post:
+      tags:
+      - ProductUsage
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ReportIdentify'
+      responses:
+        '200':
+          description: OK
+      summary: Create api product usage identify
+      x-summary-source: derived
+      operationId: postApiProductUsageIdentify
+      x-operation-id-source: derived
+  /api/product-usage/group:
+    post:
+      tags:
+      - ProductUsage
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ReportGroup'
+      responses:
+        '200':
+          description: OK
+      summary: Create api product usage group
+      x-summary-source: derived
+      operationId: postApiProductUsageGroup
+      x-operation-id-source: derived
+  /api/product-usage/alias:
+    post:
+      tags:
+      - ProductUsage
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ReportAlias'
+      responses:
+        '200':
+          description: OK
+      summary: Create api product usage alias
+      x-summary-source: derived
+      operationId: postApiProductUsageAlias
+      x-operation-id-source: derived
+components:
+  schemas:
+    ReportPage:
+      type: object
+      properties:
+        source:
+          type:
+          - string
+          - 'null'
+        anonymousId:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        context:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+        name:
+          type:
+          - string
+          - 'null'
+        category:
+          type:
+          - string
+          - 'null'
+        properties:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    ReportIdentify:
+      type: object
+      properties:
+        source:
+          type:
+          - string
+          - 'null'
+        anonymousId:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        context:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+        traits:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    ReportTrack:
+      type: object
+      properties:
+        source:
+          type:
+          - string
+          - 'null'
+        anonymousId:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        context:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+        event:
+          type:
+          - string
+          - 'null'
+        properties:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    ReportGroup:
+      type: object
+      properties:
+        source:
+          type:
+          - string
+          - 'null'
+        anonymousId:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        context:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+        groupId:
+          type:
+          - string
+          - 'null'
+        traits:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    ReportAlias:
+      type: object
+      properties:
+        source:
+          type:
+          - string
+          - 'null'
+        anonymousId:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        context:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+        previousId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

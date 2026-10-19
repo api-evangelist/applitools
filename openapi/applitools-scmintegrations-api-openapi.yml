@@ -1,0 +1,123 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Scm Integrations API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: ScmIntegrations
+paths:
+  /api/scm-integrations/batches/{BatchPointerId}/update-if-scm:
+    post:
+      tags:
+      - ScmIntegrations
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateBatchPointerOnScmRequest'
+      - name: BatchPointerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UpdateBatchPointerResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateBatchPointerResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UpdateBatchPointerResponse'
+      summary: Create api scm integrations batches by batch pointer id update if scm
+      x-summary-source: derived
+      operationId: postApiScmIntegrationsBatchesByBatchPointerIdUpdateIfScm
+      x-operation-id-source: derived
+components:
+  schemas:
+    UpdateBatchPointerResponse:
+      type: object
+      properties:
+        batchName:
+          type:
+          - string
+          - 'null'
+        batchSequenceName:
+          type:
+          - string
+          - 'null'
+        branchName:
+          type:
+          - string
+          - 'null'
+        scmSourceBranch:
+          type:
+          - string
+          - 'null'
+        parentBranchName:
+          type:
+          - string
+          - 'null'
+        scmTargetBranch:
+          type:
+          - string
+          - 'null'
+        baselineBranchName:
+          type:
+          - string
+          - 'null'
+        parentBranchBaselineSavedBefore:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        storedBatchInfoId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateBatchPointerOnScmRequest:
+      type: object
+      properties:
+        commitSha:
+          type:
+          - string
+          - 'null'
+        buildId:
+          type:
+          - string
+          - 'null'
+        repoOwner:
+          type:
+          - string
+          - 'null'
+        repoName:
+          type:
+          - string
+          - 'null'
+        branchName:
+          type:
+          - string
+          - 'null'
+        parentBranchName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

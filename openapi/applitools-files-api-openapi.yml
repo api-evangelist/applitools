@@ -1,0 +1,324 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Files API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Files
+paths:
+  /api/admin/orgs/{OrgId}/accounts/{AccountId}/sdk-logs:
+    get:
+      tags:
+      - Files
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListSdkLogs'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ListSdkLogsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSdkLogsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ListSdkLogsResult'
+      summary: Get api admin orgs by org id accounts by account id sdk logs
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsByAccountIdSdkLogs
+      x-operation-id-source: derived
+  /api/admin/orgs/{OrgId}/accounts/{AccountId}/sdk-logs/{BatchId}:
+    get:
+      tags:
+      - Files
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetSdkLog'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: BatchId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api admin orgs by org id accounts by account id sdk logs by batch id
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsByAccountIdSdkLogsByBatchId
+      x-operation-id-source: derived
+  /api/admin/orgs/{OrgId}/accounts/{AccountId}/uploaded-files:
+    get:
+      tags:
+      - Files
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListUploadedFiles'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ListUploadedFilesResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUploadedFilesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ListUploadedFilesResult'
+      summary: Get api admin orgs by org id accounts by account id uploaded files
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsByAccountIdUploadedFiles
+      x-operation-id-source: derived
+  /api/admin/orgs/{OrgId}/accounts/{AccountId}/uploaded-files/{FileName}:
+    get:
+      tags:
+      - Files
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUploadedFile'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: FileName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api admin orgs by org id accounts by account id uploaded files by file name
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsByAccountIdUploadedFilesByFileName
+      x-operation-id-source: derived
+  /api/admin/file:
+    post:
+      tags:
+      - Files
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UploadFile'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+      summary: Create api admin file
+      x-summary-source: derived
+      operationId: postApiAdminFile
+      x-operation-id-source: derived
+components:
+  schemas:
+    UploadFile:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ListUploadedFiles:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        from:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        to:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        limit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    ListSdkLogsResult:
+      type: object
+      properties:
+        files:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SdkLogFile'
+        truncated:
+          type: boolean
+      additionalProperties: false
+    GetSdkLog:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        batchId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SdkLogFile:
+      type: object
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        sizeBytes:
+          type: integer
+          format: int64
+        lastModified:
+          type: string
+          format: date-time
+      additionalProperties: false
+    ListUploadedFilesResult:
+      type: object
+      properties:
+        files:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/UploadedFile'
+        truncated:
+          type: boolean
+      additionalProperties: false
+    GetUploadedFile:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ListSdkLogs:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        from:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        to:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        limit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    UploadedFile:
+      type: object
+      properties:
+        fileName:
+          type:
+          - string
+          - 'null'
+        sizeBytes:
+          type: integer
+          format: int64
+        lastModified:
+          type: string
+          format: date-time
+      additionalProperties: false

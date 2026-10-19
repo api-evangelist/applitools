@@ -1,0 +1,169 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Activities API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Activities
+paths:
+  /api/Activities/query/usage:
+    post:
+      tags:
+      - Activities
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUsageActivities'
+      responses:
+        '200':
+          description: OK
+      summary: Create api activities query usage
+      x-summary-source: derived
+      operationId: postApiActivitiesQueryUsage
+      x-operation-id-source: derived
+  /api/Activities/query:
+    post:
+      tags:
+      - Activities
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetActivities'
+      responses:
+        '200':
+          description: OK
+      summary: Create api activities query
+      x-summary-source: derived
+      operationId: postApiActivitiesQuery
+      x-operation-id-source: derived
+  /api/Activities/query/usage/detailedreport:
+    post:
+      tags:
+      - Activities
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUsageActivitiesDetailed'
+      responses:
+        '200':
+          description: OK
+      summary: Create api activities query usage detailedreport
+      x-summary-source: derived
+      operationId: postApiActivitiesQueryUsageDetailedreport
+      x-operation-id-source: derived
+components:
+  schemas:
+    ActivityQueryRead:
+      type: object
+      properties:
+        activities:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        after:
+          type:
+          - string
+          - 'null'
+        before:
+          type:
+          - string
+          - 'null'
+        limit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        next:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    JToken:
+      type: array
+      items:
+        $ref: '#/components/schemas/JToken'
+    ActivityQueryFrom:
+      type: object
+      properties:
+        orgs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        accounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    GetUsageActivities:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/ActivityQueryFrom'
+        read:
+          $ref: '#/components/schemas/ActivityQueryRead'
+        deduce:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/JToken'
+        debug:
+          type: boolean
+      additionalProperties: false
+    GetActivities:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/ActivityQueryFrom'
+        read:
+          $ref: '#/components/schemas/ActivityQueryRead'
+        deduce:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/JToken'
+      additionalProperties: false
+    GetUsageActivitiesDetailed:
+      type: object
+      properties:
+        orgs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        accounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        after:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        before:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

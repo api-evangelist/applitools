@@ -1,0 +1,3557 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Baselines API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Baselines
+paths:
+  /api/Baselines/copy:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CopyBaselines'
+      responses:
+        '200':
+          description: OK
+      summary: Create api baselines copy
+      x-summary-source: derived
+      operationId: postApiBaselinesCopy
+      x-operation-id-source: derived
+  /api/Baselines/{BaselineId}:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaseline'
+      - name: BaselineId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+      summary: Get api baselines by baseline id
+      x-summary-source: derived
+      operationId: getApiBaselinesByBaselineId
+      x-operation-id-source: derived
+  /api/Baselines/{BaselineId}/{BaselineRev}:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaseline'
+      - name: BaselineId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: BaselineRev
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+      summary: Get api baselines by baseline id by baseline rev
+      x-summary-source: derived
+      operationId: getApiBaselinesByBaselineIdByBaselineRev
+      x-operation-id-source: derived
+  /api/Baselines/{BaselineId}/images/{ImageId}:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselineImage'
+      - name: BaselineId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+      summary: Get api baselines by baseline id images by image id
+      x-summary-source: derived
+      operationId: getApiBaselinesByBaselineIdImagesByImageId
+      x-operation-id-source: derived
+  /api/Baselines/{BaselineId}/{BaselineRev}/images/{ImageId}:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselineImage'
+      - name: BaselineId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: BaselineRev
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ImageId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+      summary: Get api baselines by baseline id by baseline rev images by image id
+      x-summary-source: derived
+      operationId: getApiBaselinesByBaselineIdByBaselineRevImagesByImageId
+      x-operation-id-source: derived
+  /api/Baselines/steps/matched:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselineStepsLastMatchedAt'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaselineStepsTime'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaselineStepsTime'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaselineStepsTime'
+      summary: Get api baselines steps matched
+      x-summary-source: derived
+      operationId: getApiBaselinesStepsMatched
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselineStepsLastMatchedAt'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaselineStepsTime'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaselineStepsTime'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaselineStepsTime'
+      summary: Create api baselines steps matched
+      x-summary-source: derived
+      operationId: postApiBaselinesStepsMatched
+      x-operation-id-source: derived
+  /api/Baselines:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselines'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Baseline'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Baseline'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Baseline'
+      summary: Get api baselines
+      x-summary-source: derived
+      operationId: getApiBaselines
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselines'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Baseline'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Baseline'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Baseline'
+      summary: Create api baselines
+      x-summary-source: derived
+      operationId: postApiBaselines
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteBaselines'
+      responses:
+        '200':
+          description: OK
+      summary: Delete api baselines
+      x-summary-source: derived
+      operationId: deleteApiBaselines
+      x-operation-id-source: derived
+  /api/Baselines/query:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselinesQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesResult'
+      summary: Get api baselines query
+      x-summary-source: derived
+      operationId: getApiBaselinesQuery
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselinesQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesResult'
+      summary: Create api baselines query
+      x-summary-source: derived
+      operationId: postApiBaselinesQuery
+      x-operation-id-source: derived
+  /api/Baselines/{Id}/history:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBaselineHistory'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetBaselineHistoryResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselineHistoryResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselineHistoryResult'
+      summary: Get api baselines by id history
+      x-summary-source: derived
+      operationId: getApiBaselinesByIdHistory
+      x-operation-id-source: derived
+  /api/Baselines/compare:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CompareBaselines'
+      responses:
+        '200':
+          description: OK
+      summary: Create api baselines compare
+      x-summary-source: derived
+      operationId: postApiBaselinesCompare
+      x-operation-id-source: derived
+  /api/Baselines/mergeactions:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateBaselineMergeActions'
+      responses:
+        '200':
+          description: OK
+      summary: Create api baselines mergeactions
+      x-summary-source: derived
+      operationId: postApiBaselinesMergeactions
+      x-operation-id-source: derived
+  /api/Baselines/{Id}/steps:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateBaselineSteps'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+      summary: Create api baselines by id steps
+      x-summary-source: derived
+      operationId: postApiBaselinesByIdSteps
+      x-operation-id-source: derived
+  /api/Baselines/{Id}/{Rev}/restore:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RestoreBaselineRequest'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Rev
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+      summary: Create api baselines by id by rev restore
+      x-summary-source: derived
+      operationId: postApiBaselinesByIdByRevRestore
+      x-operation-id-source: derived
+  /api/Baselines/{Id}/{Rev}/revert:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RestoreBaselineRequest'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Rev
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Baseline'
+      summary: Create api baselines by id by rev revert
+      x-summary-source: derived
+      operationId: postApiBaselinesByIdByRevRevert
+      x-operation-id-source: derived
+  /api/Baselines/apps:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetApps'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/App'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/App'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/App'
+      summary: Get api baselines apps
+      x-summary-source: derived
+      operationId: getApiBaselinesApps
+      x-operation-id-source: derived
+  /api/Baselines/apps/names:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAppNames'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+            text/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+      summary: Create api baselines apps names
+      x-summary-source: derived
+      operationId: postApiBaselinesAppsNames
+      x-operation-id-source: derived
+  /api/Baselines/apps/query:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAppsQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAppsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAppsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAppsResult'
+      summary: Get api baselines apps query
+      x-summary-source: derived
+      operationId: getApiBaselinesAppsQuery
+      x-operation-id-source: derived
+  /api/Baselines/apps/{Id}:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetApp'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/App'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/App'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/App'
+      summary: Get api baselines apps by id
+      x-summary-source: derived
+      operationId: getApiBaselinesAppsById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateApp'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api baselines apps by id
+      x-summary-source: derived
+      operationId: putApiBaselinesAppsById
+      x-operation-id-source: derived
+  /api/Baselines/envs:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetEnvs'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoredEnv'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoredEnv'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoredEnv'
+      summary: Get api baselines envs
+      x-summary-source: derived
+      operationId: getApiBaselinesEnvs
+      x-operation-id-source: derived
+  /api/Baselines/envs/query:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetEnvsQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetEnvsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEnvsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetEnvsResult'
+      summary: Get api baselines envs query
+      x-summary-source: derived
+      operationId: getApiBaselinesEnvsQuery
+      x-operation-id-source: derived
+  /api/Baselines/envs/{Id}:
+    put:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateEnv'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api baselines envs by id
+      x-summary-source: derived
+      operationId: putApiBaselinesEnvsById
+      x-operation-id-source: derived
+  /api/Baselines/envs/names:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetEnvNames'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetEnvNamesResultItem'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetEnvNamesResultItem'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetEnvNamesResultItem'
+      summary: Get api baselines envs names
+      x-summary-source: derived
+      operationId: getApiBaselinesEnvsNames
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateEnvName'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api baselines envs names
+      x-summary-source: derived
+      operationId: putApiBaselinesEnvsNames
+      x-operation-id-source: derived
+  /api/Baselines/branches/merge:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/MergeBranches'
+      responses:
+        '200':
+          description: OK
+      summary: Create api baselines branches merge
+      x-summary-source: derived
+      operationId: postApiBaselinesBranchesMerge
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateMergeBranches'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api baselines branches merge
+      x-summary-source: derived
+      operationId: putApiBaselinesBranchesMerge
+      x-operation-id-source: derived
+  /api/Baselines/branches:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBranches'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Branch'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Branch'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Branch'
+      summary: Get api baselines branches
+      x-summary-source: derived
+      operationId: getApiBaselinesBranches
+      x-operation-id-source: derived
+  /api/Baselines/branches/query:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBranchesQuery'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetBranchesResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBranchesResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetBranchesResult'
+      summary: Get api baselines branches query
+      x-summary-source: derived
+      operationId: getApiBaselinesBranchesQuery
+      x-operation-id-source: derived
+  /api/Baselines/branches/{Id}:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetBranch'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Branch'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Branch'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Branch'
+      summary: Get api baselines branches by id
+      x-summary-source: derived
+      operationId: getApiBaselinesBranchesById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateBranch'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api baselines branches by id
+      x-summary-source: derived
+      operationId: putApiBaselinesBranchesById
+      x-operation-id-source: derived
+  /api/Baselines/apps/{AppId}/scenarios:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetScenarios'
+      - name: AppId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Scenario'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Scenario'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Scenario'
+      summary: Get api baselines apps by app id scenarios
+      x-summary-source: derived
+      operationId: getApiBaselinesAppsByAppIdScenarios
+      x-operation-id-source: derived
+  /api/Baselines/scenarios/names:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetScenarioNames'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+            text/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+      summary: Create api baselines scenarios names
+      x-summary-source: derived
+      operationId: postApiBaselinesScenariosNames
+      x-operation-id-source: derived
+  /api/Baselines/apps/{AppId}/scenarios/query:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetScenariosQuery'
+      - name: AppId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetScenariosResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetScenariosResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetScenariosResult'
+      summary: Get api baselines apps by app id scenarios query
+      x-summary-source: derived
+      operationId: getApiBaselinesAppsByAppIdScenariosQuery
+      x-operation-id-source: derived
+  /api/Baselines/scenarios/{Id}:
+    get:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetScenario'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Scenario'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Scenario'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Scenario'
+      summary: Get api baselines scenarios by id
+      x-summary-source: derived
+      operationId: getApiBaselinesScenariosById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateScenario'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api baselines scenarios by id
+      x-summary-source: derived
+      operationId: putApiBaselinesScenariosById
+      x-operation-id-source: derived
+  /api/Baselines/scenarios/{AppId}/{Id}:
+    put:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateScenario'
+      - name: AppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api baselines scenarios by app id by id
+      x-summary-source: derived
+      operationId: putApiBaselinesScenariosByAppIdById
+      x-operation-id-source: derived
+  /api/Baselines/apps/{AppId}/scenarios/rename:
+    post:
+      tags:
+      - Baselines
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/BulkRenameScenarios'
+      - name: AppId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BulkRenameScenariosResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkRenameScenariosResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BulkRenameScenariosResult'
+      summary: Create api baselines apps by app id scenarios rename
+      x-summary-source: derived
+      operationId: postApiBaselinesAppsByAppIdScenariosRename
+      x-operation-id-source: derived
+components:
+  schemas:
+    FloatingRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        maxLeftOffset:
+          type: integer
+          format: int32
+        maxRightOffset:
+          type: integer
+          format: int32
+        maxUpOffset:
+          type: integer
+          format: int32
+        maxDownOffset:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UpdateScenario:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        displayName:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        updateInfo:
+          $ref: '#/components/schemas/BaselineUpdateInfo'
+        runInfo:
+          $ref: '#/components/schemas/SessionRunInfo'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SessionAppOutputResolution:
+      type: object
+      properties:
+        sessionDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        isChanged:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    UpdateBaselineSteps:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        steps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExpectedStepOutput'
+      additionalProperties: false
+    ImageInfo:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        domId:
+          type:
+          - string
+          - 'null'
+        domMappingId:
+          type:
+          - string
+          - 'null'
+        axTreeBlobId:
+          type:
+          - string
+          - 'null'
+        axTreePageNo:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        size:
+          $ref: '#/components/schemas/RectangleSize'
+        viewport:
+          $ref: '#/components/schemas/RectangleSize'
+        hasDom:
+          type: boolean
+        location:
+          $ref: '#/components/schemas/Location'
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        isMissing:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    InlineDynamicTextPattern:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        regex:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Point:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CrossEnvSourceBaselineStepInfo:
+      type: object
+      properties:
+        modelId:
+          type:
+          - string
+          - 'null'
+        stepState:
+          type:
+          - string
+          - 'null'
+        variantId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Baseline:
+      type: object
+      properties:
+        displayName:
+          type:
+          - string
+          - 'null'
+        secretToken:
+          type:
+          - string
+          - 'null'
+        scenarioId:
+          type:
+          - string
+          - 'null'
+        scenarioName:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        baselineModelId:
+          type:
+          - string
+          - 'null'
+        baselineEnvId:
+          type:
+          - string
+          - 'null'
+        baselineEnv:
+          $ref: '#/components/schemas/Env'
+        appName:
+          type:
+          - string
+          - 'null'
+        baselineBranchName:
+          type:
+          - string
+          - 'null'
+        branchResolutionInfoList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BranchResolutionInfo'
+        isNew:
+          type: boolean
+        id:
+          type:
+          - string
+          - 'null'
+        refState:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        rev:
+          type:
+          - string
+          - 'null'
+        expectedOutput:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExpectedStepOutput'
+        updateInfo:
+          $ref: '#/components/schemas/BaselineUpdateInfo'
+        runInfo:
+          $ref: '#/components/schemas/SessionRunInfo'
+        mergeAction:
+          $ref: '#/components/schemas/MergeAction'
+        archivedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        resolution:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StepOutputResolution'
+        baselineMergeInfo:
+          $ref: '#/components/schemas/BaselineMergeInfo'
+        commitTimetamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        commitSha:
+          type:
+          - string
+          - 'null'
+        sessionMergeBaseTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sessionExpectedOutput:
+          $ref: '#/components/schemas/SessionExpectedAppOutput'
+        sessionResolution:
+          $ref: '#/components/schemas/SessionAppOutputResolution'
+        taggedImages:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        legacyLastUpdated:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        legacyLastUpdatedBy:
+          type:
+          - string
+          - 'null'
+        legacyBaseRev:
+          type:
+          - string
+          - 'null'
+        legacyRevId:
+          type:
+          - string
+          - 'null'
+        sourceService:
+          type:
+          - string
+          - 'null'
+        isAutoAcceptedInfraUpgrade:
+          type: boolean
+      additionalProperties: false
+    GetBaselines:
+      type: object
+      properties:
+        appId:
+          type:
+          - string
+          - 'null'
+        branchIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        scenarioIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        limit:
+          type: integer
+          format: int32
+        where:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StepChangeInfo:
+      type: object
+      properties:
+        user:
+          type:
+          - string
+          - 'null'
+        sessionId:
+          type:
+          - string
+          - 'null'
+        time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    AccessibilityElementType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      type: integer
+      format: int32
+    RectangleSize:
+      type: object
+      properties:
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BranchResolutionInfo:
+      type: object
+      properties:
+        branchName:
+          type:
+          - string
+          - 'null'
+        latestViableTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    BulkRenameScenarioStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      type: integer
+      format: int32
+    ScenarioNameMapping:
+      type: object
+      properties:
+        oldName:
+          type:
+          - string
+          - 'null'
+        newName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Rectangle:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        left:
+          type: integer
+          format: int32
+          readOnly: true
+        top:
+          type: integer
+          format: int32
+          readOnly: true
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        isEmpty:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    DeleteBaselines:
+      type: object
+      properties:
+        ids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    ExternalRegionId:
+      type: object
+      properties:
+        target:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetEnvNames:
+      type: object
+      additionalProperties: false
+    GetBaselinesResult:
+      type: object
+      properties:
+        baselines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Baseline'
+        continueAfter:
+          $ref: '#/components/schemas/Baseline'
+      additionalProperties: false
+    GetBaselinesQuery:
+      type: object
+      properties:
+        limit:
+          type: integer
+          format: int32
+        range:
+          type:
+          - string
+          - 'null'
+        where:
+          type:
+          - string
+          - 'null'
+        branchId:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        scenarioId:
+          type:
+          - string
+          - 'null'
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ExpectedStepOutput:
+      type: object
+      properties:
+        tag:
+          type:
+          - string
+          - 'null'
+        image:
+          $ref: '#/components/schemas/ImageInfo'
+        thumbprint:
+          $ref: '#/components/schemas/ImageInfo'
+        occurredAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastMatchedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedBy:
+          type:
+          - string
+          - 'null'
+        lastUpdatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastAccept:
+          $ref: '#/components/schemas/StepChangeInfo'
+        lastReject:
+          $ref: '#/components/schemas/StepChangeInfo'
+        createdAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        renderId:
+          type:
+          - string
+          - 'null'
+        annotations:
+          $ref: '#/components/schemas/ImageAnnotations'
+        identifiedRegions:
+          $ref: '#/components/schemas/IdentifiedCodedRegions'
+        defaultMatchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+        refState:
+          type:
+          - string
+          - 'null'
+        refStateEq:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        env:
+          $ref: '#/components/schemas/Env'
+        variantId:
+          type:
+          - string
+          - 'null'
+        variantName:
+          type:
+          - string
+          - 'null'
+        nextVariant:
+          $ref: '#/components/schemas/ExpectedStepOutput'
+        crossEnvInfo:
+          $ref: '#/components/schemas/CrossEnvSourceBaselineStepInfo'
+        isRejected:
+          type: boolean
+        matchingRejected:
+          type: boolean
+        lastRejectedOutput:
+          $ref: '#/components/schemas/ExpectedStepOutput'
+        branchRejections:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/PerBranchRejectionInfo'
+        stepDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        hasMatchRegionsDefined:
+          type: boolean
+          readOnly: true
+        legacyAppEnvironment:
+          $ref: '#/components/schemas/Env'
+        legacyMatchSettings:
+          $ref: '#/components/schemas/ImageAnnotations'
+      additionalProperties: false
+    GetBranchesResult:
+      type: object
+      properties:
+        branches:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Branch'
+        skipTo:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ImageRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+      additionalProperties: false
+    GetEnvNamesResultItem:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DynamicMutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+      additionalProperties: false
+    Size:
+      type: object
+      properties:
+        isEmpty:
+          type: boolean
+          readOnly: true
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+      additionalProperties: false
+    GetAppsQuery:
+      type: object
+      properties:
+        limit:
+          type: integer
+          format: int32
+        skipTo:
+          type:
+          - string
+          - 'null'
+        isPartialName:
+          type:
+          - string
+          - 'null'
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateBaselineMergeActions:
+      type: object
+      properties:
+        updates:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MergeActionUpdate'
+      additionalProperties: false
+    GetBranches:
+      type: object
+      additionalProperties: false
+    UpdateBranch:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        scmBranchName:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        updateInfo:
+          $ref: '#/components/schemas/BaselineUpdateInfo'
+      additionalProperties: false
+    AccessibilityRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+        type:
+          $ref: '#/components/schemas/AccessibilityElementType'
+      additionalProperties: false
+    GetBaselineStepsLastMatchedAt:
+      type: object
+      properties:
+        baselineSteps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BaselineStepsTime'
+      additionalProperties: false
+    CompareBaselines:
+      type: object
+      properties:
+        baseline1:
+          $ref: '#/components/schemas/BaselineIdRev'
+        baseline2:
+          $ref: '#/components/schemas/BaselineIdRev'
+        matchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+      additionalProperties: false
+    GetScenarios:
+      type: object
+      properties:
+        appId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    IdentifiedCodedRegions:
+      type: object
+      properties:
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MutableRegion'
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FloatingRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DynamicMutableRegion'
+      additionalProperties: false
+    MutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+      additionalProperties: false
+    GetApps:
+      type: object
+      properties:
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateMergeBranches:
+      type: object
+      properties:
+        sourceBranch:
+          type:
+          - string
+          - 'null'
+        targetBranch:
+          type:
+          - string
+          - 'null'
+        context:
+          type:
+          - string
+          - 'null'
+        changes:
+          type: integer
+          format: int32
+        conflicts:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UpdateEnvName:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        envId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MergeAction:
+      type: object
+      properties:
+        targetState:
+          type:
+          - string
+          - 'null'
+        merge:
+          type: boolean
+      additionalProperties: false
+    BaselineIdRev:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        rev:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        legacyRevId:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+      additionalProperties: false
+    MergeBranches:
+      type: object
+      properties:
+        sourceBranch:
+          type:
+          - string
+          - 'null'
+        targetBranch:
+          type:
+          - string
+          - 'null'
+        onlyCheck:
+          type: boolean
+        context:
+          type:
+          - string
+          - 'null'
+        gitMergeTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    StoredEnv:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        os:
+          type:
+          - string
+          - 'null'
+        hostingApp:
+          type:
+          - string
+          - 'null'
+        displaySize:
+          $ref: '#/components/schemas/RectangleSize'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    PerBranchRejectionInfo:
+      type: object
+      properties:
+        isRejected:
+          type: boolean
+        lastRejectedOutput:
+          $ref: '#/components/schemas/ExpectedStepOutput'
+      additionalProperties: false
+    GetBaseline:
+      type: object
+      properties:
+        baselineId:
+          type:
+          - string
+          - 'null'
+        baselineRev:
+          type:
+          - string
+          - 'null'
+        accessToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetScenario:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StepVariantsTime:
+      type: object
+      properties:
+        index:
+          type: integer
+          format: int32
+        variants:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/VariantTime'
+      additionalProperties: false
+    CopyBaselines:
+      type: object
+      properties:
+        sourceBranch:
+          type:
+          - string
+          - 'null'
+        targetBranch:
+          type:
+          - string
+          - 'null'
+        baselineIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    Location:
+      type: object
+      properties:
+        x:
+          type: integer
+          format: int32
+        y:
+          type: integer
+          format: int32
+      additionalProperties: false
+    SessionStatus:
+      enum:
+      - 0
+      - 1
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    BulkRenameScenarios:
+      type: object
+      properties:
+        appId:
+          type:
+          - string
+          - 'null'
+        mappings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ScenarioNameMapping'
+        dryRun:
+          type: boolean
+      additionalProperties: false
+    UpdateEnv:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        os:
+          type:
+          - string
+          - 'null'
+        hostingApp:
+          type:
+          - string
+          - 'null'
+        displaySize:
+          $ref: '#/components/schemas/RectangleSize'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    GetBranchesQuery:
+      type: object
+      properties:
+        limit:
+          type: integer
+          format: int32
+        skipTo:
+          type:
+          - string
+          - 'null'
+        isPartialName:
+          type:
+          - string
+          - 'null'
+        isName:
+          type:
+          - string
+          - 'null'
+        partialNameIsPrefixOnly:
+          type: boolean
+      additionalProperties: false
+    GetEnvsQuery:
+      type: object
+      properties:
+        limit:
+          type: integer
+          format: int32
+        skipTo:
+          type:
+          - string
+          - 'null'
+        isPartialOs:
+          type:
+          - string
+          - 'null'
+        isPartialBrowser:
+          type:
+          - string
+          - 'null'
+        isPartialViewport:
+          type:
+          - string
+          - 'null'
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SessionId:
+      type: object
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    App:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    SessionRunInfo:
+      type: object
+      properties:
+        last:
+          $ref: '#/components/schemas/SessionId'
+        lastAt:
+          type: string
+          format: date-time
+        total:
+          type: integer
+          format: int32
+        lastRunStatus:
+          $ref: '#/components/schemas/SessionStatus'
+      additionalProperties: false
+    ImageAnnotations:
+      type: object
+      properties:
+        floating:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageFloatingRegion'
+        ignore:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        strict:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        content:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        layout:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        remarks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        mismatching:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageRegion'
+        dynamic:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageDynamicMutableRegion'
+        accessibility:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AccessibilityRegion'
+      additionalProperties: false
+    ImageDynamicMutableRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+      additionalProperties: false
+    BaselineUpdateInfo:
+      type: object
+      properties:
+        by:
+          type:
+          - string
+          - 'null'
+        at:
+          type: string
+          format: date-time
+        session:
+          $ref: '#/components/schemas/SessionId'
+        sessionBatchPointerId:
+          type:
+          - string
+          - 'null'
+        resolution:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StepOutputResolution'
+        baselineChangeType:
+          $ref: '#/components/schemas/BaselineChangeType'
+      additionalProperties: false
+    GetBaselineHistory:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        count:
+          type: integer
+          format: int32
+        limit:
+          type:
+          - string
+          - 'null'
+        savedBy:
+          type:
+          - string
+          - 'null'
+        savedBefore:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        savedAfter:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        startWithLatestEnvVersion:
+          type:
+          - boolean
+          - 'null'
+        fallbackToPreviousEnvVersions:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    BaselineChangeType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    GetApp:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DiffDescription:
+      type: object
+      properties:
+        baselineValue:
+          type:
+          - string
+          - 'null'
+        checkpointValue:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/DiffCategory'
+      additionalProperties: false
+    GetAppsResult:
+      type: object
+      properties:
+        apps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/App'
+        skipTo:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetBranch:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetBaselineHistoryResult:
+      type: object
+      properties:
+        baselines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Baseline'
+        continueAfter:
+          $ref: '#/components/schemas/Baseline'
+      additionalProperties: false
+    Env:
+      type: object
+      properties:
+        inferred:
+          type:
+          - string
+          - 'null'
+        os:
+          type:
+          - string
+          - 'null'
+        hostingApp:
+          type:
+          - string
+          - 'null'
+        displaySize:
+          $ref: '#/components/schemas/RectangleSize'
+        hostingAppInfo:
+          type:
+          - string
+          - 'null'
+        osInfo:
+          type:
+          - string
+          - 'null'
+        deviceInfo:
+          type:
+          - string
+          - 'null'
+        ufgJobType:
+          type:
+          - string
+          - 'null'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        renderer:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateApp:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    GetEnvsResult:
+      type: object
+      properties:
+        envs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StoredEnv'
+        skipTo:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ServerDynamicMatchLevelSettings:
+      type: object
+      properties:
+        ignorePatterns:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        customPatterns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/InlineDynamicTextPattern'
+      additionalProperties: false
+    ImageFloatingRegion:
+      type: object
+      properties:
+        left:
+          type: integer
+          format: int32
+        top:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        regionId:
+          type:
+          - string
+          - 'null'
+        paddingLeft:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingTop:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingRight:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        paddingBottom:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        domSelector:
+          type:
+          - string
+          - 'null'
+        diffDescriptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DiffDescription'
+        right:
+          type: integer
+          format: int32
+          readOnly: true
+        bottom:
+          type: integer
+          format: int32
+          readOnly: true
+        location:
+          $ref: '#/components/schemas/Point'
+        size:
+          $ref: '#/components/schemas/Size'
+        area:
+          type: integer
+          format: int32
+          readOnly: true
+        rectangle:
+          $ref: '#/components/schemas/Rectangle'
+        center:
+          $ref: '#/components/schemas/Location'
+        maxLeftOffset:
+          type: integer
+          format: int32
+        maxRightOffset:
+          type: integer
+          format: int32
+        maxUpOffset:
+          type: integer
+          format: int32
+        maxDownOffset:
+          type: integer
+          format: int32
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        caption:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        disableUntil:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        externalIds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExternalRegionId'
+      additionalProperties: false
+    ScmType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      format: int32
+    BulkRenameScenariosResult:
+      type: object
+      properties:
+        dryRun:
+          type: boolean
+        renamed:
+          type: integer
+          format: int32
+        wouldRename:
+          type: integer
+          format: int32
+        sameName:
+          type: integer
+          format: int32
+        alreadyDone:
+          type: integer
+          format: int32
+        missing:
+          type: integer
+          format: int32
+        conflict:
+          type: integer
+          format: int32
+        malformed:
+          type: integer
+          format: int32
+        failed:
+          type: integer
+          format: int32
+        rows:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BulkRenameScenarioRow'
+      additionalProperties: false
+    GetScenariosQuery:
+      type: object
+      properties:
+        appId:
+          type:
+          - string
+          - 'null'
+        isPartialName:
+          type:
+          - string
+          - 'null'
+        limit:
+          type: integer
+          format: int32
+        skipTo:
+          type:
+          - string
+          - 'null'
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ImageMatchLevel:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      type: integer
+      format: int32
+    GetScenarioNames:
+      type: object
+      properties:
+        ids:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items:
+              type: string
+      additionalProperties: false
+    Scenario:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        appId:
+          type:
+          - string
+          - 'null'
+        displayName:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        updateInfo:
+          $ref: '#/components/schemas/BaselineUpdateInfo'
+        runInfo:
+          $ref: '#/components/schemas/SessionRunInfo'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RestoreBaselineRequest:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        rev:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SessionExpectedAppOutput:
+      type: object
+      properties:
+        sessionDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+      additionalProperties: false
+    DiffCategory:
+      enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 300
+      - 301
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 500
+      - 501
+      - 502
+      - 600
+      type: integer
+      format: int32
+    BaselineMergeInfo:
+      type: object
+      properties:
+        sourceBranch:
+          type:
+          - string
+          - 'null'
+        mergedAt:
+          type: string
+          format: date-time
+        mergedBy:
+          type:
+          - string
+          - 'null'
+        mergeCommitSha:
+          type:
+          - string
+          - 'null'
+        isFromScm:
+          type: boolean
+        scmType:
+          $ref: '#/components/schemas/ScmType'
+      additionalProperties: false
+    MergeActionUpdate:
+      type: object
+      properties:
+        targetState:
+          type:
+          - string
+          - 'null'
+        merge:
+          type:
+          - boolean
+          - 'null'
+        baselineId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    VariantTime:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    GetScenariosResult:
+      type: object
+      properties:
+        scenarios:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Scenario'
+        skipTo:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAppNames:
+      type: object
+      properties:
+        ids:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items:
+              type: string
+      additionalProperties: false
+    BulkRenameScenarioRow:
+      type: object
+      properties:
+        oldName:
+          type:
+          - string
+          - 'null'
+        newName:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/BulkRenameScenarioStatus'
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StepOutputResolution:
+      type: object
+      properties:
+        isStarred:
+          type: boolean
+        isChanged:
+          type: boolean
+        replaceExpected:
+          type:
+          - boolean
+          - 'null'
+        isAutoRejected:
+          type: boolean
+        legacyMatchSettings:
+          $ref: '#/components/schemas/ImageAnnotations'
+        annotations:
+          $ref: '#/components/schemas/ImageAnnotations'
+        removedAnnotations:
+          $ref: '#/components/schemas/ImageAnnotations'
+        variantId:
+          type:
+          - string
+          - 'null'
+        expectedVariantId:
+          type:
+          - string
+          - 'null'
+        variantName:
+          type:
+          - string
+          - 'null'
+        removeVariant:
+          type:
+          - boolean
+          - 'null'
+        removeOtherVariants:
+          type:
+          - boolean
+          - 'null'
+        lastUpdatedBy:
+          type:
+          - string
+          - 'null'
+        lastUpdatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastAccept:
+          $ref: '#/components/schemas/StepChangeInfo'
+        lastReject:
+          $ref: '#/components/schemas/StepChangeInfo'
+        nextVariant:
+          $ref: '#/components/schemas/StepOutputResolution'
+        stepDynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        isResolvedByAutomaintenance:
+          type: boolean
+        isManuallyRejected:
+          type: boolean
+        hasMatchRegionsDefined:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    Branch:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        scmBranchName:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        updateInfo:
+          $ref: '#/components/schemas/BaselineUpdateInfo'
+      additionalProperties: false
+    GetEnvs:
+      type: object
+      properties:
+        sourceService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BaselineStepsTime:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        rev:
+          type:
+          - string
+          - 'null'
+        steps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StepVariantsTime'
+      additionalProperties: false
+    GetBaselineImage:
+      type: object
+      properties:
+        baselineId:
+          type:
+          - string
+          - 'null'
+        baselineRev:
+          type:
+          - string
+          - 'null'
+        imageId:
+          type:
+          - string
+          - 'null'
+        accessToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

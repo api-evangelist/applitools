@@ -1,0 +1,74 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Summaries API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Summaries
+paths:
+  /api/summaries/sessions/self-healed/csv:
+    post:
+      tags:
+      - Summaries
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GetSelfHealedSessionsSummary'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetSelfHealedSessionsSummary'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetSelfHealedSessionsSummary'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetSelfHealedSessionsSummary'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+            text/json:
+              schema:
+                type: string
+                format: binary
+      summary: Create api summaries sessions self healed csv
+      x-summary-source: derived
+      operationId: postApiSummariesSessionsSelfHealedCsv
+      x-operation-id-source: derived
+components:
+  schemas:
+    SessionId:
+      type: object
+      properties:
+        batchId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetSelfHealedSessionsSummary:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionId'
+      additionalProperties: false

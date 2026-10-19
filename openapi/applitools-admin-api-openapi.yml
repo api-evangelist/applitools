@@ -1,0 +1,5244 @@
+openapi: 3.2.0
+info:
+  title: Applitools Eyes Admin API
+  description: Applitools Eyes APIs are not public might be changed at any point in time.
+  contact:
+    name: Applitools
+    url: https://applitools.com
+    email: supprt@applitools.com
+  version: v1
+tags:
+- name: Admin
+paths:
+  /api/Admin/config:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAdminConfig'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IssuedAccountsConfig'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IssuedAccountsConfig'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IssuedAccountsConfig'
+      summary: Get api admin config
+      x-summary-source: derived
+      operationId: getApiAdminConfig
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateAdminConfig'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin config
+      x-summary-source: derived
+      operationId: putApiAdminConfig
+      x-operation-id-source: derived
+  /api/Admin/settings:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateGlobalSettings'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin settings
+      x-summary-source: derived
+      operationId: putApiAdminSettings
+      x-operation-id-source: derived
+  /api/Admin/accountcontacts:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAccountContacts'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAccountContactsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountContactsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountContactsResult'
+      summary: Get api admin accountcontacts
+      x-summary-source: derived
+      operationId: getApiAdminAccountcontacts
+      x-operation-id-source: derived
+  /api/Admin/accountinfo:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAccountInfo'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAccountInfoResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountInfoResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountInfoResult'
+      summary: Get api admin accountinfo
+      x-summary-source: derived
+      operationId: getApiAdminAccountinfo
+      x-operation-id-source: derived
+  /api/Admin/usersettings:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUserSettings'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetUserSettingsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserSettingsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetUserSettingsResult'
+      summary: Get api admin usersettings
+      x-summary-source: derived
+      operationId: getApiAdminUsersettings
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateUserSettings'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin usersettings
+      x-summary-source: derived
+      operationId: putApiAdminUsersettings
+      x-operation-id-source: derived
+  /api/Admin/dynamic-text-patterns-settings:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetDynamicTextPatternsSettings'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DynamicTextPatternsSettings'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DynamicTextPatternsSettings'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DynamicTextPatternsSettings'
+      summary: Get api admin dynamic text patterns settings
+      x-summary-source: derived
+      operationId: getApiAdminDynamicTextPatternsSettings
+      x-operation-id-source: derived
+  /api/Admin/dynamic-text-custom-patterns:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateDynamicTextCustomPatterns'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin dynamic text custom patterns
+      x-summary-source: derived
+      operationId: putApiAdminDynamicTextCustomPatterns
+      x-operation-id-source: derived
+  /api/Admin/plg:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetPlgRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PlgData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlgData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PlgData'
+      summary: Get api admin plg
+      x-summary-source: derived
+      operationId: getApiAdminPlg
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdatePlgRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin plg
+      x-summary-source: derived
+      operationId: putApiAdminPlg
+      x-operation-id-source: derived
+  /api/Admin/access-denied-customization:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAccessDeniedCustomization'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAccessDeniedCustomizationResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccessDeniedCustomizationResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAccessDeniedCustomizationResult'
+      summary: Get api admin access denied customization
+      x-summary-source: derived
+      operationId: getApiAdminAccessDeniedCustomization
+      x-operation-id-source: derived
+  /api/Admin/request-access-customization:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRequestAccessCustomization'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetRequestAccessCustomizationResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRequestAccessCustomizationResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetRequestAccessCustomizationResult'
+      summary: Get api admin request access customization
+      x-summary-source: derived
+      operationId: getApiAdminRequestAccessCustomization
+      x-operation-id-source: derived
+  /api/Admin/update-consent:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateConsentMessageAcceptance'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin update consent
+      x-summary-source: derived
+      operationId: putApiAdminUpdateConsent
+      x-operation-id-source: derived
+  /api/Admin/auth/accounts:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUserInfo'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetUserInfoResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserInfoResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetUserInfoResult'
+      summary: Get api admin auth accounts
+      x-summary-source: derived
+      operationId: getApiAdminAuthAccounts
+      x-operation-id-source: derived
+  /api/Admin/userinfo:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUserInfo'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetUserInfoResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserInfoResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetUserInfoResult'
+      summary: Get api admin userinfo
+      x-summary-source: derived
+      operationId: getApiAdminUserinfo
+      x-operation-id-source: derived
+  /api/Admin/auth:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/Authorize'
+      responses:
+        '200':
+          description: OK
+      summary: Get api admin auth
+      x-summary-source: derived
+      operationId: getApiAdminAuth
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/Authorize'
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin auth
+      x-summary-source: derived
+      operationId: postApiAdminAuth
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/usage:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUsageReport'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UsageReport'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsageReport'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UsageReport'
+      summary: Get api admin orgs by org id usage
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdUsage
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/running-sessions:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetRunningSessionsReport'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get api admin orgs by org id running sessions
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdRunningSessions
+      x-operation-id-source: derived
+  /api/Admin/orgs:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddOrg'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Org'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Org'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Org'
+      summary: Create api admin orgs
+      x-summary-source: derived
+      operationId: postApiAdminOrgs
+      x-operation-id-source: derived
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetOrgs'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Org'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Org'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Org'
+      summary: Get api admin orgs
+      x-summary-source: derived
+      operationId: getApiAdminOrgs
+      x-operation-id-source: derived
+  /api/Admin/orgs/provision:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ProvisionOrg'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProvisionOrgResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProvisionOrgResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProvisionOrgResult'
+      summary: Create api admin orgs provision
+      x-summary-source: derived
+      operationId: postApiAdminOrgsProvision
+      x-operation-id-source: derived
+  /api/Admin/orgs/page:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetOrgsPage'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetOrgsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrgsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetOrgsResult'
+      summary: Get api admin orgs page
+      x-summary-source: derived
+      operationId: getApiAdminOrgsPage
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetOrg'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetOrgResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrgResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetOrgResult'
+      summary: Get api admin orgs by org id
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteOrgAndAccountData'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api admin orgs by org id
+      x-summary-source: derived
+      operationId: deleteApiAdminOrgsByOrgId
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/deactivate:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeactivateOrgRequest'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by org id deactivate
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdDeactivate
+      x-operation-id-source: derived
+  /api/Admin/orgs/{Id}:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateOrg'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Org'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Org'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Org'
+      summary: Replace api admin orgs by id
+      x-summary-source: derived
+      operationId: putApiAdminOrgsById
+      x-operation-id-source: derived
+  /api/Admin/orgs/{Id}/status:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateOrgStatus'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Org'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Org'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Org'
+      summary: Replace api admin orgs by id status
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByIdStatus
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/SendContactRequest'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by id status
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByIdStatus
+      x-operation-id-source: derived
+  /api/Admin/orgs/{Id}/contact:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/SendContactRequest'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by id contact
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByIdContact
+      x-operation-id-source: derived
+  /api/Admin/orgs/{Id}/insufficient-concurrency:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/SendInsufficientConcurrencyAlertRequest'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by id insufficient concurrency
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByIdInsufficientConcurrency
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/usage-alerts:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetOrgUsageAlerts'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OrgUsageAlertsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUsageAlertsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OrgUsageAlertsResult'
+      summary: Get api admin orgs by org id usage alerts
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdUsageAlerts
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateOrgUsageAlerts'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OrgUsageAlertsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUsageAlertsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OrgUsageAlertsResult'
+      summary: Replace api admin orgs by org id usage alerts
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdUsageAlerts
+      x-operation-id-source: derived
+  /api/Admin/accounts:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddAccount'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Account'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+      summary: Create api admin accounts
+      x-summary-source: derived
+      operationId: postApiAdminAccounts
+      x-operation-id-source: derived
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+      summary: Get api admin accounts
+      x-summary-source: derived
+      operationId: getApiAdminAccounts
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accounts:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddAccount'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Account'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+      summary: Create api admin orgs by org id accounts
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdAccounts
+      x-operation-id-source: derived
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+      summary: Get api admin orgs by org id accounts
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccounts
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accounts/{Id}:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAccount'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAccountResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountResult'
+      summary: Get api admin orgs by org id accounts by id
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateAccount'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin orgs by org id accounts by id
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdAccountsById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteAccountAndKeepData'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api admin orgs by org id accounts by id
+      x-summary-source: derived
+      operationId: deleteApiAdminOrgsByOrgIdAccountsById
+      x-operation-id-source: derived
+  /api/Admin/accounts/{Id}:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateAccount'
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin accounts by id
+      x-summary-source: derived
+      operationId: putApiAdminAccountsById
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accounts/{AccId}/AzureServiceBus:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateAccountSetting'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin orgs by org id accounts by acc id azure service bus
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdAccountsByAccIdAzureServiceBus
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accounts/{AccountId}/move:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/MoveAccountToOrg'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin orgs by org id accounts by account id move
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdAccountsByAccountIdMove
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accounts/{AccountId}/apps/query:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AdminGetAppsQuery'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetAppsResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAppsResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetAppsResult'
+      summary: Get api admin orgs by org id accounts by account id apps query
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsByAccountIdAppsQuery
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accounts/{AccountId}/apps/{Id}:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AdminGetApp'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/App'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/App'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/App'
+      summary: Get api admin orgs by org id accounts by account id apps by id
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsByAccountIdAppsById
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accounts/{AccountId}/joinrequests:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetJoinRequests'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JoinRequest'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JoinRequest'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JoinRequest'
+      summary: Get api admin orgs by org id accounts by account id joinrequests
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountsByAccountIdJoinrequests
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ResolveJoinRequests'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: AccountId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/JoinRequest'
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/JoinRequest'
+            text/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/JoinRequest'
+      summary: Replace api admin orgs by org id accounts by account id joinrequests
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdAccountsByAccountIdJoinrequests
+      x-operation-id-source: derived
+  /api/Admin/joinrequests:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateJoinRequest'
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin joinrequests
+      x-summary-source: derived
+      operationId: postApiAdminJoinrequests
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/users:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUsers'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrgUser'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrgUser'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrgUser'
+      summary: Get api admin orgs by org id users
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdUsers
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/users/{Id}:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUser'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+      summary: Get api admin orgs by org id users by id
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdUsersById
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddUser'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+      summary: Create api admin orgs by org id users by id
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdUsersById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateUser'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin orgs by org id users by id
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdUsersById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveUser'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Delete api admin orgs by org id users by id
+      x-summary-source: derived
+      operationId: deleteApiAdminOrgsByOrgIdUsersById
+      x-operation-id-source: derived
+  /api/Admin/orgs/users/{Email}:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetUserByEmail'
+      - name: Email
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OrgUser'
+      summary: Get api admin orgs users by email
+      x-summary-source: derived
+      operationId: getApiAdminOrgsUsersByEmail
+      x-operation-id-source: derived
+  /api/Admin/orgs/users/rename:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RenameUsers'
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs users rename
+      x-summary-source: derived
+      operationId: postApiAdminOrgsUsersRename
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/users/{Id}/removemembership:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/RemoveMembership'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by org id users by id removemembership
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdUsersByIdRemovemembership
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/users/{Username}/move:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/MoveUserToOrg'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Username
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin orgs by org id users by username move
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdUsersByUsernameMove
+      x-operation-id-source: derived
+  /api/Admin/ipallowlist:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/PutIPWhitelist'
+      responses:
+        '200':
+          description: OK
+      summary: Replace api admin ipallowlist
+      x-summary-source: derived
+      operationId: putApiAdminIpallowlist
+      x-operation-id-source: derived
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetIPWhitelist'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetIPWhitelistResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetIPWhitelistResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetIPWhitelistResponse'
+      summary: Get api admin ipallowlist
+      x-summary-source: derived
+      operationId: getApiAdminIpallowlist
+      x-operation-id-source: derived
+  /api/Admin/serverinfo:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetServerInfo'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetServerInfoResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServerInfoResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetServerInfoResponse'
+      summary: Get api admin serverinfo
+      x-summary-source: derived
+      operationId: getApiAdminServerinfo
+      x-operation-id-source: derived
+  /api/Admin/authkey:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/CreateSuperUserAuthKey'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+      summary: Create api admin authkey
+      x-summary-source: derived
+      operationId: postApiAdminAuthkey
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accountkeys:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetAccountAccessKeys'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccessKey'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccessKey'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccessKey'
+      summary: Get api admin orgs by org id accountkeys
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdAccountkeys
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/AddAccountAccessKey'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+      summary: Create api admin orgs by org id accountkeys
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdAccountkeys
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteAccountAccessKeys'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+      summary: Delete api admin orgs by org id accountkeys
+      x-summary-source: derived
+      operationId: deleteApiAdminOrgsByOrgIdAccountkeys
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/accountkeys/{Id}:
+    put:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/UpdateAccountAccessKey'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+      summary: Replace api admin orgs by org id accountkeys by id
+      x-summary-source: derived
+      operationId: putApiAdminOrgsByOrgIdAccountkeysById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/DeleteAccountAccessKeys'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AccessKey'
+      summary: Delete api admin orgs by org id accountkeys by id
+      x-summary-source: derived
+      operationId: deleteApiAdminOrgsByOrgIdAccountkeysById
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/scale/state:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetScaleState'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ScaleState'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScaleState'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ScaleState'
+      summary: Get api admin orgs by org id scale state
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdScaleState
+      x-operation-id-source: derived
+  /api/Admin/orgs/{OrgId}/scale/scale-up-request:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ScaleUpRequest'
+      - name: OrgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by org id scale scale up request
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdScaleScaleUpRequest
+      x-operation-id-source: derived
+  /api/Admin/orgs/{orgId}/services/{service}/enable:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/EnableServiceRequest'
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: service
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/EnableServiceResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnableServiceResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/EnableServiceResult'
+      summary: Create api admin orgs by org id services by service enable
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdServicesByServiceEnable
+      x-operation-id-source: derived
+  /api/Admin/orgs/{orgId}/services/{service}/status:
+    get:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/GetServiceStatusRequest'
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: service
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetServiceStatusResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceStatusResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceStatusResult'
+      summary: Get api admin orgs by org id services by service status
+      x-summary-source: derived
+      operationId: getApiAdminOrgsByOrgIdServicesByServiceStatus
+      x-operation-id-source: derived
+  /api/Admin/orgs/{orgId}/services/{service}/enablement-completed:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ServiceEnablementCompletedRequest'
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: service
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by org id services by service enablement completed
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdServicesByServiceEnablementCompleted
+      x-operation-id-source: derived
+  /api/Admin/orgs/{orgId}/services/reset-enablement-for-testing:
+    post:
+      tags:
+      - Admin
+      parameters:
+      - name: request
+        in: query
+        schema:
+          $ref: '#/components/schemas/ResetServiceEnablementForTesting'
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Create api admin orgs by org id services reset enablement for testing
+      x-summary-source: derived
+      operationId: postApiAdminOrgsByOrgIdServicesResetEnablementForTesting
+      x-operation-id-source: derived
+components:
+  schemas:
+    UsageAt:
+      type: object
+      properties:
+        at:
+          type: string
+          format: date-time
+        componentChecks:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        componentChecksLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        componentCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        componentCountLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        componentConcurrency:
+          type: integer
+          format: int32
+        componentConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        nativeMobilePageConcurrency:
+          type: integer
+          format: int32
+        nativeMobilePageConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageChecks:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageChecksLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageCountLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageConcurrency:
+          type: integer
+          format: int32
+        pageConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        users:
+          type: integer
+          format: int32
+        usersLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        viewers:
+          type: integer
+          format: int32
+        viewersLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        sessionConcurrency:
+          type: integer
+          format: int32
+        sessionConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    OrgLastUseInfo:
+      type: object
+      properties:
+        lastDayATestRan:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastDayALoginHappened:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    JToken:
+      type: array
+      items:
+        $ref: '#/components/schemas/JToken'
+    UsageReportOfAccountOrTeam:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        usage:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/UsageAt'
+      additionalProperties: false
+    AddAccount:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        admin:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ProvisionOrgResult:
+      type: object
+      properties:
+        org:
+          $ref: '#/components/schemas/Org'
+        account:
+          $ref: '#/components/schemas/Account'
+        user:
+          $ref: '#/components/schemas/OrgUser'
+      additionalProperties: false
+    GetAccount:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        fetchScmIntegrationsInfo:
+          type: boolean
+      additionalProperties: false
+    GlobalSettings:
+      type: object
+      properties:
+        smtp:
+          $ref: '#/components/schemas/SmtpSettings'
+        loginHandler:
+          type:
+          - string
+          - 'null'
+        superViewers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        accessDeniedPageCustomization:
+          $ref: '#/components/schemas/AccessDeniedPageCustomization'
+        requestAccessPageCustomization:
+          $ref: '#/components/schemas/RequestAccessPageCustomization'
+        consentMessageCustomization:
+          $ref: '#/components/schemas/ConsentMessageCustomization'
+      additionalProperties: false
+    UpdatePlgRequest:
+      type: object
+      properties:
+        wizard:
+          $ref: '#/components/schemas/PlgWizardData'
+      additionalProperties: false
+    OrgIndexedSessionsState:
+      type: object
+      properties:
+        templateVersion:
+          type:
+          - string
+          - 'null'
+        migrationStatus:
+          $ref: '#/components/schemas/OrgIndexedSessionsMigrationStatus'
+        reindexTaskId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAdminConfig:
+      type: object
+      additionalProperties: false
+    GetRunningSessionsReport:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        limit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    DeactivateOrgRequest:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    InlineDynamicTextPattern:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        regex:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetJoinRequests:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        includeResolved:
+          type: boolean
+      additionalProperties: false
+    ProvisionOrg:
+      type: object
+      properties:
+        orgName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        mustShowConsent:
+          type: boolean
+        source:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OrgUsageAlertsResult:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+      additionalProperties: false
+    OrgBlockedInfo:
+      type: object
+      properties:
+        at:
+          type: string
+          format: date-time
+        by:
+          type:
+          - string
+          - 'null'
+        why:
+          type:
+          - string
+          - 'null'
+        unblockAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    UpdateUserSettings:
+      type: object
+      properties:
+        settings:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    GetAccountAccessKeys:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        userKeys:
+          type: boolean
+      additionalProperties: false
+    AccountTeamsSettings:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+      additionalProperties: false
+    GetUserSettings:
+      type: object
+      additionalProperties: false
+    AccessDeniedPageCustomization:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        link:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    EnableServiceRequest:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        service:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetUsageReport:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        granularity:
+          $ref: '#/components/schemas/TimeUnits'
+        from:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        to:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        teamIds:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetServerInfoResponse:
+      type: object
+      properties:
+        version:
+          type:
+          - string
+          - 'null'
+        branch:
+          type:
+          - string
+          - 'null'
+        siteName:
+          type:
+          - string
+          - 'null'
+        releaseTag:
+          type:
+          - string
+          - 'null'
+        algoVersion:
+          type:
+          - string
+          - 'null'
+        frontendVersion:
+          type:
+          - string
+          - 'null'
+        queueWaitingTimes:
+          $ref: '#/components/schemas/QueuesWaitingTimes'
+        unifiedOrgSupported:
+          type: boolean
+      additionalProperties: false
+    DynamicTextPattern:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        regExp:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AutonomousSettings:
+      type: object
+      properties:
+        trialMaxUrlsForTest:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        trialMaxEnvsPerPlan:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    GetAccessDeniedCustomizationResult:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        link:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PlgData:
+      type: object
+      properties:
+        wizard:
+          $ref: '#/components/schemas/PlgWizardData'
+      additionalProperties: false
+    ConsentMessageCustomization:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+        generalConsentMessage:
+          $ref: '#/components/schemas/ConsentMessageAndVersion'
+        consentMessageByEmail:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/ConsentMessageAndVersion'
+      additionalProperties: false
+    DeleteOrgAndAccountData:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ConsentMessageAndVersion:
+      type: object
+      properties:
+        consentMessage:
+          type:
+          - string
+          - 'null'
+        version:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UpdateAccountSetting:
+      type: object
+      properties:
+        accId:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        isEnabled:
+          type: boolean
+      additionalProperties: false
+    OrgIndexedSessionsMigrationStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    UpdateAccountAccessKey:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        secret:
+          type:
+          - string
+          - 'null'
+        info:
+          $ref: '#/components/schemas/AccessKeyInfo'
+        createdAt:
+          type: string
+          format: date-time
+        isExpired:
+          type: boolean
+        accessedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AddAccountAccessKey:
+      type: object
+      properties:
+        resource:
+          type:
+          - string
+          - 'null'
+        user:
+          type:
+          - string
+          - 'null'
+        permissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        labels:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        expiry:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdBy:
+          type:
+          - string
+          - 'null'
+        purpose:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SdkData:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        category:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    JoinRequest:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        username:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        reason:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        updatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        reslovedBy:
+          type:
+          - string
+          - 'null'
+        reslovedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        wasApproved:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    ServiceStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+    GetUserByEmail:
+      type: object
+      properties:
+        email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    IntegrationsInfo:
+      type: object
+      properties:
+        gitHubLegacyConfigured:
+          type: boolean
+        bitBucketConfigured:
+          type: boolean
+        azureDevOpsConfigured:
+          type: boolean
+        gitLabConfigured:
+          type: boolean
+        gitHubV2Configured:
+          type: boolean
+      additionalProperties: false
+    ServiceEnablementStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    OrgExecutionGridSettings:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+        isTunnelEnabled:
+          type: boolean
+        concurrency:
+          type: integer
+          format: int32
+        tunnelConcurrency:
+          type: integer
+          format: int32
+      additionalProperties: false
+    GetOrgResult:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        storeId:
+          type:
+          - string
+          - 'null'
+        isBlocked:
+          type:
+          - boolean
+          - 'null'
+        blockInfo:
+          $ref: '#/components/schemas/OrgBlockedInfo'
+        status:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        statusStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        statusExpiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        originalStatusBeforeElevation:
+          type:
+          - string
+          - 'null'
+        statusElevatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        admins:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        limits:
+          $ref: '#/components/schemas/EyesUsageLimits'
+        usage:
+          $ref: '#/components/schemas/EyesUsage'
+        blockedAccounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        owner:
+          type:
+          - string
+          - 'null'
+        tam:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
+        allowMultipleActiveSessions:
+          type: boolean
+        forceEnabledFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        forceDisabledFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        deleteAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pricingModel:
+          type:
+          - string
+          - 'null'
+        pricingModelStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        devFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        cleanupSettings:
+          $ref: '#/components/schemas/OrgCleanupSettings'
+        executionGridSettings:
+          $ref: '#/components/schemas/OrgExecutionGridSettings'
+        usageAlertsSettings:
+          $ref: '#/components/schemas/OrgUsageAlertsSettings'
+        usageAlertsState:
+          $ref: '#/components/schemas/OrgUsageAlertsState'
+        isAutonomous:
+          type:
+          - boolean
+          - 'null'
+        autonomousEnv:
+          type:
+          - string
+          - 'null'
+        isPending:
+          type:
+          - boolean
+          - 'null'
+        autonomousSettings:
+          $ref: '#/components/schemas/AutonomousSettings'
+        accountsOrderByUsage:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        accountPendingDurations:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccountPendingDurations'
+        testAnalyzerCustomizations:
+          $ref: '#/components/schemas/TestAnalyzerCustomizationsSettings'
+        indexedSessionsState:
+          $ref: '#/components/schemas/OrgIndexedSessionsState'
+        orgLastUseInfo:
+          $ref: '#/components/schemas/OrgLastUseInfo'
+        servicesActivationInfo:
+          $ref: '#/components/schemas/ServicesActivationInfo'
+        migratedToUnifiedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        serviceActivationTemporarilyBlocked:
+          type:
+          - boolean
+          - 'null'
+        isUnified:
+          type:
+          - boolean
+          - 'null'
+        isInactive:
+          type:
+          - boolean
+          - 'null'
+        unifiedMigrationStatus:
+          $ref: '#/components/schemas/UnifiedMigrationStatus'
+        isInternal:
+          type:
+          - boolean
+          - 'null'
+        provisioningInProgress:
+          type:
+          - boolean
+          - 'null'
+        provisioningStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    EyesAccountsUsageLimits:
+      type: object
+      properties:
+        componentChecks:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+        componentsNumber:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+        componentConcurrency:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+        nativeMobilePageConcurrency:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+        sessionConcurrency:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+        pageChecks:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+        pagesNumber:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+        pageConcurrency:
+          $ref: '#/components/schemas/EyesAccountsUsageLimit'
+      additionalProperties: false
+    PendingEnablement:
+      type: object
+      properties:
+        initiatedAt:
+          type: string
+          format: date-time
+        initiatedBy:
+          type:
+          - string
+          - 'null'
+        expiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        success:
+          type:
+          - boolean
+          - 'null'
+        errorDetails:
+          type:
+          - string
+          - 'null'
+        creditsRequired:
+          type: boolean
+        scenario:
+          $ref: '#/components/schemas/EnablementScenario'
+        completionWebhookUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    TimeUnits:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    CreateSuperUserAuthKey:
+      type: object
+      properties:
+        expiry:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    GetUser:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetOrgsPage:
+      type: object
+      properties:
+        full:
+          type: boolean
+        computeLimits:
+          type: boolean
+        limit:
+          type: integer
+          format: int32
+        skipTo:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UserSettings:
+      type: object
+      properties:
+        jira:
+          $ref: '#/components/schemas/AccountJiraSettings'
+        teams:
+          $ref: '#/components/schemas/AccountTeamsSettings'
+        rally:
+          $ref: '#/components/schemas/AccountRallySettings'
+        gitHub:
+          $ref: '#/components/schemas/AccountGitHubSettings'
+        sessions:
+          $ref: '#/components/schemas/AccountSessionsSettings'
+        email:
+          $ref: '#/components/schemas/AccountEmailSettings'
+      additionalProperties: false
+    OrgServiceActivationInfo:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        canEnable:
+          type: boolean
+        status:
+          $ref: '#/components/schemas/ServiceStatus'
+        cantEnableReason:
+          $ref: '#/components/schemas/ServiceEnablementDeniedReason'
+        errorDetails:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetOrg:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccountEmailSettings:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+        whenTestIsAssigned:
+          type: boolean
+        whenTestIsDeleted:
+          type: boolean
+        whenTestIsUpdated:
+          type: boolean
+        whenTestStatusIsChanged:
+          type: boolean
+      additionalProperties: false
+    GetUserSettingsResult:
+      type: object
+      properties:
+        settings:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    AdminGetApp:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAccessDeniedCustomization:
+      type: object
+      additionalProperties: false
+    ScaleUpRequest:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RallyUserResponse:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        rallyName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SendInsufficientConcurrencyAlertRequest:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        link:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAccountInfoResult:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        permissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        orgStatus:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetPlgRequest:
+      type: object
+      additionalProperties: false
+    ScaleStateStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      type: integer
+      format: int32
+    UnifiedMigrationStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      format: int32
+    GetServiceStatusResult:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/ServiceStatus'
+        enabledAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        message:
+          type:
+          - string
+          - 'null'
+        errorDetails:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DeleteAccountAccessKeys:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        ids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    PutIPWhitelist:
+      type: object
+      properties:
+        iPs:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ServiceEnablementDeniedReason:
+      enum:
+      - 10
+      - 20
+      - 30
+      - 40
+      - 45
+      - 50
+      type: integer
+      format: int32
+    ServicesAvailability:
+      type: object
+      properties:
+        eyes:
+          type: boolean
+        autonomous:
+          type: boolean
+      additionalProperties: false
+    AccountJiraSettings:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+        url:
+          type:
+          - string
+          - 'null'
+        newIssue:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items:
+              $ref: '#/components/schemas/StringNamedProperty'
+      additionalProperties: false
+    GetServiceStatusRequest:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        service:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ServicesActivationInfo:
+      type: object
+      properties:
+        eyes:
+          $ref: '#/components/schemas/ServiceActivationInfo'
+        autonomous:
+          $ref: '#/components/schemas/ServiceActivationInfo'
+      additionalProperties: false
+    ResolveJoinRequests:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        requestIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isApproved:
+          type: boolean
+      additionalProperties: false
+    UserOrg:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        orgName:
+          type:
+          - string
+          - 'null'
+        isOrgAdmin:
+          type: boolean
+        orgStatus:
+          type:
+          - string
+          - 'null'
+        orgStatusExpiredAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isOrgBlocked:
+          type: boolean
+        services:
+          $ref: '#/components/schemas/OrgServicesInfo'
+      additionalProperties: false
+    GetOrgs:
+      type: object
+      properties:
+        by:
+          type:
+          - string
+          - 'null'
+        full:
+          type: boolean
+        computeLimits:
+          type: boolean
+        matchName:
+          type: boolean
+      additionalProperties: false
+    OrgUser:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        lastSessionStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        numberOfSuccesfulLogins:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        addedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        settings:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+        plgSettings:
+          $ref: '#/components/schemas/PlgData'
+        consentVersionAccepted:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        mustShowConsent:
+          type: boolean
+        isHidden:
+          type: boolean
+        administeredOrgIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    GetAccountContacts:
+      type: object
+      properties:
+        requestedAccountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateOrg:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        storeId:
+          type:
+          - string
+          - 'null'
+        isBlocked:
+          type:
+          - boolean
+          - 'null'
+        blockInfo:
+          $ref: '#/components/schemas/OrgBlockedInfo'
+        status:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        statusStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        statusExpiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        originalStatusBeforeElevation:
+          type:
+          - string
+          - 'null'
+        statusElevatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        admins:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        limits:
+          $ref: '#/components/schemas/EyesUsageLimits'
+        usage:
+          $ref: '#/components/schemas/EyesUsage'
+        blockedAccounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        owner:
+          type:
+          - string
+          - 'null'
+        tam:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
+        allowMultipleActiveSessions:
+          type: boolean
+        forceEnabledFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        forceDisabledFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        deleteAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pricingModel:
+          type:
+          - string
+          - 'null'
+        pricingModelStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        devFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        cleanupSettings:
+          $ref: '#/components/schemas/OrgCleanupSettings'
+        executionGridSettings:
+          $ref: '#/components/schemas/OrgExecutionGridSettings'
+        usageAlertsSettings:
+          $ref: '#/components/schemas/OrgUsageAlertsSettings'
+        usageAlertsState:
+          $ref: '#/components/schemas/OrgUsageAlertsState'
+        isAutonomous:
+          type:
+          - boolean
+          - 'null'
+        autonomousEnv:
+          type:
+          - string
+          - 'null'
+        isPending:
+          type:
+          - boolean
+          - 'null'
+        autonomousSettings:
+          $ref: '#/components/schemas/AutonomousSettings'
+        accountsOrderByUsage:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        accountPendingDurations:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccountPendingDurations'
+        testAnalyzerCustomizations:
+          $ref: '#/components/schemas/TestAnalyzerCustomizationsSettings'
+        indexedSessionsState:
+          $ref: '#/components/schemas/OrgIndexedSessionsState'
+        orgLastUseInfo:
+          $ref: '#/components/schemas/OrgLastUseInfo'
+        servicesActivationInfo:
+          $ref: '#/components/schemas/ServicesActivationInfo'
+        migratedToUnifiedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        serviceActivationTemporarilyBlocked:
+          type:
+          - boolean
+          - 'null'
+        isUnified:
+          type:
+          - boolean
+          - 'null'
+        isInactive:
+          type:
+          - boolean
+          - 'null'
+        unifiedMigrationStatus:
+          $ref: '#/components/schemas/UnifiedMigrationStatus'
+        isInternal:
+          type:
+          - boolean
+          - 'null'
+        provisioningInProgress:
+          type:
+          - boolean
+          - 'null'
+        provisioningStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    EyesAccountsUsageLimit:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+        limit:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: integer
+            format: int32
+      additionalProperties: false
+    AccountSettings:
+      type: object
+      properties:
+        jira:
+          $ref: '#/components/schemas/AccountJiraSettings'
+        teams:
+          $ref: '#/components/schemas/AccountTeamsSettings'
+        email:
+          $ref: '#/components/schemas/AccountEmailSettings'
+        rally:
+          $ref: '#/components/schemas/AccountRallySettings'
+        gitHub:
+          $ref: '#/components/schemas/AccountGitHubSettings'
+        sessions:
+          $ref: '#/components/schemas/AccountSessionsSettings'
+        azureServiceBus:
+          $ref: '#/components/schemas/AzureServiceBusSettings'
+        dynamicTextPatternsSettings:
+          $ref: '#/components/schemas/DynamicTextPatternsSettings'
+        defaultMatchLevel:
+          $ref: '#/components/schemas/ImageMatchLevel'
+      additionalProperties: false
+    AddOrg:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        application:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ServiceActivationInfo:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        enabledAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        trialCredits:
+          type: integer
+          format: int32
+        pendingEnablement:
+          $ref: '#/components/schemas/PendingEnablement'
+      additionalProperties: false
+    UpdateOrgStatus:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        startedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        expiration:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetAccountResult:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        contactInfo:
+          type:
+          - string
+          - 'null'
+        autoRegisterViewers:
+          type: boolean
+        storeId:
+          type:
+          - string
+          - 'null'
+        settings:
+          $ref: '#/components/schemas/AccountSettings'
+        members:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccountMember'
+        apps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/App'
+        scmIntegrationsInfo:
+          $ref: '#/components/schemas/IntegrationsInfo'
+      additionalProperties: false
+    Authorize:
+      type: object
+      properties:
+        username:
+          type:
+          - string
+          - 'null'
+        password:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UserIntegrations:
+      type: object
+      properties:
+        rallyUser:
+          $ref: '#/components/schemas/RallyUserResponse'
+      additionalProperties: false
+    GetRequestAccessCustomizationResult:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        link:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DynamicTextPatternsSettings:
+      type: object
+      properties:
+        customPatterns:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/DynamicTextPattern'
+      additionalProperties: false
+    ResetServiceEnablementForTesting:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateAdminConfig:
+      type: object
+      properties:
+        config:
+          type:
+          - string
+          - 'null'
+        password:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccountRallySettings:
+      type: object
+      properties:
+        serverId:
+          type:
+          - string
+          - 'null'
+        rallySettings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/RallySetting'
+        isEnabled:
+          type: boolean
+      additionalProperties: false
+    GetAccountContactsResult:
+      type: object
+      properties:
+        contacts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isAccountDisabled:
+          type: boolean
+        isOrgBlocked:
+          type: boolean
+      additionalProperties: false
+    UpdateUser:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        lastSessionStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        numberOfSuccesfulLogins:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        addedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        settings:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+        plgSettings:
+          $ref: '#/components/schemas/PlgData'
+        consentVersionAccepted:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        mustShowConsent:
+          type: boolean
+        isHidden:
+          type: boolean
+        administeredOrgIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateDynamicTextCustomPatterns:
+      type: object
+      properties:
+        customPatterns:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/DynamicTextPattern'
+      additionalProperties: false
+    GetOrgsResult:
+      type: object
+      properties:
+        orgs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Org'
+        skipTo:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    App:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isDeleted:
+          type:
+          - boolean
+          - 'null'
+        dynamicSettings:
+          $ref: '#/components/schemas/ServerDynamicMatchLevelSettings'
+        activeSourceServices:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    AdminGetAppsQuery:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        limit:
+          type: integer
+          format: int32
+        skipTo:
+          type:
+          - string
+          - 'null'
+        isPartialName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetIPWhitelist:
+      type: object
+      additionalProperties: false
+    AccessKeyInfo:
+      type: object
+      properties:
+        resource:
+          type:
+          - string
+          - 'null'
+        user:
+          type:
+          - string
+          - 'null'
+        permissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        labels:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        expiry:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdBy:
+          type:
+          - string
+          - 'null'
+        purpose:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+      additionalProperties: false
+    OrgUsageAlertsState:
+      type: object
+      properties:
+        lastAlertedMonths:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    UsageReport:
+      type: object
+      properties:
+        from:
+          type: string
+          format: date-time
+        to:
+          type: string
+          format: date-time
+        granularity:
+          $ref: '#/components/schemas/TimeUnits'
+        account:
+          $ref: '#/components/schemas/UsageReportOfAccountOrTeam'
+        teams:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/UsageReportOfAccountOrTeam'
+      additionalProperties: false
+    MoveAccountToOrg:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        moveMembers:
+          type: boolean
+        force:
+          type: boolean
+      additionalProperties: false
+    GetAccountInfo:
+      type: object
+      additionalProperties: false
+    Org:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        storeId:
+          type:
+          - string
+          - 'null'
+        isBlocked:
+          type:
+          - boolean
+          - 'null'
+        blockInfo:
+          $ref: '#/components/schemas/OrgBlockedInfo'
+        status:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        statusStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        statusExpiresAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        originalStatusBeforeElevation:
+          type:
+          - string
+          - 'null'
+        statusElevatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        admins:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        limits:
+          $ref: '#/components/schemas/EyesUsageLimits'
+        usage:
+          $ref: '#/components/schemas/EyesUsage'
+        blockedAccounts:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        owner:
+          type:
+          - string
+          - 'null'
+        tam:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
+        allowMultipleActiveSessions:
+          type: boolean
+        forceEnabledFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        forceDisabledFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        deleteAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pricingModel:
+          type:
+          - string
+          - 'null'
+        pricingModelStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        devFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        cleanupSettings:
+          $ref: '#/components/schemas/OrgCleanupSettings'
+        executionGridSettings:
+          $ref: '#/components/schemas/OrgExecutionGridSettings'
+        usageAlertsSettings:
+          $ref: '#/components/schemas/OrgUsageAlertsSettings'
+        usageAlertsState:
+          $ref: '#/components/schemas/OrgUsageAlertsState'
+        isAutonomous:
+          type:
+          - boolean
+          - 'null'
+        autonomousEnv:
+          type:
+          - string
+          - 'null'
+        isPending:
+          type:
+          - boolean
+          - 'null'
+        autonomousSettings:
+          $ref: '#/components/schemas/AutonomousSettings'
+        accountsOrderByUsage:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        accountPendingDurations:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccountPendingDurations'
+        testAnalyzerCustomizations:
+          $ref: '#/components/schemas/TestAnalyzerCustomizationsSettings'
+        indexedSessionsState:
+          $ref: '#/components/schemas/OrgIndexedSessionsState'
+        orgLastUseInfo:
+          $ref: '#/components/schemas/OrgLastUseInfo'
+        servicesActivationInfo:
+          $ref: '#/components/schemas/ServicesActivationInfo'
+        migratedToUnifiedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        serviceActivationTemporarilyBlocked:
+          type:
+          - boolean
+          - 'null'
+        isUnified:
+          type:
+          - boolean
+          - 'null'
+        isInactive:
+          type:
+          - boolean
+          - 'null'
+        unifiedMigrationStatus:
+          $ref: '#/components/schemas/UnifiedMigrationStatus'
+        isInternal:
+          type:
+          - boolean
+          - 'null'
+        provisioningInProgress:
+          type:
+          - boolean
+          - 'null'
+        provisioningStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    StringNamedProperty:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    UpdateOrgUsageAlerts:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        enabled:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    OrgUsageAlertsSettings:
+      type: object
+      properties:
+        enabled:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    RemoveUser:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    EyesUsage:
+      type: object
+      properties:
+        percentage:
+          type: integer
+          format: int32
+        pageChecks:
+          type: integer
+          format: int32
+        componentChecks:
+          type: integer
+          format: int32
+        pages:
+          type: integer
+          format: int32
+        components:
+          type: integer
+          format: int32
+      additionalProperties: false
+    GetAppsResult:
+      type: object
+      properties:
+        apps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/App'
+        skipTo:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RenameUsers:
+      type: object
+      properties:
+        usernames:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    BackgroundColorCustomizationSettings:
+      type: object
+      properties:
+        rules:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BackgroundColorCustomizationRule'
+      additionalProperties: false
+    GetUserInfoResult:
+      type: object
+      properties:
+        sessionToken:
+          type:
+          - string
+          - 'null'
+        username:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        isSuperAdmin:
+          type: boolean
+        isSuperViewer:
+          type: boolean
+        isOrgAdmin:
+          type: boolean
+        orgId:
+          type:
+          - string
+          - 'null'
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        devFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        orgStatus:
+          type:
+          - string
+          - 'null'
+        isOrgBlocked:
+          type: boolean
+        isAutonomousBlocked:
+          type: boolean
+        isOrgPending:
+          type: boolean
+        accounts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/UserAccount'
+        orgs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/UserOrg'
+        settings:
+          $ref: '#/components/schemas/UserSettings'
+        limits:
+          $ref: '#/components/schemas/EyesUsageLimits'
+        userIntegrations:
+          $ref: '#/components/schemas/UserIntegrations'
+        agentsInUse:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        isFirstLogin:
+          type:
+          - boolean
+          - 'null'
+        shouldShowConsent:
+          type: boolean
+        consentMessage:
+          type:
+          - string
+          - 'null'
+        accountQuotaUsagePercent:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        accountQuotaExceeded:
+          type:
+          - boolean
+          - 'null'
+        isEcEnabled:
+          type: boolean
+        setupMode:
+          type:
+          - boolean
+          - 'null'
+        orgStatusExpiredAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        autonomousSettings:
+          $ref: '#/components/schemas/AutonomousSettings'
+        eyesServiceUrl:
+          type:
+          - string
+          - 'null'
+        autonomousServiceUrl:
+          type:
+          - string
+          - 'null'
+        pendingDurations:
+          $ref: '#/components/schemas/AccountPendingDurations'
+        isAutonomous:
+          type:
+          - boolean
+          - 'null'
+        isUnified:
+          type:
+          - boolean
+          - 'null'
+        testAnalyzerCustomizations:
+          $ref: '#/components/schemas/TestAnalyzerCustomizationsSettings'
+        servicesAvailability:
+          $ref: '#/components/schemas/ServicesAvailability'
+        productSelectionPageUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetRequestAccessCustomization:
+      type: object
+      additionalProperties: false
+    GetServerInfo:
+      type: object
+      additionalProperties: false
+    CreateJoinRequest:
+      type: object
+      properties:
+        accountId:
+          type:
+          - string
+          - 'null'
+        username:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        reason:
+          type:
+          - string
+          - 'null'
+        recaptchaToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AttributeMapping:
+      type: object
+      properties:
+        attributeId:
+          type:
+          - string
+          - 'null'
+        attributeValue:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AccountGitHubSettings:
+      type: object
+      properties:
+        isV2Enabled:
+          type: boolean
+      additionalProperties: false
+    UpdateGlobalSettings:
+      type: object
+      properties:
+        smtp:
+          $ref: '#/components/schemas/SmtpSettings'
+        loginHandler:
+          type:
+          - string
+          - 'null'
+        superViewers:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        accessDeniedPageCustomization:
+          $ref: '#/components/schemas/AccessDeniedPageCustomization'
+        requestAccessPageCustomization:
+          $ref: '#/components/schemas/RequestAccessPageCustomization'
+        consentMessageCustomization:
+          $ref: '#/components/schemas/ConsentMessageCustomization'
+      additionalProperties: false
+    UpdateAccount:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        contactInfo:
+          type:
+          - string
+          - 'null'
+        autoRegisterViewers:
+          type: boolean
+        storeId:
+          type:
+          - string
+          - 'null'
+        settings:
+          $ref: '#/components/schemas/AccountSettings'
+        members:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccountMember'
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AddUser:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        lastSessionStartedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        numberOfSuccesfulLogins:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        addedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        settings:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+        plgSettings:
+          $ref: '#/components/schemas/PlgData'
+        consentVersionAccepted:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        mustShowConsent:
+          type: boolean
+        isHidden:
+          type: boolean
+        administeredOrgIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ScaleState:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/ScaleStateStatus'
+        lastStatusChangeTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastStatusAgeSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        lastScaleUpRequestTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastScaleUpRequestAgeSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        statusMessage:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+      additionalProperties: false
+    RequestAccessPageCustomization:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        link:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetUsers:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BackgroundColorCustomizationRule:
+      type: object
+      properties:
+        value:
+          type:
+          - string
+          - 'null'
+        expression:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+      additionalProperties: false
+    ServerDynamicMatchLevelSettings:
+      type: object
+      properties:
+        ignorePatterns:
+          uniqueItems: true
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        customPatterns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/InlineDynamicTextPattern'
+      additionalProperties: false
+    GetScaleState:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    GetDynamicTextPatternsSettings:
+      type: object
+      additionalProperties: false
+    OrgCleanupSettings:
+      type: object
+      properties:
+        timeUnits:
+          $ref: '#/components/schemas/TimeUnits'
+        isEnabled:
+          type: boolean
+        retentionPeriod:
+          type: integer
+          format: int32
+        baselineRetentionPeriod:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        archivePeriod:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UpdateConsentMessageAcceptance:
+      type: object
+      properties:
+        consentAccepted:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    GetUserInfo:
+      type: object
+      properties:
+        username:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        ignoreAccount:
+          type: boolean
+        fast:
+          type: boolean
+        filterAccountsByService:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SmtpSettings:
+      type: object
+      properties:
+        host:
+          type:
+          - string
+          - 'null'
+        port:
+          type: integer
+          format: int32
+        ssl:
+          type: boolean
+        username:
+          type:
+          - string
+          - 'null'
+        password:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        senderAddress:
+          type:
+          - string
+          - 'null'
+        timeoutMs:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    AccountSessionsSettings:
+      type: object
+      properties:
+        baselineStepMaxVariants:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        baselineStepVariantExpiry:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        selfHealingEnabled:
+          type: boolean
+      additionalProperties: false
+    DeleteAccountAndKeepData:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Account:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        isDisabled:
+          type: boolean
+        contactInfo:
+          type:
+          - string
+          - 'null'
+        autoRegisterViewers:
+          type: boolean
+        storeId:
+          type:
+          - string
+          - 'null'
+        settings:
+          $ref: '#/components/schemas/AccountSettings'
+        members:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/AccountMember'
+      additionalProperties: false
+    RallySetting:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        workspaceId:
+          type:
+          - string
+          - 'null'
+        projectId:
+          type:
+          - string
+          - 'null'
+        itemTypeId:
+          type:
+          - string
+          - 'null'
+        applicationId:
+          type:
+          - string
+          - 'null'
+        mappings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AttributeMapping'
+        closeItemOnBugDelete:
+          type: boolean
+        closeMappings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AttributeMapping'
+      additionalProperties: false
+    ImageMatchLevel:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      type: integer
+      format: int32
+    EnablementScenario:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      format: int32
+    SendContactRequest:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        feature:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AzureServiceBusSettings:
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+      additionalProperties: false
+    GetIPWhitelistResponse:
+      type: object
+      properties:
+        iPs:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    EnableServiceResult:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/ServiceEnablementStatus'
+        reason:
+          $ref: '#/components/schemas/ServiceEnablementDeniedReason'
+        message:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OrgServicesInfo:
+      type: object
+      properties:
+        eyes:
+          $ref: '#/components/schemas/OrgServiceActivationInfo'
+        autonomous:
+          $ref: '#/components/schemas/OrgServiceActivationInfo'
+      additionalProperties: false
+    IssuedAccountsConfig:
+      type: object
+      properties:
+        setup:
+          type:
+          - boolean
+          - 'null'
+        admins:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        contactInfo:
+          type:
+          - string
+          - 'null'
+        legacyLoginHandler:
+          type:
+          - string
+          - 'null'
+        version:
+          type:
+          - string
+          - 'null'
+        settings:
+          $ref: '#/components/schemas/GlobalSettings'
+        issueTime:
+          type: string
+          format: date-time
+        issuedFor:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PlgWizardData:
+      type: object
+      properties:
+        chosenSdks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SdkData'
+        reasonForCreateAccount:
+          type:
+          - string
+          - 'null'
+        wasShown:
+          type:
+          - boolean
+          - 'null'
+        wasClosed:
+          type:
+          - boolean
+          - 'null'
+        wasCompleted:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    AccountMember:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        isViewer:
+          type: boolean
+        isAdmin:
+          type: boolean
+      additionalProperties: false
+    ServiceEnablementCompletedRequest:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        service:
+          type:
+          - string
+          - 'null'
+        success:
+          type:
+          - boolean
+          - 'null'
+        errorMessage:
+          type:
+          - string
+          - 'null'
+        enablementToken:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RemoveMembership:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+        accountIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    AccessKey:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        secret:
+          type:
+          - string
+          - 'null'
+        info:
+          $ref: '#/components/schemas/AccessKeyInfo'
+        createdAt:
+          type: string
+          format: date-time
+        isExpired:
+          type: boolean
+        accessedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    AccountPendingDurations:
+      type: object
+      properties:
+        totalSessionsDuration:
+          type: integer
+          format: int64
+        totalSessionsPendingDuration:
+          type: integer
+          format: int64
+        totalEnforcedQueueSessionPendingDuration:
+          type: integer
+          format: int64
+        totalComponentSessionsDuration:
+          type: integer
+          format: int64
+        totalComponentSessionsPendingDuration:
+          type: integer
+          format: int64
+        totalEnforcedQueueComponentSessionPendingDuration:
+          type: integer
+          format: int64
+        totalEyesPageSessionsDuration:
+          type: integer
+          format: int64
+        totalEnforcedQueueEyesPageSessionPendingDuration:
+          type: integer
+          format: int64
+        totalSessions:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UserAccount:
+      type: object
+      properties:
+        accountName:
+          type:
+          - string
+          - 'null'
+        accountId:
+          type:
+          - string
+          - 'null'
+        orgName:
+          type:
+          - string
+          - 'null'
+        orgId:
+          type:
+          - string
+          - 'null'
+        runnerKey:
+          type:
+          - string
+          - 'null'
+        isViewer:
+          type: boolean
+        isAdmin:
+          type: boolean
+        isCurrent:
+          type: boolean
+        scmIntegrationConfigured:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    EyesUsageLimits:
+      type: object
+      properties:
+        componentChecksLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        componentConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        nativeMobilePageConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageChecksLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        usersLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        viewersLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pagesNumberLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        componentsNumberLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        accountLimits:
+          $ref: '#/components/schemas/EyesAccountsUsageLimits'
+        egSessionConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        egSessionsTotalLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        sessionConcurrencyLimit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        legacySessionCheckpoints:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        legacySessionConcurrency:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        legacyUsers:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        legacyViewers:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    TestAnalyzerCustomizationsSettings:
+      type: object
+      properties:
+        backgroundColorCustomization:
+          $ref: '#/components/schemas/BackgroundColorCustomizationSettings'
+      additionalProperties: false
+    GetOrgUsageAlerts:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MoveUserToOrg:
+      type: object
+      properties:
+        orgId:
+          type:
+          - string
+          - 'null'
+        username:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    QueuesWaitingTimes:
+      type: object
+      properties:
+        uncompleted:
+          type: integer
+          format: int32
+        uncompletedExt:
+          type: integer
+          format: int32
+        cleanup:
+          type: integer
+          format: int32
+      additionalProperties: false
