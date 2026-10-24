@@ -200,6 +200,8 @@ apis:
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -310,6 +312,8 @@ apis:
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -330,6 +334,8 @@ apis:
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
+  - Image
+  tags_raw:
   - Images
   properties:
   - type: OpenAPI
@@ -370,6 +376,8 @@ apis:
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -420,6 +428,8 @@ apis:
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
+  - Summary
+  tags_raw:
   - Summaries
   properties:
   - type: OpenAPI
@@ -430,6 +440,8 @@ apis:
   humanURL: https://applitools.com/docs/eyes/reference/server-api
   baseURL: https://eyesapi.applitools.com
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
