@@ -1,4 +1,4 @@
-# Applitools (applitools)
+# Applitools
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,145 +66,125 @@
 
 Applitools is a Visual AI testing platform for end-to-end functional, visual, and API testing. The product line covers Eyes (Visual AI inside existing test frameworks), Autonomous (no-code AI-powered E2E platform), Execution Cloud (self-healing cloud test runner), and Ultrafast Grid (cross-browser/device visual rendering). Applitools exposes a REST server API at eyesapi.applitools.com and ships SDKs for Selenium, Cypress, Playwright, WebdriverIO, Puppeteer, Appium, Espresso, XCUI, Robot Framework, and more across JavaScript, TypeScript, Java, Python, C#, and Ruby.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/applitools/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/applitools/refs/heads/main/apis.yml)
+**Areas:** Testing · Visual AI · Visual Testing · Autonomous Testing · REST · SDK · Cross-Browser · Execution Cloud
 
-## Tags
+## Applitools on APIs.io
 
-- Testing
-- Visual AI
-- Visual Testing
-- Autonomous Testing
-- REST
-- SDK
-- Cross-Browser
-- Execution Cloud
+Everything profiled for Applitools is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/applitools/](https://apis.io/providers/applitools/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (8)
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+- [Applitools Eyes Server REST API](https://apis.io/apis/applitools/eyes-server-api/) — REST API for the Applitools Eyes cloud server. Endpoint groups include Batch Management (results, statistics, properties, deletion), Discussions (list and…
+- [Applitools Eyes SDKs](https://apis.io/apis/applitools/eyes-sdks/) — Visual testing SDKs that integrate with existing test frameworks (Selenium, Cypress, Playwright, WebdriverIO, Puppeteer, Appium, Espresso, XCUI, Robot…
+- [Applitools Autonomous](https://apis.io/apis/applitools/autonomous/) — AI-powered no-code platform for end-to-end functional, visual, and API testing. Handles test authoring, result analysis, and provides REST API access for…
+- [Applitools Execution Cloud](https://apis.io/apis/applitools/execution-cloud/) — Cloud test execution infrastructure with self-healing capabilities - tests remain functional even when UI elements change. Drop-in remote WebDriver…
+- [Applitools Ultrafast Grid](https://apis.io/apis/applitools/ultrafast-grid/) — Cross-browser and device visual rendering grid. Renders DOM snapshots captured by Eyes SDKs across many browser/viewport combinations in parallel and…
+- [Applitools Batches API](https://apis.io/apis/applitools/applitools-batches-api/) — Batch management endpoints
+- [Applitools Discussions API](https://apis.io/apis/applitools/applitools-discussions-api/) — Discussion and comment endpoints
+- [Applitools SCM API](https://apis.io/apis/applitools/applitools-scm-api/) — Source-control management integrations
 
-## APIs
+### Published properties
 
-### Applitools Eyes Server REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for the Applitools Eyes cloud server. Endpoint groups include Batch Management (results, statistics, properties, deletion), Discussions (list and manage comments), and SCM Integrations (status setting for source control systems). Authentication uses the user's Applitools API key.
+#### Agentic access (1)
 
-- **Human URL:** [https://applitools.com/docs/eyes/reference/server-api](https://applitools.com/docs/eyes/reference/server-api)
-- **Base URL:** `https://eyesapi.applitools.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Applitools Agentic Access](https://apis.io/agentic-access/applitools/applitools-agentic-access/)
 
-- REST
-- Eyes
-- Batches
-- Discussions
-- SCM
+#### Collections (4)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://applitools.com/docs/eyes/reference/server-api)
-- [Product Docs](https://applitools.com/docs/)
-- [Postman Collection](collections/applitools.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/applitools.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Applitools Eyes Server REST API](https://apis.io/collections/applitools/open-applitools/)
+- [Applitools Eyes Server REST Batches API](https://apis.io/collections/applitools/open-applitools-batches-api/)
+- [Applitools Eyes Server REST Batches Discussions API](https://apis.io/collections/applitools/open-applitools-discussions-api/)
+- [Applitools Eyes Server REST Batches SCM API](https://apis.io/collections/applitools/open-applitools-scm-api/)
 
-### Applitools Eyes SDKs
+#### Security (3)
 
-Visual testing SDKs that integrate with existing test frameworks (Selenium, Cypress, Playwright, WebdriverIO, Puppeteer, Appium, Espresso, XCUI, Robot Framework, Images) across JavaScript/TypeScript, Java, Python, C#, and Ruby. SDKs send screenshots and DOM snapshots to the Eyes cloud server for Visual AI comparison.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://applitools.com/docs/eyes](https://applitools.com/docs/eyes)
-- **Base URL:** `https://eyesapi.applitools.com`
+- [Applitools Authentication](https://apis.io/security/applitools/applitools-authentication/)
+- [Applitools Domain Security](https://apis.io/security/applitools/applitools-domain-security/)
+- [Applitools Trust Center](https://apis.io/security/applitools/applitools-trust-center/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- SDK
-- Selenium
-- Cypress
-- Playwright
-- Appium
-- Visual AI
+Published plans, tiers and prices.
 
-#### Properties
+- [Applitools Plans Pricing](https://apis.io/plans/applitools/applitools-plans-pricing/)
 
-- [Documentation](https://applitools.com/docs/eyes)
-- [Cypress](https://applitools.com/docs/eyes/sdks/cypress)
-- [Playwright Python](https://applitools.com/docs/eyes/sdks/playwright-python)
-- [Robot](https://applitools.com/docs/eyes/sdks/robot)
-- [Espresso](https://applitools.com/docs/eyes/sdks/espresso)
-- [Postman Collection](collections/applitools.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/applitools.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-### Applitools Autonomous
+Published request limits.
 
-AI-powered no-code platform for end-to-end functional, visual, and API testing. Handles test authoring, result analysis, and provides REST API access for programmatic integration into CI/CD.
+- [Applitools Rate Limits](https://apis.io/rate-limits/applitools/applitools-rate-limits/)
 
-- **Human URL:** [https://applitools.com/platform/autonomous/](https://applitools.com/platform/autonomous/)
-- **Base URL:** `https://eyes.applitools.com`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Autonomous
-- AI
-- No-Code
-- E2E Testing
+- [Applitools Finops](https://apis.io/finops/applitools/applitools-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Product Page](https://applitools.com/platform/autonomous/)
-- [Documentation](https://applitools.com/docs/)
-- [Postman Collection](collections/applitools.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/applitools.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Applitools Execution Cloud
-
-Cloud test execution infrastructure with self-healing capabilities - tests remain functional even when UI elements change. Drop-in remote WebDriver replacement for Selenium, Playwright, and WebdriverIO tests.
-
-- **Human URL:** [https://applitools.com/platform/execution-cloud/](https://applitools.com/platform/execution-cloud/)
-- **Base URL:** `https://exec-wus.applitools.com`
-
-#### Tags
-
-- Execution Cloud
-- Self-Healing
-- WebDriver
-
-#### Properties
-
-- [Product Page](https://applitools.com/platform/execution-cloud/)
-- [Documentation](https://applitools.com/docs/)
-- [Postman Collection](collections/applitools.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/applitools.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Applitools Ultrafast Grid
-
-Cross-browser and device visual rendering grid. Renders DOM snapshots captured by Eyes SDKs across many browser/viewport combinations in parallel and applies Visual AI comparison.
-
-- **Human URL:** [https://applitools.com/platform/ultrafast-grid/](https://applitools.com/platform/ultrafast-grid/)
-- **Base URL:** `https://eyesapi.applitools.com`
-
-#### Tags
-
-- Ultrafast Grid
-- Cross-Browser
-- Visual AI
-
-#### Properties
-
-- [Product Page](https://applitools.com/platform/ultrafast-grid/)
-- [Postman Collection](collections/applitools.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/applitools.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://applitools.com/)
 - [Documentation](https://applitools.com/docs/)
-- [Git Hub](https://github.com/applitools)
-- [LinkedIn](https://www.linkedin.com/company/applitools)
-- [Plans](plans/applitools-plans-pricing.yml)
-- [Rate Limits](rate-limits/applitools-rate-limits.yml)
-- [Fin Ops](finops/applitools-finops.yml)
+- [Blog](https://applitools.com/blog/feed/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 43.5 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 13.2 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/applitools/](https://apis.io/providers/applitools/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Applitools: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/applitools/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
